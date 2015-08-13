@@ -17,7 +17,7 @@
     <link href="/static/dist/css/bootstrap.min.css" rel="stylesheet">
 
     <!-- Custom styles for this template -->
-    <link href="navbar.css" rel="stylesheet">
+    <link href="/static/dist/css/navbar.css" rel="stylesheet">
 
     <!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
     <!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
@@ -99,15 +99,19 @@
       </nav>
 
       <!-- Main component for a primary marketing message or call to action -->
-      {% block content %}
-      {% endblock %}
-
+      
+	{% block content %}
+    
+    {% endblock %}
 
     </div> <!-- /container -->
     
-    <div class="navbar navbar-default navbar-fixed-bottom">
-      <div class="container">
-        <p class="navbar-text">Desarrollado por el pasante de ing. telecomunicaciones la UNEFA Carlos Lomeli Sandia, para el dpto de Ox y Mx de Cx y Dx (Valencia) Movilnet</p>
+    
+    
+      
+    <div class="navbar navbar-default">
+      <div class="container text-center">
+        <p class="navbar-text col-md-12 col-sm-12 col-xs-12">Desarrollado por el pasante de ing. telecomunicaciones la UNEFA Carlos Lomeli Sandia, para el dpto de Ox y Mx de Cx y Dx (Valencia) Movilnet</p>
       </div>
     </footer>
 	
