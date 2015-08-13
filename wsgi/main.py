@@ -362,6 +362,7 @@ def processing():
 		if 'A3/APT' in line:
 			countAPTa3 += 1 	
 			
+	os.remove(filepath)
 	return render_template('processing-results.html', countAPTa1=countAPTa1,
 	 countAPTa2=countAPTa2, countAPTa3=countAPTa3)
 
