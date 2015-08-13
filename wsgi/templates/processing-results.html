@@ -10,8 +10,12 @@
         <div class="container">
             <div class="row">
                 <div class="col-sm-12">
-                    <div class="alert alert-success"><strong>Archivo subido!</strong><p> Has subido exitosamente el archivo {{ filename }}</p> </div>
-                    <p><a class="btn btn-lg btn-primary btn-success"  href="{{ url_for('processing') }}">Procesar</a></p>
+                    <div class="alert alert-success"><strong>Resultatos de reporte:</strong>
+						<p> A1/APT: {{ countAPTa1 }} .</p> 
+						<p> A2/APT: {{ countAPTa2 }} .</p> 
+						<p> A3/APT: {{ countAPTa3 }} .</p> 
+                    </div>
+                    <p><a class="btn btn-lg btn-primary btn-success"  href="{{ url_for('index') }}">Volver</a></p>
                 </div> 
             </div>
         </div><!--/container-->

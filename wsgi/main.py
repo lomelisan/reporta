@@ -24,12 +24,15 @@ import os
 from itsdangerous import URLSafeTimedSerializer
 from flask.ext.mail import Mail, Message
 
+# Global Vars
+global filepath
+
 mail = Mail()
 application = Flask(__name__)
 
 # upload reports config
 application.config['UPLOAD_FOLDER'] = os.environ.get('OPENSHIFT_DATA_DIR') if os.environ.get('OPENSHIFT_DATA_DIR') else 'wsgi/static/reports'
-application.config['ALLOWED_EXTENSIONS'] = set(['txt'])
+application.config['ALLOWED_EXTENSIONS'] = set(['log'])
 
 # cloud and local db
 application.config['SQLALCHEMY_DATABASE_URI'] = os.environ.get('OPENSHIFT_POSTGRESQL_DB_URL') if os.environ.get('OPENSHIFT_POSTGRESQL_DB_URL') else 'postgres://lomelisan:6c6f6d656c69@localhost:5432/reporta'
@@ -54,6 +57,8 @@ application.config['MAIL_DEFAULT_SENDER'] = 'reporta-movilnet@gmail.com'
 db = SQLAlchemy(application)
 mail.init_app(application)
 
+# Global vars
+global filepath
 
 # DB Models
 
@@ -169,7 +174,7 @@ class SigninForm(Form):
 class UploadForm(Form):
 	input_file = FileField('', validators = [
 			FileRequired(message = 'No hay archivo para subir!')
-			, FileAllowed(['txt'], message = 'Solo introduzca archivos .txt')
+			, FileAllowed(['log'], message = 'Solo introduzca archivos .log')
 			])
 	submit = SubmitField(label = "Subir")
 	
@@ -333,10 +338,32 @@ def upload():
 		input_file = request.files['input_file']
 		if input_file:
 			filename = secure_filename(input_file.filename)
-			input_file.save(os.path.join(application.config['UPLOAD_FOLDER'], filename))
+			global filepath 
+			filepath = os.path.join(application.config['UPLOAD_FOLDER'], filename)
+			input_file.save(filepath)
 			return render_template('upload-success.html', filename=filename)
 	else:
 		return render_template('upload.html', uploadfile_form = form,  page_title = 'Subida')
+
+@application.route('/processing')
+@login_required
+@check_confirmed
+def processing():
+	global filepath
+	datafile = file(filepath)
+	countAPTa1 = 0
+	countAPTa2 = 0
+	countAPTa3 = 0
+	for line in datafile:
+		if 'A1/APT' in line:
+			countAPTa1 += 1
+		if 'A2/APT' in line:
+			countAPTa2 += 1
+		if 'A3/APT' in line:
+			countAPTa3 += 1 	
+			
+	return render_template('processing-results.html', countAPTa1=countAPTa1,
+	 countAPTa2=countAPTa2, countAPTa3=countAPTa3)
 
 
 def dbinit():
