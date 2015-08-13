@@ -1,0 +1,10 @@
+#--Ambiente virtual
+env/
+
+#--Python
+*.pyc
+*.py~
+*.pyo
+
+#--Alembic
+

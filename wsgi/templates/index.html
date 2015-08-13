@@ -1,0 +1,29 @@
+{% extends "base-layout.html" %}
+
+{% block content %}
+
+<div class="jumbotron">
+        <h1>Bienvenido!</h1>
+        <p>Cansado de reportar rutinas diarias? Tenemos el servicio perfecto para ti!.</p>
+        <p><a class="btn btn-primary btn-lg" href="{{ url_for('signup') }}">Inscríbite ahora!</a></p>
+</div>
+
+<div class="row">
+        <div class="col-lg-4">
+          <h2>Ahorra tiempo</h2>
+          <p>Tu tiempo es valioso, por eso tan solo ingresa el archivo de repuesta de la central y <span class="glyphicon glyphicon-registration-mark">eporta.</span> se encarga del resto!</p>
+          <p><a class="btn btn-default" href="#">+Info</a></p>
+        </div>
+        <div class="col-lg-4">
+          <h2>Soporta tus procesos</h2>
+          <p>Tu trabajo merece respaldo, por eso contarás con un registro de tus reportes procesados!. Olvídate de contratiempos mientras uses <span class="glyphicon glyphicon-registration-mark">eporta.</span>!</p>
+          <p><a class="btn btn-default" href="#">+Info</a></p>
+       </div>
+        <div class="col-lg-4">
+          <h2>Mantiene al dia</h2>
+          <p>Con <span class="glyphicon glyphicon-registration-mark">eporta.</span>, tus rutinas no pasarán por alto, pues recibirás recordatorio vía correo cuando debas hacerlas!.</p>
+          <p><a class="btn btn-default" href="#">+Info</a></p>
+        </div>
+      </div>
+
+{% endblock %}
