@@ -17,11 +17,11 @@
     <link href="/static/dist/css/bootstrap.min.css" rel="stylesheet">
 
     <!-- Custom styles for this template -->
-    <link href="/static/dist/css/navbar.css" rel="stylesheet">
+    <link href="/static/dist/css/sticky-footer-navbar.css" rel="stylesheet">
 
     <!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
     <!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
-    <script src="../../assets/js/ie-emulation-modes-warning.js"></script>
+    <script src="/static/assets/js/ie-emulation-modes-warning.js"></script>
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
@@ -64,7 +64,9 @@
                         <li><a href="{{ url_for('profile') }}">Configuración...</a></li>
                         <li class="divider"></li>
                         <li class="dropdown-header">Reportes</li>
+                        <li><a href="#">Instrucciones</a></li>
                         <li><a href="{{ url_for('upload') }}">Subida</a></li>
+                        <li><a href="#">Historial</a></li>
                         <li class="divider"></li>
                         <li><a href="{{ url_for('signout') }}">Desconectarme</a></li>
                     </ul>
@@ -99,26 +101,27 @@
       </nav>
 
       <!-- Main component for a primary marketing message or call to action -->
-      
+     
 	{% block content %}
     
     {% endblock %}
-
+	
     </div> <!-- /container -->
     
     
     
       
-    <div class="navbar navbar-default">
+    <footer class="footer">
       <div class="container text-center">
-        <p class="navbar-text col-md-12 col-sm-12 col-xs-12">Desarrollado por el pasante de ing. telecomunicaciones la UNEFA Carlos Lomeli Sandia, para el dpto de Ox y Mx de Cx y Dx (Valencia) Movilnet</p>
+         <p class="text-muted col-md-12 col-sm-12 col-xs-12">Diseñado y desplegado por el Pasante de Ing. de Telecomunicaciones <strong>UNEFA</strong>, Carlos Lomeli Sandia,<BR>
+        para el Departamento de Operación y Mantenimiento de Conmutación y Datos Valencia, <strong>Movilnet</strong></p>
       </div>
     </footer>
 	
     <!-- Bootstrap core JavaScript
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="/static/assets/js/jquery.min.js"></script>
     <script src="/static/dist/js/bootstrap.min.js"></script>
     <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
     <script src="/static/assets/js/ie10-viewport-bug-workaround.js"></script>

@@ -10,10 +10,25 @@
         <div class="container">
             <div class="row">
                 <div class="col-sm-12">
-                    <div class="alert alert-success"><strong>Resultatos de reporte:</strong>
-						<p> A1/APT: {{ countAPTa1 }} .</p> 
-						<p> A2/APT: {{ countAPTa2 }} .</p> 
-						<p> A3/APT: {{ countAPTa3 }} .</p> 
+                    <div class="alert alert-success"><strong>Resultados de reporte:</strong>
+						<p>&nbsp;</p>
+						<p><strong> Número de Alarmas A1/APZ: {{ countApzA1 }} </strong></p>
+						<p><strong> Descripción: </strong></p>
+						{% for a in colApzA1 %}
+						<p>{{ a }}</p>
+						{% endfor %}
+						<p>&nbsp;</p>
+						<p><strong> Número de Alarmas A2/APZ: {{ countApzA2 }} </strong></p> 
+						<p><strong> Descripción:  </strong></p>
+						{% for a in colApzA2 %}
+						<p>{{ a }}</p>
+						{% endfor %}
+						<p>&nbsp;</p>
+						<p><strong> Número de Alarmas A3/APZ: {{ countApzA3 }} </strong></p> 
+						<p><strong> Descripción: </strong></p>
+						{% for a in colApzA3 %}
+						<p>{{ a }}</p>
+						{% endfor %}
                     </div>
                     <p><a class="btn btn-lg btn-primary btn-success"  href="{{ url_for('index') }}">Volver</a></p>
                 </div> 

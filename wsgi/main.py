@@ -341,7 +341,7 @@ def upload():
 			global filepath 
 			filepath = os.path.join(application.config['UPLOAD_FOLDER'], filename)
 			input_file.save(filepath)
-			return render_template('upload-success.html', filename=filename)
+			return render_template('upload-success.html', filename=filename, page_title = u'Èxito')
 	else:
 		return render_template('upload.html', uploadfile_form = form,  page_title = 'Subida')
 
@@ -351,20 +351,52 @@ def upload():
 def processing():
 	global filepath
 	datafile = file(filepath)
-	countAPTa1 = 0
-	countAPTa2 = 0
-	countAPTa3 = 0
+	countApzA1 = 0
+	countApzA2 = 0
+	countApzA3 = 0
+	colApzA1 = []
+	colApzA2 = []
+	colApzA3 = []
+	a1ApzAux = False
+	a2ApzAux = False
+	a3ApzAux = False
 	for line in datafile:
-		if 'A1/APT' in line:
-			countAPTa1 += 1
-		if 'A2/APT' in line:
-			countAPTa2 += 1
-		if 'A3/APT' in line:
-			countAPTa3 += 1 	
+		if "MSSVA3_MI0313A_" in line:
+			a1ApzAux = False
+			a2ApzAux = False
+			a3ApzAux = False
+		
+		if a1ApzAux == True:
+			colApzA1.append(line)
+			
+		if 'A1/APZ' in line:
+			a1ApzAux = True
+			countApzA1 += 1
+			colApzA1.append(line)
+		
+		if a2ApzAux == True:
+			colApzA2.append(line)		
+						 
+		if 'A2/APZ' in line:
+			a2ApzAux = True
+			countApzA2 += 1
+			colApzA2.append(line)
+		
+		if a3ApzAux == True:
+			colApzA3.append(line)
+			
+		if 'A3/APZ' in line:
+			a3ApzAux = True
+			countApzA3 += 1
+			colApzA3.append(line)
+		
+			
+			
 			
 	os.remove(filepath)
-	return render_template('processing-results.html', countAPTa1=countAPTa1,
-	 countAPTa2=countAPTa2, countAPTa3=countAPTa3)
+	return render_template('processing-results.html',countApzA1 = countApzA1,
+	 colApzA1=colApzA1, countApzA2=countApzA2, colApzA2=colApzA2 , 
+	 countApzA3=countApzA3, colApzA3 =colApzA3, page_title = 'Resultados' )
 
 
 def dbinit():
