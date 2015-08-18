@@ -1,0 +1,60 @@
+{% extends "base-layout.html" %}
+
+{% block content %}
+<style>
+	#browsebutton { 
+		background-color: white;
+		}
+	#my-file-selector {
+		display: none;
+		}
+</style>
+
+<div class="row">
+    <div class="col-sm-2">
+
+    </div>
+    <div class="col-sm-8 well" style="background-color: rgb(255,255,255);">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-2">
+                </div>
+                <div class="col-sm-8">
+					<div class "row">
+						<form class="form-inline center-block" action="{{url_for('update_pattern')}}" method="POST" enctype="multipart/form-data">
+                           {{ uploadpattern_form.hidden_tag() }}
+							<div class="heading">
+								<h4 class="form-heading">Subida de reportes <span class="glyphicon glyphicon-registration-mark">eporta.</span>!</h4>
+							</div>
+								<label for="input_file">Archivo .xlsx</label>
+							<div class="input-group {% if uploadpattern_form.input_file.errors %} has-error {% endif %}">
+								<label id="browsebutton" class="btn btn-default input-group-addon" for="my-file-selector">
+									{{ uploadpattern_form.input_file(id="my-file-selector")}}
+									Explorar...
+								</label>
+								<input type="text" class="form-control" readonly>
+								<span class="input-group-btn">
+									{{uploadpattern_form.submit(class="btn btn-primary ")}}
+								</span>
+							</div>
+							<div class="input-group {% if uploadpattern_form.input_file.errors %} has-error {% endif %}">
+								<p class="help-block">{{ uploadpattern_form.input_file.errors[0] }}</p>
+							</div>
+						</form>
+					</div>
+				</div>
+                
+                <div class="col-sm-2">
+                </div>
+            </div>
+        </div><!--/container-->
+    </div>                   
+    <div class="col-sm-2">
+    </div>
+</div>
+
+{% endblock %}
+{% block scripts %}
+{{ super() }}
+<script src="/static/assets/js/inputFileButton.js"></script>>
+{% endblock %}

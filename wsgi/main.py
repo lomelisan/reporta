@@ -36,7 +36,6 @@ application = Flask(__name__)
 
 # upload reports config
 application.config['UPLOAD_FOLDER'] = os.environ.get('OPENSHIFT_DATA_DIR') if os.environ.get('OPENSHIFT_DATA_DIR') else 'wsgi/static/reports'
-application.config['ALLOWED_EXTENSIONS'] = set(['log'])
 
 # cloud and local db
 application.config['SQLALCHEMY_DATABASE_URI'] = os.environ.get('OPENSHIFT_POSTGRESQL_DB_URL') if os.environ.get('OPENSHIFT_POSTGRESQL_DB_URL') else 'postgres://lomelisan:6c6f6d656c69@localhost:5432/reporta'
@@ -194,6 +193,14 @@ class UploadForm(Form):
 			])
 	submit = SubmitField(label = "Subir")
 	
+class UploadPatternForm(Form):
+	input_file = FileField('', validators = [
+			FileRequired(message = 'No hay archivo para subir!')
+			, FileAllowed(['xlsx'], message = 'Solo introduzca archivos .xlsx')
+			])
+	submit = SubmitField(label = "Subir")
+	
+	
 	
 
 @login_manager.user_loader
@@ -317,12 +324,22 @@ def signout():
 def profile():
     return render_template('profile.html', page_title='Reporta - Perfil')
 
-@application.route('/update_pattern')
+@application.route('/update_pattern', methods=['GET', 'POST'])
 @login_required
 @check_confirmed
 @check_admin
 def update_pattern():
-    return render_template('update-pattern.html', page_title='Reporta - Perfil')
+	form = UploadPatternForm()
+	if request.method == 'POST' and form.validate_on_submit():
+		input_file = request.files['input_file']
+		if input_file:
+			filename = secure_filename(input_file.filename)
+			global filepath 
+			filepath = os.path.join(application.config['UPLOAD_FOLDER'], filename)
+			input_file.save(filepath)
+			return render_template('upload-pattern-success.html', filename=filename, page_title = u'Éxito')
+	else:
+		return render_template('upload-pattern.html',  uploadpattern_form = form,  page_title = 'Subida')
     
     
 @application.route('/adminpanel')
