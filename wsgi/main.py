@@ -402,7 +402,7 @@ def processing():
 	global filepath
 	datafile = file(filepath)
 	patternFilePath = os.path.join(application.config['UPLOAD_FOLDER'], "test.xlsx")
-	heirFilePath = os.path.join(application.config['UPLOAD_FOLDER'], "test2.xlsx")
+	#heirFilePath = os.path.join(application.config['UPLOAD_FOLDER'], "test2.xlsx")
 	countApzA1 = 0
 	countApzA2 = 0
 	countApzA3 = 0
@@ -412,6 +412,8 @@ def processing():
 	a1ApzAux = False
 	a2ApzAux = False
 	a3ApzAux = False
+	
+	
 	for line in datafile:
 		if "MSSVA3_MI0313A_" in line:
 			a1ApzAux = False
@@ -443,11 +445,11 @@ def processing():
 			colApzA3.append(line)
 			
 	os.remove(filepath)
-	wb = load_workbook(patternFilePath)
-	ws = wb.get_sheet_by_name("mss")
+	#wb = load_workbook(patternFilePath)
+	#ws = wb.get_sheet_by_name("mss")
 	#c = ws.cell(row = 5, column = 5)
 	#c.hyperlink = (a1ApzPathXl)
-	wb.save(patternFilePath)
+	#wb.save(patternFilePath)
 	#os.remove(heirFilePath)
 	return render_template('processing-results.html',countApzA1 = countApzA1,
 	 colApzA1=colApzA1, countApzA2=countApzA2, colApzA2=colApzA2 , 
