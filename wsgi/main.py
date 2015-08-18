@@ -24,9 +24,8 @@ import os
 from itsdangerous import URLSafeTimedSerializer
 from flask.ext.mail import Mail, Message
 
-# Excel File Imports
-from openpyxl import load_workbook
-#import zipfile
+# Global Vars
+global filepath
 
 mail = Mail()
 application = Flask(__name__)
@@ -58,12 +57,11 @@ application.config['MAIL_DEFAULT_SENDER'] = 'reporta-movilnet@gmail.com'
 db = SQLAlchemy(application)
 mail.init_app(application)
 
-# Global vars and miscellaneus config
-global filePath
-application.config['PATTERNS_FOLDER'] = os.environ.get('OPENSHIFT_DATA_DIR') if os.environ.get('OPENSHIFT_DATA_DIR') else 'wsgi/static/patterns'
-
+# Global vars
+global filepath
 
 # DB Models
+
 class Users(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     username = db.Column(db.String(60), unique=True)
@@ -129,9 +127,6 @@ def send_email(to, subject, template):
         sender=application.config['MAIL_DEFAULT_SENDER']
     )
     mail.send(msg)
-
-#Excel File Editor
-	
 
 #Custom decorator
 def check_confirmed(func):
@@ -343,9 +338,9 @@ def upload():
 		input_file = request.files['input_file']
 		if input_file:
 			filename = secure_filename(input_file.filename)
-			global filePath 
-			filePath = os.path.join(application.config['UPLOAD_FOLDER'], filename)
-			input_file.save(filePath)
+			global filepath 
+			filepath = os.path.join(application.config['UPLOAD_FOLDER'], filename)
+			input_file.save(filepath)
 			return render_template('upload-success.html', filename=filename, page_title = u'Èxito')
 	else:
 		return render_template('upload.html', uploadfile_form = form,  page_title = 'Subida')
@@ -354,12 +349,8 @@ def upload():
 @login_required
 @check_confirmed
 def processing():
-	global filePath
-	uploadFile = file(filePath)
-	patternFilePath = os.path.join(application.config['PATTERNS_FOLDER'], "test.xlsx")
-	heirFilePath = os.path.join(application.config['PATTERNS_FOLDER'], "test2.xlsx")
-	a1ApzPathXl = os.path.join("a1Apz.txt")
-	a1ApzPathZip = os.path.join(application.config['PATTERNS_FOLDER'], "a1Apz.txt")
+	global filepath
+	datafile = file(filepath)
 	countApzA1 = 0
 	countApzA2 = 0
 	countApzA3 = 0
@@ -369,10 +360,7 @@ def processing():
 	a1ApzAux = False
 	a2ApzAux = False
 	a3ApzAux = False
-	
-	
-	
-	for line in uploadFile:
+	for line in datafile:
 		if "MSSVA3_MI0313A_" in line:
 			a1ApzAux = False
 			a2ApzAux = False
@@ -402,30 +390,13 @@ def processing():
 			countApzA3 += 1
 			colApzA3.append(line)
 		
-	os.remove(filePath)
-	if countApzA1 >= 1:
-		f = open(a1ApzPathZip, 'w')
-		for i in colApzA1:
-			f.write(i)
-		f.close()
-	
-	wb = load_workbook(patternFilePath)
-	ws = wb.get_sheet_by_name("mss")
-	c = ws.cell(row = 5, column = 5)
-	c.hyperlink = (a1ApzPathXl)
-	wb.save(heirFilePath)
-	
-	#zf = zipfile.ZipFile('report.zip', mode='w')
-	#zf.write(heirFilePath, arcname='test2.xlsx')
-	#if countApzA1 >= 1:
-		#zf.write(a1ApzPathZip, arcname='a1Apz.txt')
-	#zf.close()
-	os.remove(heirFilePath)
-	os.remove(a1ApzPathZip)
-	
+			
+			
+			
+	os.remove(filepath)
 	return render_template('processing-results.html',countApzA1 = countApzA1,
 	 colApzA1=colApzA1, countApzA2=countApzA2, colApzA2=colApzA2 , 
-	 countApzA3=countApzA3, colApzA3 =colApzA3, page_title = 'Resultados', patternFilePath=patternFilePath, a1ApzPathZip=a1ApzPathZip)
+	 countApzA3=countApzA3, colApzA3 =colApzA3, page_title = 'Resultados' )
 
 
 def dbinit():
