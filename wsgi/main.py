@@ -27,6 +27,9 @@ from flask.ext.mail import Mail, Message
 # Global Vars
 global filepath
 
+# Excel File Imports
+from openpyxl import load_workbook
+
 mail = Mail()
 application = Flask(__name__)
 
@@ -341,7 +344,7 @@ def upload():
 			global filepath 
 			filepath = os.path.join(application.config['UPLOAD_FOLDER'], filename)
 			input_file.save(filepath)
-			return render_template('upload-success.html', filename=filename, page_title = u'Èxito')
+			return render_template('upload-success.html', filename=filename, page_title = u'Éxito')
 	else:
 		return render_template('upload.html', uploadfile_form = form,  page_title = 'Subida')
 
