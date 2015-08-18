@@ -420,6 +420,7 @@ def processing():
 	#if countApzA1 >= 1:
 		#zf.write(a1ApzPathZip, arcname='a1Apz.txt')
 	#zf.close()
+	os.remove(heirFilePath)
 	os.remove(a1ApzPathZip)
 	
 	return render_template('processing-results.html',countApzA1 = countApzA1,
