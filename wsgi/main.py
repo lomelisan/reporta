@@ -403,6 +403,7 @@ def processing():
 	datafile = file(filepath)
 	patternFilePath = os.path.join(application.config['UPLOAD_FOLDER'], "test.xlsx")
 	a1ApzPathZip = os.path.join(application.config['UPLOAD_FOLDER'], "a1Apz.txt")
+	heirFilePath = os.path.join(application.config['UPLOAD_FOLDER'], "test2.xlsx")
 	countApzA1 = 0
 	countApzA2 = 0
 	countApzA3 = 0
@@ -451,13 +452,13 @@ def processing():
 		for i in colApzA1:
 			f.write(i)
 		f.close()
+		
 	
-	
-	##wb = load_workbook(patternFilePath)
+	wb = load_workbook(patternFilePath)
 	##ws = wb.get_sheet_by_name("mss")
 	##c = ws.cell(row = 5, column = 5)
 	#c.hyperlink = (a1ApzPathXl)
-	##wb.save(patternFilePath)
+	wb.save(heirFilePath)
 	
 	
 	#zf = zipfile.ZipFile('report.zip', mode='w')
@@ -470,7 +471,8 @@ def processing():
 	
 	return render_template('processing-results.html',countApzA1 = countApzA1,
 	 colApzA1=colApzA1, countApzA2=countApzA2, colApzA2=colApzA2 , 
-	 countApzA3=countApzA3, colApzA3 =colApzA3, page_title = 'Resultados', a1ApzPathZip=a1ApzPathZip  )
+	 countApzA3=countApzA3, colApzA3 =colApzA3, page_title = 'Resultados',
+	 a1ApzPathZip=a1ApzPathZip, heirFilePath=heirFilePath, patternFilePath=patternFilePath  )
 
 
 def dbinit():
