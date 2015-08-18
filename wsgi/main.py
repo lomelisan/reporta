@@ -147,12 +147,12 @@ def check_confirmed(func):
 #Custom decorator
 def check_admin(func):
     @wraps(func)
-    def decorated_function(*args, **kwargs):
+    def decorated_admin_function(*args, **kwargs):
         if current_user.role != 'admin':
             return redirect(url_for('notadmin'))
         return func(*args, **kwargs)
 
-    return decorated_function
+    return decorated_admin_function
 
 #Custom lowcase Valitador
 def lowcase_check(form, field):
