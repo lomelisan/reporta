@@ -449,7 +449,11 @@ def processing():
 	c = ws.cell(row = 5, column = 5)
 	#c.hyperlink = (a1ApzPathXl)
 	wb.save(patternFilePath)
-	os.remove(patternFilePath)
+	
+	f = open(os.path.join(application.config['UPLOAD_FOLDER'], "test.txt"),"w")
+	f.close()
+	
+	
 	return render_template('processing-results.html',countApzA1 = countApzA1,
 	 colApzA1=colApzA1, countApzA2=countApzA2, colApzA2=colApzA2 , 
 	 countApzA3=countApzA3, colApzA3 =colApzA3, page_title = 'Resultados' )
