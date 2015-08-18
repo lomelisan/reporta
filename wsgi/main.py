@@ -320,6 +320,8 @@ def profile():
     
 @application.route('/adminpanel')
 @login_required
+@check_confirmed
+@check_admin
 def adminpanel():
     return render_template('adminpanel.html', page_title='Administrador')
     
@@ -347,7 +349,8 @@ def unconfirmed():
 
 @application.route('/notadmin')
 @login_required
-def unconfirmed():
+@check_confirmed
+def notadmin():
     if current_user.role == 'admin':
         return redirect(url_for('index'))
     return render_template('notadmin.html')
