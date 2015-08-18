@@ -461,11 +461,11 @@ def processing():
 	wb.save(heirFilePath)
 	
 	
-	#zf = zipfile.ZipFile('report.zip', mode='w')
-	#zf.write(patternFilePath, arcname='test.xlsx')
-	#if countApzA1 >= 1:
-	#	zf.write(a1ApzPathZip, arcname='a1Apz.txt')
-	#zf.close()
+	zf = zipfile.ZipFile('report.zip', mode='w')
+	zf.write(heirFilePath, arcname='test.xlsx')
+	if countApzA1 >= 1:
+		zf.write(a1ApzPathZip, arcname='a1Apz.txt')
+	zf.close()
 	
 	
 	
