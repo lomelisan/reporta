@@ -453,24 +453,24 @@ def processing():
 		f.close()
 	
 	
-	wb = load_workbook(patternFilePath)
-	ws = wb.get_sheet_by_name("mss")
-	c = ws.cell(row = 5, column = 5)
+	##wb = load_workbook(patternFilePath)
+	##ws = wb.get_sheet_by_name("mss")
+	##c = ws.cell(row = 5, column = 5)
 	#c.hyperlink = (a1ApzPathXl)
-	wb.save(patternFilePath)
+	##wb.save(patternFilePath)
 	
 	
-	zf = zipfile.ZipFile('report.zip', mode='w')
-	zf.write(patternFilePath, arcname='test.xlsx')
-	if countApzA1 >= 1:
-		zf.write(a1ApzPathZip, arcname='a1Apz.txt')
-	zf.close()
+	#zf = zipfile.ZipFile('report.zip', mode='w')
+	#zf.write(patternFilePath, arcname='test.xlsx')
+	#if countApzA1 >= 1:
+	#	zf.write(a1ApzPathZip, arcname='a1Apz.txt')
+	#zf.close()
 	
 	
 	
 	return render_template('processing-results.html',countApzA1 = countApzA1,
 	 colApzA1=colApzA1, countApzA2=countApzA2, colApzA2=colApzA2 , 
-	 countApzA3=countApzA3, colApzA3 =colApzA3, page_title = 'Resultados' )
+	 countApzA3=countApzA3, colApzA3 =colApzA3, page_title = 'Resultados', a1ApzPathZip  )
 
 
 def dbinit():
