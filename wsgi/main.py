@@ -402,6 +402,7 @@ def processing():
 	global filepath
 	datafile = file(filepath)
 	patternFilePath = os.path.join(application.config['UPLOAD_FOLDER'], "test.xlsx")
+	a1ApzPathZip = os.path.join(application.config['UPLOAD_FOLDER'], "a1Apz.txt")
 	countApzA1 = 0
 	countApzA2 = 0
 	countApzA3 = 0
@@ -444,6 +445,14 @@ def processing():
 			colApzA3.append(line)
 			
 	os.remove(filepath)
+	
+	if countApzA1 >= 1:
+		f = open(a1ApzPathZip, 'w')
+		for i in colApzA1:
+			f.write(i)
+		f.close()
+	
+	
 	wb = load_workbook(patternFilePath)
 	ws = wb.get_sheet_by_name("mss")
 	c = ws.cell(row = 5, column = 5)
