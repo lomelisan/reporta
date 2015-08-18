@@ -145,12 +145,12 @@ def check_confirmed(func):
     return decorated_function
     
 #Custom decorator
-def check_admin(func):
-    @wraps(func)
+def check_admin(func2):
+    @wraps(func2)
     def decorated_admin_function(*args, **kwargs):
         if current_user.role != 'admin':
             return redirect(url_for('notadmin'))
-        return func(*args, **kwargs)
+        return func2(*args, **kwargs)
 
     return decorated_admin_function
 
