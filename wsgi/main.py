@@ -461,7 +461,7 @@ def processing():
 	
 	
 	zf = zipfile.ZipFile('report.zip', mode='w')
-	zf.write(patternFilePath, arcname='test2.xlsx')
+	zf.write(patternFilePath, arcname='test.xlsx')
 	if countApzA1 >= 1:
 		zf.write(a1ApzPathZip, arcname='a1Apz.txt')
 	zf.close()
