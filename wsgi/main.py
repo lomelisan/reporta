@@ -460,6 +460,13 @@ def processing():
 	wb.save(patternFilePath)
 	
 	
+	zf = zipfile.ZipFile('report.zip', mode='w')
+	zf.write(patternFilePath, arcname='test2.xlsx')
+	if countApzA1 >= 1:
+		zf.write(a1ApzPathZip, arcname='a1Apz.txt')
+	zf.close()
+	
+	
 	
 	return render_template('processing-results.html',countApzA1 = countApzA1,
 	 colApzA1=colApzA1, countApzA2=countApzA2, colApzA2=colApzA2 , 
