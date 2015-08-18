@@ -402,7 +402,7 @@ def processing():
 	global filepath
 	datafile = file(filepath)
 	patternFilePath = os.path.join(application.config['UPLOAD_FOLDER'], "test.xlsx")
-	#heirFilePath = os.path.join(application.config['UPLOAD_FOLDER'], "test2.xlsx")
+	heirFilePath = os.path.join(application.config['UPLOAD_FOLDER'], "test2.xlsx")
 	countApzA1 = 0
 	countApzA2 = 0
 	countApzA3 = 0
