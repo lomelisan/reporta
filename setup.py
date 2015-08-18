@@ -12,6 +12,6 @@ setup(name='reporta',
 		'Flask-Login==0.2.7',
 		'Flask-WTF==0.9.2',
 		'flask_mail',
-		'alembic'
+		'alembic',
 		'openpyxl']
 		)
