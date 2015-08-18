@@ -196,7 +196,7 @@ class UploadForm(Form):
 class UploadPatternForm(Form):
 	input_file = FileField('', validators = [
 			FileRequired(message = 'No hay archivo para subir!')
-			, FileAllowed(['xlsx'], message = 'Solo introduzca archivos .xlsx')
+			, FileAllowed(['xlsx', 'txt'], message = 'Solo introduzca archivos .xlsx')
 			])
 	submit = SubmitField(label = "Subir")
 	
