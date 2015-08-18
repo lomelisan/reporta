@@ -444,8 +444,8 @@ def processing():
 			
 	os.remove(filepath)
 	wb = load_workbook(patternFilePath)
-	ws = wb.get_sheet_by_name("mss")
-	c = ws.cell(row = 5, column = 5)
+	#ws = wb.get_sheet_by_name("mss")
+	#c = ws.cell(row = 5, column = 5)
 	#c.hyperlink = (a1ApzPathXl)
 	wb.save(heirFilePath)
 	os.remove(heirFilePath)
