@@ -143,6 +143,16 @@ def check_confirmed(func):
         return func(*args, **kwargs)
 
     return decorated_function
+    
+#Custom decorator
+def check_admin(func):
+    @wraps(func)
+    def decorated_function(*args, **kwargs):
+        if current_user.role != 'admin':
+            return redirect(url_for('notadmin'))
+        return func(*args, **kwargs)
+
+    return decorated_function
 
 #Custom lowcase Valitador
 def lowcase_check(form, field):
@@ -334,6 +344,13 @@ def unconfirmed():
     if current_user.confirmed:
         return redirect(url_for('index'))
     return render_template('unconfirmed.html')
+
+@application.route('/notadmin')
+@login_required
+def unconfirmed():
+    if current_user.role == 'admin':
+        return redirect(url_for('index'))
+    return render_template('notadmin.html')
     
 @application.route('/upload', methods=['GET', 'POST'])
 @login_required
