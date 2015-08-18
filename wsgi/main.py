@@ -26,7 +26,7 @@ from flask.ext.mail import Mail, Message
 
 # Excel File Imports
 from openpyxl import load_workbook
-import zipfile
+#import zipfile
 
 mail = Mail()
 application = Flask(__name__)
@@ -415,11 +415,11 @@ def processing():
 	c.hyperlink = (a1ApzPathXl)
 	wb.save(heirFilePath)
 	
-	zf = zipfile.ZipFile('report.zip', mode='w')
-	zf.write(heirFilePath, arcname='test2.xlsx')
-	if countApzA1 >= 1:
-		zf.write(a1ApzPathZip, arcname='a1Apz.txt')
-	zf.close()
+	#zf = zipfile.ZipFile('report.zip', mode='w')
+	#zf.write(heirFilePath, arcname='test2.xlsx')
+	#if countApzA1 >= 1:
+		#zf.write(a1ApzPathZip, arcname='a1Apz.txt')
+	#zf.close()
 	os.remove(a1ApzPathZip)
 	
 	return render_template('processing-results.html',countApzA1 = countApzA1,
