@@ -316,6 +316,13 @@ def signout():
 @check_confirmed
 def profile():
     return render_template('profile.html', page_title='Reporta - Perfil')
+
+@application.route('/update_pattern')
+@login_required
+@check_confirmed
+@check_admin
+def update_pattern():
+    return render_template('update-pattern.html', page_title='Reporta - Perfil')
     
     
 @application.route('/adminpanel')
