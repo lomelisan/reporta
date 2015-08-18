@@ -29,6 +29,7 @@ global filepath
 
 # Excel File Imports
 from openpyxl import load_workbook
+import zipfile
 
 mail = Mail()
 application = Flask(__name__)
