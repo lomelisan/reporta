@@ -447,8 +447,8 @@ def processing():
 	ws = wb.get_sheet_by_name("mss")
 	#c = ws.cell(row = 5, column = 5)
 	#c.hyperlink = (a1ApzPathXl)
-	wb.save(heirFilePath)
-	os.remove(heirFilePath)
+	wb.save(patternFilePath)
+	#os.remove(heirFilePath)
 	return render_template('processing-results.html',countApzA1 = countApzA1,
 	 colApzA1=colApzA1, countApzA2=countApzA2, colApzA2=colApzA2 , 
 	 countApzA3=countApzA3, colApzA3 =colApzA3, page_title = 'Resultados' )
