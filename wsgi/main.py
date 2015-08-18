@@ -450,8 +450,6 @@ def processing():
 	#c.hyperlink = (a1ApzPathXl)
 	wb.save(patternFilePath)
 	
-	f = open(os.path.join(application.config['UPLOAD_FOLDER'], "test.txt"),"w")
-	f.close()
 	
 	
 	return render_template('processing-results.html',countApzA1 = countApzA1,
