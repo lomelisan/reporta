@@ -63,9 +63,11 @@ mail.init_app(application)
 
 # Global vars
 global filepath
+application.config['PATTERNS_FOLDER'] = 'wsgi/static/patterns'
+
+
 
 # DB Models
-
 class Users(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     username = db.Column(db.String(60), unique=True)
@@ -355,6 +357,8 @@ def upload():
 def processing():
 	global filepath
 	datafile = file(filepath)
+	patternFilePath = os.path.join(application.config['PATTERNS_FOLDER'], "test.xlsx")
+	heirFilePath = os.path.join(application.config['UPLOAD_FOLDER'], "test2.xlsx")
 	countApzA1 = 0
 	countApzA2 = 0
 	countApzA3 = 0
@@ -393,11 +397,14 @@ def processing():
 			a3ApzAux = True
 			countApzA3 += 1
 			colApzA3.append(line)
-		
-			
-			
 			
 	os.remove(filepath)
+	wb = load_workbook(patternFilePath)
+	ws = wb.get_sheet_by_name("mss")
+	c = ws.cell(row = 5, column = 5)
+	#c.hyperlink = (a1ApzPathXl)
+	wb.save(heirFilePath)
+	os.remove(heirFilePath)
 	return render_template('processing-results.html',countApzA1 = countApzA1,
 	 colApzA1=colApzA1, countApzA2=countApzA2, colApzA2=colApzA2 , 
 	 countApzA3=countApzA3, colApzA3 =colApzA3, page_title = 'Resultados' )
