@@ -491,11 +491,17 @@ def processing():
 	subject = "Has recibido un Reporte!"
 	send_email_file(current_user.email, subject, html, path_mail_file, name_file, type_mail_file)
 	
+	os.remove(a1ApzPathZip)
 	
 	return render_template('processing-results.html',countApzA1 = countApzA1,
 	 colApzA1=colApzA1, countApzA2=countApzA2, colApzA2=colApzA2 , 
 	 countApzA3=countApzA3, colApzA3 =colApzA3, page_title = 'Resultados',
 	 a1ApzPathZip=a1ApzPathZip, heirFilePath=heirFilePath, patternFilePath=patternFilePath, current_user_email=current_user.email )
+
+
+
+
+
 
 
 def dbinit():
