@@ -35,7 +35,7 @@ mail = Mail()
 application = Flask(__name__)
 
 # upload reports config
-application.config['UPLOAD_FOLDER'] = os.environ.get('OPENSHIFT_DATA_DIR') if os.environ.get('OPENSHIFT_DATA_DIR') else 'wsgi/static/reports'
+application.config['UPLOAD_FOLDER'] = os.environ.get('OPENSHIFT_DATA_DIR') if os.environ.get('OPENSHIFT_DATA_DIR') else 'wsgi/static/patterns'
 
 # cloud and local db
 application.config['SQLALCHEMY_DATABASE_URI'] = os.environ.get('OPENSHIFT_POSTGRESQL_DB_URL') if os.environ.get('OPENSHIFT_POSTGRESQL_DB_URL') else 'postgres://lomelisan:6c6f6d656c69@localhost:5432/reporta'
@@ -131,6 +131,18 @@ def send_email(to, subject, template):
         html=template,
         sender=application.config['MAIL_DEFAULT_SENDER']
     )
+    mail.send(msg)
+    
+#Send Email File
+def send_email_file(to, subject, template, path_mail_file, name_file, type_mail_file):
+    msg = Message(
+        subject,
+        recipients=[to],
+        html=template,
+        sender=application.config['MAIL_DEFAULT_SENDER']
+    )
+    with application.open_resource(path_mail_file) as fp:
+		msg.attach(name_file, type_mail_file, fp.read())
     mail.send(msg)
 
 #Custom decorator
@@ -461,6 +473,7 @@ def processing():
 	wb.save(heirFilePath)
 	
 	
+	
 	#zf = zipfile.ZipFile('report.zip', mode='w')
 	#zf.write(heirFilePath, arcname='test.xlsx')
 	#if countApzA1 >= 1:
@@ -468,11 +481,21 @@ def processing():
 	#zf.close()
 	
 	
+
+	
+	#File sender
+	path_mail_file = "static/patterns/reporta/test2.xlsx"
+	type_mail_file = "excel/xlsx"
+	name_file = "reporte.xlsx"
+	html = render_template('report.html')
+	subject = "Has recibido un Reporte!"
+	send_email_file(current_user.email, subject, html, path_mail_file, name_file, type_mail_file)
+	
 	
 	return render_template('processing-results.html',countApzA1 = countApzA1,
 	 colApzA1=colApzA1, countApzA2=countApzA2, colApzA2=colApzA2 , 
 	 countApzA3=countApzA3, colApzA3 =colApzA3, page_title = 'Resultados',
-	 a1ApzPathZip=a1ApzPathZip, heirFilePath=heirFilePath, patternFilePath=patternFilePath  )
+	 a1ApzPathZip=a1ApzPathZip, heirFilePath=heirFilePath, patternFilePath=patternFilePath, current_user_email=current_user.email )
 
 
 def dbinit():
