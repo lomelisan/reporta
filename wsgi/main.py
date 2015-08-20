@@ -480,7 +480,9 @@ def processing():
 		#zf.write(a1ApzPathZip, arcname='a1Apz.txt')
 	#zf.close()
 	
-	
+	if countApzA1 >= 1:
+		os.remove(a1ApzPathZip)
+		
 
 	
 	#File sender
@@ -491,7 +493,7 @@ def processing():
 	subject = "Has recibido un Reporte!"
 	send_email_file(current_user.email, subject, html, path_mail_file, name_file, type_mail_file)
 	
-	os.remove(a1ApzPathZip)
+	
 	
 	return render_template('processing-results.html',countApzA1 = countApzA1,
 	 colApzA1=colApzA1, countApzA2=countApzA2, colApzA2=colApzA2 , 
