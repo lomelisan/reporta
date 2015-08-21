@@ -413,66 +413,32 @@ def upload():
 def processing():
 	global filepath
 	datafile = file(filepath)
-	patternFilePath = os.path.join(application.config['UPLOAD_FOLDER'], "test.xlsx")
-	a1ApzPathZip = os.path.join(application.config['UPLOAD_FOLDER'], "reporta/a1Apz.txt")
-	heirFilePath = os.path.join(application.config['UPLOAD_FOLDER'], "reporta/test2.xlsx")
+	patternFilePath = os.path.join(application.config['UPLOAD_FOLDER'], "modelo.xlsx")
+	heirFilePath = os.path.join(application.config['UPLOAD_FOLDER'], "reporta/reporte.xlsx")
 	countApzA1 = 0
-	countApzA2 = 0
-	countApzA3 = 0
-	colApzA1 = []
-	colApzA2 = []
-	colApzA3 = []
-	a1ApzAux = False
-	a2ApzAux = False
-	a3ApzAux = False
-	
+	colGen = []
+	countLines = 0
 	
 	for line in datafile:
-		if "MSSVA3_MI0313A_" in line:
-			a1ApzAux = False
-			a2ApzAux = False
-			a3ApzAux = False
 		
-		if a1ApzAux == True:
-			colApzA1.append(line)
+		colGen.append(line)
+		countLines += 1
 			
 		if 'A1/APZ' in line:
-			a1ApzAux = True
 			countApzA1 += 1
-			colApzA1.append(line)
-		
-		if a2ApzAux == True:
-			colApzA2.append(line)		
-						 
-		if 'A2/APZ' in line:
-			a2ApzAux = True
-			countApzA2 += 1
-			colApzA2.append(line)
-		
-		if a3ApzAux == True:
-			colApzA3.append(line)
-			
-		if 'A3/APZ' in line:
-			a3ApzAux = True
-			countApzA3 += 1
-			colApzA3.append(line)
 			
 	os.remove(filepath)
 	
-	if countApzA1 >= 1:
-		f = open(a1ApzPathZip, 'w')
-		for i in colApzA1:
-			f.write(i)
-		f.close()
-		
-	
+	i = 0
+	j = 0
 	wb = load_workbook(patternFilePath)
-	##ws = wb.get_sheet_by_name("mss")
-	##c = ws.cell(row = 5, column = 5)
-	#c.hyperlink = (a1ApzPathXl)
+	ws = wb.get_sheet_by_name("logo")
+	rows = countLines
+	
+	for i in range(rows):
+		ws.cell(row=i+1, column=1).value = colGen[i]
+					 
 	wb.save(heirFilePath)
-	
-	
 	
 	#zf = zipfile.ZipFile('report.zip', mode='w')
 	#zf.write(heirFilePath, arcname='test.xlsx')
@@ -480,25 +446,20 @@ def processing():
 		#zf.write(a1ApzPathZip, arcname='a1Apz.txt')
 	#zf.close()
 	
-	if countApzA1 >= 1:
-		os.remove(a1ApzPathZip)
-		
-
 	
 	#File sender
-	path_mail_file = "static/patterns/reporta/test2.xlsx"
+	path_mail_file = "static/patterns/reporta/reporte.xlsx"
 	type_mail_file = "excel/xlsx"
 	name_file = "reporte.xlsx"
 	html = render_template('report.html')
 	subject = "Has recibido un Reporte!"
 	send_email_file(current_user.email, subject, html, path_mail_file, name_file, type_mail_file)
 	
-	
+	os.remove(heirFilePath)
 	
 	return render_template('processing-results.html',countApzA1 = countApzA1,
-	 colApzA1=colApzA1, countApzA2=countApzA2, colApzA2=colApzA2 , 
-	 countApzA3=countApzA3, colApzA3 =colApzA3, page_title = 'Resultados',
-	 a1ApzPathZip=a1ApzPathZip, heirFilePath=heirFilePath, patternFilePath=patternFilePath, current_user_email=current_user.email )
+	 countLines=countLines, page_title = 'Resultados', heirFilePath=heirFilePath,
+	 patternFilePath=patternFilePath, current_user_email=current_user.email )
 
 
 
