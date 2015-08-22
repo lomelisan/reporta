@@ -10,8 +10,11 @@
         <div class="container">
             <div class="row">
                 <div class="col-sm-12">
-                    <div class="alert alert-success"><strong>Archivo procesado exitosamente.</strong><p> Haz clic en Enviar para enviar el reporte por correo</p> </div>
-                    <p><a class="btn btn-lg btn-primary btn-success"  href="{{ url_for('sending') }}">Enviar</a></p>
+                    <div class="alert alert-success"><strong>Archivo .log leído exitosamente.</strong>
+                    <p>Número de Líneas de archivo .log: <strong> {{ countLines }} </strong></p>
+                    <p> Haz clic en Procesar para empezar a elborar el reporte</p> 
+                    </div>
+                    <p><a class="btn btn-lg btn-primary btn-success"  href="{{ url_for('processing') }}">Procesar</a></p>
                 </div> 
             </div>
         </div><!--/container-->

@@ -29,7 +29,6 @@ global filepath
 
 # Excel File Imports
 from openpyxl import load_workbook
-import zipfile
 
 mail = Mail()
 application = Flask(__name__)
@@ -62,6 +61,10 @@ mail.init_app(application)
 
 # Global vars
 global filepath
+global colGen
+global countLines
+global countApzA1
+global heirFilePath
 application.config['PATTERNS_FOLDER'] = 'wsgi/static/patterns'
 
 
@@ -407,16 +410,17 @@ def upload():
 	else:
 		return render_template('upload.html', uploadfile_form = form,  page_title = 'Subida')
 
-@application.route('/processing')
+@application.route('/reading')
 @login_required
 @check_confirmed
-def processing():
+def reading():
 	global filepath
+	global colGen
+	global countApzA1
+	global countLines
 	datafile = file(filepath)
-	patternFilePath = os.path.join(application.config['UPLOAD_FOLDER'], "modelo.xlsx")
-	heirFilePath = os.path.join(application.config['UPLOAD_FOLDER'], "reporta/reporte.xlsx")
-	countApzA1 = 0
 	colGen = []
+	countApzA1 = 0
 	countLines = 0
 	
 	for line in datafile:
@@ -429,24 +433,58 @@ def processing():
 			
 	os.remove(filepath)
 	
+	return render_template('reading-results.html', countLines=countLines,
+	page_title = 'Lectura exitosa')
+
+
+@application.route('/processing')
+@login_required
+@check_confirmed
+def processing():
+	global colGen
+	global countApzA1
+	global heirFilePath
+	global countLines
+	patternFilePath = os.path.join(application.config['UPLOAD_FOLDER'], "ModeloB.xlsx")
+	heirFilePath = os.path.join(application.config['UPLOAD_FOLDER'], "reporta/reporte.xlsx")
 	i = 0
 	j = 0
 	wb = load_workbook(patternFilePath)
 	ws = wb.get_sheet_by_name("logo")
+	ws2 = wb.get_sheet_by_name("MSS")
 	rows = countLines
+	x = "reporte.xlsx#logo!A1"
 	
 	for i in range(rows):
 		ws.cell(row=i+1, column=1).value = colGen[i]
-					 
+	
+	i = 0
+	rows = 56
+	for i in range(rows):
+		if i  == 16:
+			ws2.cell(row=i+1, column=5).hyperlink = (x)
+			if countApzA1 >= 1:
+				ws2.cell(row=i+1, column=4).value = "NOT OK"
+			else:
+				ws2.cell(row=i+1, column=4).value = "OK"
+			
+		if i >= 22 and i <= 41:
+			ws2.cell(row=i+1, column=5).hyperlink = (x)
+		if i == 56:
+			break
+		if i >= 47:
+			ws2.cell(row=i+1, column=5).hyperlink = (x)
+		
+	
 	wb.save(heirFilePath)
 	
-	#zf = zipfile.ZipFile('report.zip', mode='w')
-	#zf.write(heirFilePath, arcname='test.xlsx')
-	#if countApzA1 >= 1:
-		#zf.write(a1ApzPathZip, arcname='a1Apz.txt')
-	#zf.close()
+	return render_template('processing-results.html', page_title = 'Proceso exitoso')
 	
-	
+@application.route('/sending')
+@login_required
+@check_confirmed
+def sending():		
+	global heirFilePath
 	#File sender
 	path_mail_file = "static/patterns/reporta/reporte.xlsx"
 	type_mail_file = "excel/xlsx"
@@ -457,13 +495,8 @@ def processing():
 	
 	os.remove(heirFilePath)
 	
-	return render_template('processing-results.html',countApzA1 = countApzA1,
-	 countLines=countLines, page_title = 'Resultados', heirFilePath=heirFilePath,
-	 patternFilePath=patternFilePath, current_user_email=current_user.email )
-
-
-
-
+	return render_template('sending-results.html', 
+	page_title = 'Reporte enviado' )
 
 
 
