@@ -486,7 +486,10 @@ def processing():
 def sending():		
 	global heirFilePath
 	#File sender
-	path_mail_file = "static/patterns/reporta/reporte.xlsx"
+	if os.environ.get('OPENSHIFT_DATA_DIR'):
+		path_mail_file = heirFilePath
+	else:
+		path_mail_file = "static/patterns/reporta/reporte.xlsx"
 	type_mail_file = "excel/xlsx"
 	name_file = "reporte.xlsx"
 	html = render_template('report.html')
