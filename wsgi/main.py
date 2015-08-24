@@ -418,23 +418,222 @@ def reading():
 	global colGen
 	global countApzA1
 	global countLines
+	global ok_dpwsp
+	global ok_exrpp
+	
 	datafile = file(filepath)
 	colGen = []
-	countApzA1 = 0
+	
+	
+	
 	countLines = 0
 	
+	allip = False
+	countApzA1 = 0
+	
+	calp = False
+	
+	dpwsp = False
+	ok_dpwsp = False
+	
+	plldp = False
+	
+	exrpp= False
+	count_exrpp = 0
+	ok_exrpp = True
+	
+	exemp = False
+	count_exemp = 0
+	ok_exemp = True
+	
+	ntstp = False
+	count_ntstp = 0
+	ok_ntstp = False
+	
+	syrip = False
+	
+	
+	apamp = False
+	count_apamp = 0
+	count_pas = 0
+	count_act = 0
+	
+	m3rsp = False
+	m3asp = False
+	ihalp = False
+	ihstp = False
+	strsp = False
+	blorp = False
+	blurp = False
+	faiap = False
+	mgsvp = False
+	mgarp = False
+	stbsp = False
+	sybfp = False
+	
 	for line in datafile:
-		
-		colGen.append(line)
 		countLines += 1
-			
+		colGen.append(line)
+		
+		if len(line) == 10:
+			continue
+		
+		if "END" in line:
+			allip = False
+			calp = False
+			dpwsp = False
+			plldp = False
+			exrpp = False
+			exemp = False
+			ntstp = False
+			syrip = False
+			apamp = False
+			m3rsp = False
+			m3asp = False
+			ihalp = False
+			ihstp = False
+			strsp = False
+			blorp = False
+			blurp = False
+			faiap = False
+			mgsvp = False
+			mgarp = False
+			stbsp = False
+			sybfp = False
+		
+		#if 	'<allip;' in line:
+			#allip = True
+		#if allip == True and 'A1/APZ' in line:
+			#countApzA1 += 1
+		
+		
+		# Proceso alarma Allip
 		if 'A1/APZ' in line:
 			countApzA1 += 1
+		#----------	 
 			
-	os.remove(filepath)
+		if '<CACLP;' in line:
+			calp = True
+			
+		# Proceso alarma DPWSP	
+		if '<DPWSP;' in line:
+			dpwsp = True
+		if '<DPWSP;' and 'NRM  B  WO' in line:
+			ok_dpwsp = True
+		#----------	
+			
+		if '<PLLDP;' in line:
+			plldp = True
+		
+		# Proceso alarma EXRP
+		if exrpp == True:
+			count_exrpp += 1
+			if count_exrpp >= 4:
+				if 'WO' in line:
+					ok_exrpp = True
+				else :
+					exrpp = False
+					ok_exrpp = False
+					
+		
+		if '<EXRPP:RP=ALL;' in line:
+			exrpp = True
+			count_exrpp += 1
+		#----------	 
+			
+		# Proceso alarma EXEMP
+		if 	exemp == True:
+			count_exemp += 1
+			if count_exrpp >= 4:
+				if 'WO' in line:
+					ok_exemp = True
+				else:
+					exemp = False
+					ok_exemp = False
+				
+		if '<EXEMP:rp=all,em=ALL;' in line:
+			exemp = True:
+			count_exemp += 1
+		#----------
+		
+			
+		# Proceso alarma NTSP
+		if 	ntstp == True:
+			count_ntstp += 1
+			if count_ntstp >= 4:
+				if 'WO' in line:
+					ok_ntstp = True
+				else:
+					ntstp = False
+					ok_ntstp = False
+		
+		if '<NTSTP:SNT=ALL;' in line:
+			ntstp = True
+			count_ntstp += 1
+		#----------
+			 
+		if '<SYRIP:SURVEY;' in line:
+			syrip = True
+		
+		# Proceso alarma APAMP
+		if apamp == True:
+			count_apamp += 1
+			if count_apamp += 3:
+				if 'PASSIVE' in line:
+					count_pas += 1
+				if 'ACTIVE' in line:
+					count_act += 1
+			else:
+				apamp = False
+					
+				
+				
+		if 'DIRECTORY ADDRESS DATA' in line:
+			apamp = True
+			count_apamp == 1
+		#----------
+		
+		
+		if '<M3RSP:DEST=ALL;' in line:
+			m3rsp = True
+			
+		if '<M3ASP;' in line:
+			m3asp = True
+		
+		if '<IHALP:EPID=ALL; ' in line:
+			ihalp = True
+		
+		if '<IHSTP:IPPORT=ALL;' in line:
+			ihstp = True
+		
+		if '<STRSP:R=ALL;' in line:
+			strsp = True
+		
+		if '<BLORP;' in line:
+			blorp = True
+		
+		if '<BLURP:R=ALL;' in line:
+			blurp = True
+		
+		if '<FAIAP:R=ALL;' in line:
+			faiap = True
+			
+		if '<MGSVP;' in line:
+			mgsvp = True	 
+		
+		if '<MGARP:NLOG=10;' in line:
+			mgarp = True
+		
+		if '<STBSP:DETY=ALL;' in line:
+			stbsp = True
+		
+		if '<SYBFP:FILE; ' in line:
+			sybfp = True
+			
+	os.remove(filepath)	
 	
 	return render_template('reading-results.html', countLines=countLines,
-	page_title = 'Lectura exitosa')
+	page_title = 'Lectura exitosa', t = t)
 
 
 @application.route('/processing')
@@ -445,6 +644,8 @@ def processing():
 	global countApzA1
 	global heirFilePath
 	global countLines
+	global ok_dpwsp
+	global ok_exrpp
 	patternFilePath = os.path.join(application.config['UPLOAD_FOLDER'], "ModeloB.xlsx")
 	heirFilePath = os.path.join(application.config['UPLOAD_FOLDER'], "reporta/reporte.xlsx")
 	i = 0
@@ -470,6 +671,17 @@ def processing():
 			
 		if i >= 22 and i <= 41:
 			ws2.cell(row=i+1, column=5).hyperlink = (x)
+			if i == 23:
+				if ok_dpwsp == True:
+					ws2.cell(row=i+1, column=4).value = "OK"
+				else:
+					ws2.cell(row=i+1, column=4).value = "NOT OK"
+			if i == 25:
+				if ok_exrpp == True:
+					ws2.cell(row=i+1, column=4).value = "OK"
+				else:
+					ws2.cell(row=i+1, column=4).value = "NOT OK"
+					
 		if i == 56:
 			break
 		if i >= 47:
