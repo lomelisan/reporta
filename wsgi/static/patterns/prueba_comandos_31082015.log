@@ -1,0 +1,3720 @@
+<prcstate
+NOT ACCEPTED
+SYNTAX FAULT
+<exit;
+
+c:\winnt\profiles\mvbackup>prcstate
+active
+
+c:\winnt\profiles\mvbackup>hostname
+MSSVA3APG40B
+
+c:\winnt\profiles\mvbackup>alist
+
+Alarm Identifier    Class    Category    Time
+29124:0             A3       APZ         Tue Feb 10 01:00:24 2015
+
+Object of Reference
+STSDEST1
+
+Alarm Text
+CDH RESPONDING READY DIRECTORY WARNING
+DIRECTORY               PATH                            FILES           OLDEST FILE 
+Ready           K:\aes\data\cdh\ftp\STSDEST1\Ready                      517             Tue Feb 03 00:00:00 2015
+
+
+Probable cause is  communication failure between APG and remote host
+
+Problem Data
+The Directory has been filled to pre-defined limit or it contains files older than pre-defined limit
+
+
+Alarm Identifier    Class    Category    Time
+29090:4             A2       APZ         Sat Apr 25 21:51:31 2015
+
+Object of Reference
+RCEFILE1_CDDF/660
+
+Alarm Text
+AP FILE PROCESSING FAULT
+CAUSE
+FILE TRANSFER FAILED
+
+TRANSFER QUEUE
+RCEFILE1
+
+DESTINATION SET
+CDDF
+
+Problem Data
+Transfer error
+
+
+c:\winnt\profiles\mvbackup>cluster res
+Listing status for all available resources:
+
+Resource             Group                Node            Status
+-------------------- -------------------- --------------- ------
+Cluster IP Address   Cluster Group        MSSVA3APG40B    Online
+Cluster Name         Cluster Group        MSSVA3APG40B    Online
+Internal IP Address for SPOE Cluster Group        MSSVA3APG40B    Online
+AP_1                 Cluster Group        MSSVA3APG40B    Online
+Disks K: L: M:       Disk Group           MSSVA3APG40B    Online
+Disks R: S: V: G:    Disk Group           MSSVA3APG40B    Online
+Disks Q: Y: I:       Disk Group           MSSVA3APG40B    Online
+Share K              Disk Group           MSSVA3APG40B    Online
+Images               Disk Group           MSSVA3APG40B    Online
+DHCP Service         Disk Group           MSSVA3APG40B    Online
+Diskeeper            Disk Group           MSSVA3APG40B    Online
+Share LOGS           Disk Group           MSSVA3APG40B    Online
+Share FMS            Disk Group           MSSVA3APG40B    Online
+Share CPS            Disk Group           MSSVA3APG40B    Online
+Share MCS            Disk Group           MSSVA3APG40B    Online
+Share R              Disk Group           MSSVA3APG40B    Online
+Share S              Disk Group           MSSVA3APG40B    Online
+stsprov              Disk Group           MSSVA3APG40B    Online
+stsconv              Disk Group           MSSVA3APG40B    Online
+stsopcf              Disk Group           MSSVA3APG40B    Online
+stsmain              Disk Group           MSSVA3APG40B    Online
+gatherer             Disk Group           MSSVA3APG40B    Online
+PES_CLH_server       Disk Group           MSSVA3APG40B    Online
+OCS_IPNAADM          Disk Group           MSSVA3APG40B    Online
+MCS_ALEC_ADM         Disk Group           MSSVA3APG40B    Online
+MCS_MTS_ADM          Disk Group           MSSVA3APG40B    Online
+MCS_ADH_ADM          Disk Group           MSSVA3APG40B    Online
+MCS_MSS_ADM          Disk Group           MSSVA3APG40B    Online
+MCS_ALIS_ADM         Disk Group           MSSVA3APG40B    Online
+MCS_ALDA_ADM         Disk Group           MSSVA3APG40B    Online
+MCS_AIAP_ADM         Disk Group           MSSVA3APG40B    Online
+MAS_MODT_Handler     Disk Group           MSSVA3APG40B    Online
+MAS_MODD_Handler     Disk Group           MSSVA3APG40B    Online
+MAS_CPTASP_cptheartbeat Disk Group           MSSVA3APG40B    Online
+MAS_CPTASP_cptcentral_A Disk Group           MSSVA3APG40B    Online
+MAS_CPTASP_cptcentral_B Disk Group           MSSVA3APG40B    Online
+MAS_CPTASP_cptcentral Disk Group           MSSVA3APG40B    Online
+FMS_CPF_server       Disk Group           MSSVA3APG40B    Online
+CPS_BUSRV            Disk Group           MSSVA3APG40B    Online
+CPS_BUAP_parmgr      Disk Group           MSSVA3APG40B    Online
+CPS_BUAP_loader      Disk Group           MSSVA3APG40B    Online
+CPS_BUAP_filemgr     Disk Group           MSSVA3APG40B    Online
+CPS_BUFTPD           Disk Group           MSSVA3APG40B    Online
+AES_DBO_server       Disk Group           MSSVA3APG40B    Online
+AES_CDH_Server       Disk Group           MSSVA3APG40B    Online
+AES_AFP_server       Disk Group           MSSVA3APG40B    Online
+ACS_RTR_service_7    Disk Group           MSSVA3APG40B    Online
+ACS_MSD_service_7    Disk Group           MSSVA3APG40B    Online
+ACS_RTR_service_6    Disk Group           MSSVA3APG40B    Online
+ACS_MSD_service_6    Disk Group           MSSVA3APG40B    Online
+ACS_RTR_service_5    Disk Group           MSSVA3APG40B    Online
+ACS_MSD_service_5    Disk Group           MSSVA3APG40B    Online
+ACS_RTR_service_4    Disk Group           MSSVA3APG40B    Online
+ACS_MSD_service_4    Disk Group           MSSVA3APG40B    Online
+ACS_RTR_service_3    Disk Group           MSSVA3APG40B    Online
+ACS_MSD_service_3    Disk Group           MSSVA3APG40B    Online
+ACS_RTR_service_2    Disk Group           MSSVA3APG40B    Online
+ACS_MSD_service_2    Disk Group           MSSVA3APG40B    Online
+ACS_RTR_service_1    Disk Group           MSSVA3APG40B    Online
+ACS_MSD_service_1    Disk Group           MSSVA3APG40B    Online
+ACS_RTR_service      Disk Group           MSSVA3APG40B    Online
+ACS_MSD_service      Disk Group           MSSVA3APG40B    Online
+ACS_ALOG_Main        Disk Group           MSSVA3APG40B    Online
+APIO_TFTP_Server     Disk Group           MSSVA3APG40B    Online
+ACS_LM_Server        Disk Group           MSSVA3APG40B    Online
+OCS_OCP_echo_0       RGAPM_0              MSSVA3APG40A    Online
+ACS_DSD_service_0    RGAPM_0              MSSVA3APG40A    Online
+ACS_SFC_Recovery_0   RGAPM_0              MSSVA3APG40A    Online
+ACS_CHB_ClockSyncService_0 RGAPM_0              MSSVA3APG40A    Online
+ACS_CHB_HeartBeatService_0 RGAPM_0              MSSVA3APG40A    Online
+ACS_EMF_Server_0     RGAPM_0              MSSVA3APG40A    Online
+ACS_SSU_Monitor_0    RGAPM_0              MSSVA3APG40A    Online
+ACS_ALOG_SecLog_0    RGAPM_0              MSSVA3APG40A    Online
+ACS_ALOG_SysMon_0    RGAPM_0              MSSVA3APG40A    Online
+ACS_ALOG_BufMan_0    RGAPM_0              MSSVA3APG40A    Online
+ACS_NSF_Server_0     RGAPM_0              MSSVA3APG40A    Online
+ACS_USA_SyslogAnalyser_0 RGAPM_0              MSSVA3APG40A    Online
+ACS_ACSC_Logmaint_0  RGAPM_0              MSSVA3APG40A    Online
+ACS_PRC_EventAnalyser_0 RGAPM_0              MSSVA3APG40A    Online
+ACS_ALH_Exec_0       RGAPM_0              MSSVA3APG40A    Online
+OCS_OCP_echo_1       RGAPM_1              MSSVA3APG40B    Online
+ACS_DSD_service_1    RGAPM_1              MSSVA3APG40B    Online
+ACS_SFC_Recovery_1   RGAPM_1              MSSVA3APG40B    Online
+ACS_CHB_ClockSyncService_1 RGAPM_1              MSSVA3APG40B    Online
+ACS_CHB_HeartBeatService_1 RGAPM_1              MSSVA3APG40B    Online
+
+ACS_EMF_Server_1     RGAPM_1              MSSVA3APG40B    Online
+ACS_SSU_Monitor_1    RGAPM_1              MSSVA3APG40B    Online
+ACS_ALOG_SecLog_1    RGAPM_1              MSSVA3APG40B    Online
+ACS_ALOG_SysMon_1    RGAPM_1              MSSVA3APG40B    Online
+ACS_ALOG_BufMan_1    RGAPM_1              MSSVA3APG40B    Online
+ACS_NSF_Server_1     RGAPM_1              MSSVA3APG40B    Online
+ACS_USA_SyslogAnalyser_1 RGAPM_1              MSSVA3APG40B    Online
+ACS_ACSC_Logmaint_1  RGAPM_1              MSSVA3APG40B    Online
+ACS_PRC_EventAnalyser_1 RGAPM_1              MSSVA3APG40B    Online
+ACS_ALH_Exec_1       RGAPM_1              MSSVA3APG40B    Online
+
+c:\winnt\profiles\mvbackup>cluster group
+Listing status for all available resource groups:
+
+Group                Node            Status
+-------------------- --------------- ------
+Cluster Group        MSSVA3APG40B    Online
+Disk Group           MSSVA3APG40B    Online
+RGAPM_0              MSSVA3APG40A    Online
+RGAPM_1              MSSVA3APG40B    Online
+
+c:\winnt\profiles\mvbackup>cdhls
+CDH DESTINATION TABLE
+
+DESTINATION                       TRANSFER TYPE  
+IMS                               SFTPV2         
+RTRDEST                           FTPV2          
+STSDEST1                          FTPV2          
+
+c:\winnt\profiles\mvbackup>cdhver RTRDEST
+DESTINATION                       STATUS         NOTIFICATION   
+RTRDEST                           OK             -              
+
+c:\winnt\profiles\mvbackup>afpls
+AFP TABLE
+
+TRANSFER QUEUE                    USER GROUP
+NWSSTS089914                      
+NWSSTS251101                      
+NWSSTS262845                      
+NWSSTS563155                      
+NWSSTS575441                      
+NWSSTS664105                      
+NWSSTS772313                      
+NWSSTS778035                      
+NWSSTS837273                      
+NWSSTS845761                      
+NWSSTS851734                      
+NWSSTS910358                      
+RCEFILE1                          
+RTRTQ                             
+TRARFILE                          
+TRDIPFILE                         
+
+c:\winnt\profiles\mvbackup>afpls
+AFP TABLE
+
+TRANSFER QUEUE                    USER GROUP
+NWSSTS089914                      
+NWSSTS251101                      
+NWSSTS262845                      
+NWSSTS563155                      
+NWSSTS575441                      
+NWSSTS664105                      
+NWSSTS772313                      
+NWSSTS778035                      
+NWSSTS837273                      
+NWSSTS845761                      
+NWSSTS851734                      
+NWSSTS910358                      
+RCEFILE1                          
+RTRTQ                             
+TRARFILE                          
+TRDIPFILE                         
+
+c:\winnt\profiles\mvbackup>aloglist
+STATUS
+ACTIVE
+
+MAXIMUM LOGFILE SIZE    CURRENT LOGFILE SIZE
+100 MB                  99 MB
+
+LOGGING PERIOD
+2015-08-28 0458   2015-08-31 1637
+
+TRANSFER QUEUE
+
+
+
+c:\winnt\profiles\mvbackup>mml
+WO      MSSVA3_MI0313A_V1         AD-698  TIME 150831 1638  PAGE    1
+<ALLIP;
+ALARM LIST
+
+A1/APT "MSSVA3_MI0313A_" 241 140314   0000      
+MT A-INTERFACE RESET FAULT
+BSC
+VA2BSC
+
+
+
+A1/APT "MSSVA3_MI0313A_" 242 140314   0000      
+MT IU INTERFACE RESET FAULT
+RNC
+CC3RNC
+
+
+A1/APT "MSSVA3_MI0313A_" 243 140314   0000      
+MT IU INTERFACE RESET FAULT
+RNC
+PTORNC
+
+
+A1/APZ "MSSVA3_MI0313A_" 581 150803   0115      
+CP FAULT
+
+
+A2/APT "MSSVA3_MI0313A_" 235 140313   2356      
+SIGNALLING FAULT SUPERVISION
+
+
+A2/APZ "MSSVA3_MI0313A_" 176 141106   0107      
+AP REBOOT
+
+AP    APNAME         NODE      NODENAME
+ 1    MSSVA3APG40C   A         MSSVA3APG40A
+
+CAUSE                    DATE     TIME     
+Unexpected shut down     20141106 010649   
+
+
+A2/APZ "MSSVA3_MI0313A_" 209 141109   0117      
+AP ANTIVIRUS FUNCTION FAULT
+
+AP    APNAME         NODE      NODENAME
+ 1    MSSVA3APG40C   A         MSSVA3APG40A
+
+SIGNATURE FILE DOWNLOAD FAILED
+
+
+A2/APZ "MSSVA3_MI0313A_" 593 150113   1942      
+SOFTWARE ERROR
+
+
+A2/APT "MSSVA3_MI0313A_" 009 150122   1743      
+EVENT REPORTING THRESHOLD REACHED
+ENUM THRESHOLD LEVEL
+132  TH        5
+
+
+A2/APT "MSSVA3_MI0313A_" 298 150127   2119      
+EVENT REPORTING THRESHOLD REACHED
+ENUM THRESHOLD LEVEL
+117  TH        100
+
+
+A2/APT "MSSVA3_MI0313A_" 081 150417   1857      
+EVENT REPORTING THRESHOLD REACHED
+ENUM THRESHOLD LEVEL
+120  TH        5
+
+
+A2/APZ "MSSVA3_MI0313A_" 642 150425   2151      
+AP FILE PROCESSING FAULT
+
+AP    APNAME         NODE      NODENAME
+ 1    MSSVA3APG40C   B         MSSVA3APG40B
+
+CAUSE
+FILE TRANSFER FAILED
+
+TRANSFER QUEUE
+RCEFILE1
+
+DESTINATION SET
+CDDF
+
+
+A2/APT "MSSVA3_MI0313A_" 140 150428   1555      
+EVENT REPORTING THRESHOLD REACHED
+ENUM THRESHOLD LEVEL
+1018 TH        5
+
+
+A2/APT "MSSVA3_MI0313A_" 965 150713   2032      
+EVENT REPORTING THRESHOLD REACHED
+ENUM THRESHOLD LEVEL
+1034 TH        50
+
+
+A2/APT "MSSVA3_MI0313A_" 196 150715   0833      
+EVENT REPORTING THRESHOLD REACHED
+ENUM THRESHOLD LEVEL
+1016 TH        5
+
+
+A2/APT "MSSVA3_MI0313A_" 506 150716   1533      
+EVENT REPORTING THRESHOLD REACHED
+ENUM THRESHOLD LEVEL
+106  TH        20
+
+
+A2/APT "MSSVA3_MI0313A_" 923 150827   1152      
+EVENT REPORTING THRESHOLD REACHED
+ENUM THRESHOLD LEVEL
+119  TH        20
+
+
+A3/APT "MSSVA3_MI0313A_" 003 140313   2356      
+MT FAILED AUTHENTICATION
+
+
+A3/APZ "MSSVA3_MI0313A_" 177 141106   1820      
+APPLICATION DETECTED SOFTWARE ERROR
+
+
+A3/APZ "MSSVA3_MI0313A_" 757 150210   0100      
+CDH RESPONDING READY DIRECTORY WARNING
+
+AP    APNAME         NODE      NODENAME
+ 1    MSSVA3APG40C   B         MSSVA3APG40B
+
+DIRECTORY               PATH                            FILES           OLDEST FILE 
+Ready           K:\aes\data\cdh\ftp\STSDEST1\Ready                      517             Tue Feb 03 00:00:00 2015
+
+
+Probable cause is  communication failure between APG and remote host
+
+
+O1/APT "MSSVA3_MI0313A_" 727 150416   1514      
+SIGNAL FAULT SUPERV TEMPORARILY DISCONNECTED
+
+
+O2/APT "MSSVA3_MI0313A_" 004 140313   2356      
+MT IMEI SUPERVISION LOG FAULT
+
+LOG
+BLACK
+
+
+O2/APT "MSSVA3_MI0313A_" 838 140625   0958      
+SWITCHING NETWORK TERMINAL MANUALLY BLOCKED
+
+SNT                SUBSNT
+RTDMA-2534    
+
+
+O2/APT "MSSVA3_MI0313A_" 839 140625   0958      
+SWITCHING NETWORK TERMINAL MANUALLY BLOCKED
+
+SNT                SUBSNT
+RTDMA-2535    
+
+
+O2/APT "MSSVA3_MI0313A_" 840 140625   0959      
+SWITCHING NETWORK TERMINAL MANUALLY BLOCKED
+
+SNT                SUBSNT
+RTDMA-2536    
+
+
+O2/APT "MSSVA3_MI0313A_" 841 140625   0959      
+SWITCHING NETWORK TERMINAL MANUALLY BLOCKED
+
+SNT                SUBSNT
+RTDMA-2537    
+
+
+O2/APT "MSSVA3_MI0313A_" 842 140625   0959      
+SWITCHING NETWORK TERMINAL MANUALLY BLOCKED
+
+SNT                SUBSNT
+RTDMA-2538    
+
+
+END
+
+<CACLP;
+TIME
+
+LOCAL TIME
+
+DATE     TIME     SUMMERTIME     DAY      DCAT
+150831   163821   NO             MON      0
+
+
+REFERENCE CLOCKS
+
+RC      DEV     STATE            URCTYPE  LOCATION
+
+URC1            NOT CONNECTED
+URC2            NOT CONNECTED
+URC3            NOT CONNECTED
+
+END
+
+<DPWSP;
+CP STATE
+
+MAU  SB SBSTATE      RPH-A       RPH-B       BUA STATE
+NRM  B  WO           -           -                   1
+
+END
+
+<PLLDP;
+PROCESSOR LOAD DATA
+INT PLOAD CALIM  OFFDO OFFDI FTCHDO FTCHDI OFFMPH OFFMPL FTCHMPH FTCHMPL
+ 1   57    56250  1053   678  1053    678   2274     11   2274      11
+ 2   57    56250  1039   663  1039    663   2358     12   2358      12
+ 3   57    56250  1042   707  1042    707   2404     79   2404      79
+ 4   56    56250  1010   687  1010    687   2303     13   2303      13
+ 5   55    56250  1006   649  1006    649   2346     12   2346      12
+ 6   55    56250   996   634   996    634   2328     77   2328      77
+ 7   55    56250  1070   638  1070    638   2310     13   2310      13
+ 8   56    56250  1054   698  1054    698   2272     13   2272      13
+ 9   57    56250  1044   743  1044    743   2377     11   2377      11
+10   55    56250  1015   660  1015    660   2307     13   2307      13
+11   56    56250  1046   709  1046    709   2291      8   2291       8
+12   55    56250  1061   684  1061    684   2386     10   2386      10
+
+INT OFFTCAP FTDTCAP
+ 1      0       0
+ 2      0       0
+ 3      0       0
+ 4      0       0
+ 5      0       0
+ 6      0       0
+ 7      0       0
+ 8      0       0
+ 9      0       0
+10      0       0
+11      0       0
+12      0       0
+END
+
+<EXRPP:RP=ALL;
+RP DATA
+
+RP    STATE  TYPE     TWIN  STATE   DS     MAINT.STATE  PIU
+   6  WO     RPSCB1E                       IDLE
+   7  WO     RPSCB1E                       IDLE
+  12  WO     GARP1E                        IDLE
+  13  WO     GARP1E                        IDLE
+  14  WO     GARP1E                        IDLE
+  15  WO     GARP1E                        IDLE
+  16  WO     GARP1E                        IDLE
+  17  WO     GARP1E                        IDLE
+  18  WO     GARP1E                        IDLE
+  21  WO     GARP1E                        IDLE
+  22  WO     GARP1E                        IDLE
+  23  WO     GARP1E                        IDLE
+  25  WO     GARP1E                        IDLE
+  27  WO     GARP1E                        IDLE
+END
+
+<EXEMP:RP=ALL,EM=all;
+EM DATA
+
+RP    TYPE   EM  EQM                       TWIN  CNTRL  PP     STATE
+  12  GARP1E  0  IP-0                            PRIM          WO
+  12  GARP1E  1  SCTP-0                          PRIM          WO
+
+  13  GARP1E  0  GCPH-0                          PRIM          WO
+
+  14  GARP1E  0  IP-1                            PRIM          WO
+  14  GARP1E  1  SCTP-1                          PRIM          WO
+
+  15  GARP1E  0  GCPH-1                          PRIM          WO
+
+  16  GARP1E  0  IP-2                            PRIM          WO
+  16  GARP1E  1  SCTP-2                          PRIM          WO
+
+  17  GARP1E  0  GCPH-2                          PRIM          WO
+
+  18  GARP1E  0  IP-3                            PRIM          WO
+  18  GARP1E  1  SCTP-3                          PRIM          WO
+
+  21  GARP1E  0  IP-4                            PRIM          WO
+  21  GARP1E  1  SCTP-4                          PRIM          WO
+
+  22  GARP1E  0  GCPH-3                          PRIM          WO
+
+  23  GARP1E  0  IP-5                            PRIM          WO
+  23  GARP1E  1  SCTP-5                          PRIM          WO
+
+  25  GARP1E  0  IP-6                            PRIM          WO
+  25  GARP1E  1  SCTP-6                          PRIM          WO
+
+  27  GARP1E  0  IP-7                            PRIM          WO
+  27  GARP1E  1  SCTP-7                          PRIM          WO
+
+END
+
+<NTSTP:SNT=ALL;
+SWITCHING NETWORK TERMINAL STATE
+
+SNT                STATE       BLS   LST              FCODE
+RTDMA-15           WO          
+RTDMA-16           WO          
+RTDMA-17           WO          
+RTDMA-18           WO          
+RTDMA-19           WO          
+RTDMA-20           WO          
+RTDMA-21           WO          
+RTDMA-22           WO          
+RTDMA-23           WO          
+RTDMA-24           WO          
+RTDMA-25           WO          
+RTDMA-26           WO          
+RTDMA-154          WO          
+RTDMA-155          WO          
+RTDMA-156          WO          
+RTDMA-157          WO          
+RTDMA-158          WO          
+RTDMA-159          WO          
+RTDMA-160          WO          
+RTDMA-161          WO          
+RTDMA-162          WO          
+RTDMA-163          WO          
+RTDMA-164          WO          
+RTDMA-165          WO          
+RTDMA-166          WO          
+RTDMA-167          WO          
+RTDMA-168          WO          
+RTDMA-169          WO          
+RTDMA-170          WO          
+RTDMA-171          WO          
+RTDMA-172          WO          
+RTDMA-173          WO          
+RTDMA-174          WO          
+RTDMA-175          WO          
+RTDMA-176          WO          
+RTDMA-177          WO          
+RTDMA-178          WO          
+RTDMA-179          WO          
+RTDMA-180          WO          
+RTDMA-181          WO          
+RTDMA-182          WO          
+RTDMA-183          WO          
+RTDMA-184          WO          
+RTDMA-185          WO          
+RTDMA-186          WO          
+RTDMA-187          WO          
+RTDMA-188          WO          
+RTDMA-189          WO          
+RTDMA-190          WO          
+RTDMA-191          WO          
+RTDMA-192          WO          
+RTDMA-193          WO          
+RTDMA-194          WO          
+RTDMA-195          WO          
+RTDMA-196          WO          
+RTDMA-197          WO          
+RTDMA-198          WO          
+RTDMA-199          WO          
+RTDMA-200          WO          
+RTDMA-201          WO          
+RTDMA-202          WO          
+RTDMA-203          WO          
+RTDMA-204          WO          
+RTDMA-205          WO          
+RTDMA-206          WO          
+RTDMA-207          WO          
+RTDMA-208          WO          
+RTDMA-209          WO          
+RTDMA-210          WO          
+RTDMA-211          WO          
+RTDMA-212          WO          
+RTDMA-213          WO          
+RTDMA-214          WO          
+RTDMA-215          WO          
+RTDMA-216          WO          
+RTDMA-217          WO          
+RTDMA-218          WO          
+RTDMA-219          WO          
+RTDMA-220          WO          
+RTDMA-221          WO          
+RTDMA-222          WO          
+RTDMA-223          WO          
+RTDMA-224          WO          
+RTDMA-225          WO          
+RTDMA-226          WO          
+RTDMA-227          WO          
+RTDMA-228          WO          
+RTDMA-229          WO          
+RTDMA-230          WO          
+RTDMA-231          WO          
+RTDMA-232          WO          
+RTDMA-233          WO          
+RTDMA-234          WO          
+RTDMA-235          WO          
+RTDMA-236          WO          
+RTDMA-237          WO          
+RTDMA-238          WO          
+RTDMA-239          WO          
+RTDMA-240          WO          
+RTDMA-241          WO          
+RTDMA-242          WO          
+RTDMA-243          WO          
+RTDMA-244          WO          
+RTDMA-245          WO          
+RTDMA-246          WO          
+RTDMA-247          WO          
+RTDMA-248          WO          
+RTDMA-504          WO          
+RTDMA-505          WO          
+RTDMA-506          WO          
+RTDMA-507          WO          
+RTDMA-508          WO          
+RTDMA-509          WO          
+RTDMA-510          WO          
+RTDMA-511          WO          
+RTDMA-512          WO          
+RTDMA-513          WO          
+RTDMA-532          WO          
+RTDMA-533          WO          
+RTDMA-534          WO          
+RTDMA-535          WO          
+RTDMA-536          WO          
+RTDMA-537          WO          
+RTDMA-538          WO          
+RTDMA-539          WO          
+RTDMA-540          WO          
+RTDMA-541          WO          
+RTDMA-542          WO          
+RTDMA-543          WO          
+RTDMA-544          WO          
+RTDMA-545          WO          
+RTDMA-546          WO          
+RTDMA-547          WO          
+RTDMA-548          WO          
+RTDMA-549          WO          
+RTDMA-550          WO          
+RTDMA-551          WO          
+RTDMA-552          WO          
+RTDMA-601          WO          
+RTDMA-602          WO          
+RTDMA-603          WO          
+RTDMA-604          WO          
+RTDMA-605          WO          
+RTDMA-606          WO          
+RTDMA-607          WO          
+RTDMA-608          WO          
+RTDMA-609          WO          
+RTDMA-610          WO          
+RTDMA-611          WO          
+RTDMA-632          WO          
+RTDMA-633          WO          
+RTDMA-634          WO          
+RTDMA-635          WO          
+RTDMA-636          WO          
+RTDMA-637          WO          
+RTDMA-638          WO          
+RTDMA-639          WO          
+RTDMA-640          WO          
+RTDMA-641          WO          
+RTDMA-642          WO          
+RTDMA-643          WO          
+RTDMA-644          WO          
+RTDMA-645          WO          
+RTDMA-646          WO          
+RTDMA-647          WO          
+RTDMA-648          WO          
+RTDMA-649          WO          
+RTDMA-650          WO          
+RTDMA-651          WO          
+RTDMA-652          WO          
+RTDMA-653          WO          
+RTDMA-654          WO          
+RTDMA-655          WO          
+RTDMA-656          WO          
+RTDMA-657          WO          
+RTDMA-658          WO          
+RTDMA-659          WO          
+RTDMA-660          WO          
+RTDMA-661          WO          
+RTDMA-662          WO          
+RTDMA-663          WO          
+RTDMA-664          WO          
+RTDMA-665          WO          
+RTDMA-666          WO          
+RTDMA-667          WO          
+RTDMA-668          WO          
+RTDMA-669          WO          
+RTDMA-670          WO          
+RTDMA-671          WO          
+RTDMA-672          WO          
+RTDMA-673          WO          
+RTDMA-674          WO          
+RTDMA-675          WO          
+RTDMA-676          WO          
+RTDMA-2534         BLOC        MBL
+RTDMA-2535         BLOC        MBL
+RTDMA-2536         BLOC        MBL
+RTDMA-2537         BLOC        MBL
+RTDMA-2538         BLOC        MBL
+RTDMA-3049         WO          
+RTDMA-3050         WO          
+RTDMA-3051         WO          
+RTDMA-3052         WO          
+RTDMA-3053         WO          
+RTDMA-3054         WO          
+RTDMA-3055         WO          
+RTDMA-3056         WO          
+RTDMA-3095         WO          
+RTDMA-3096         WO          
+RTDMA-3097         WO          
+RTDMA-3098         WO          
+RTDMA-3099         WO          
+RTDMA-3100         WO          
+RTDMA-3101         WO          
+RTDMA-3675         WO          
+RTDMA-3676         WO          
+RTDMA-3677         WO          
+RTDMA-3678         WO          
+RTDMA-3679         WO          
+RTDMA-3680         WO          
+RTDMA-3681         WO          
+RTDMA-3688         WO          
+RTDMA-3689         WO          
+RTDMA-3690         WO          
+RTDMA-3691         WO          
+RTDMA-3692         WO          
+RTDMA-3693         WO          
+RTDMA-3694         WO          
+RTDMA-3695         WO          
+RTDMA-3696         WO          
+RTDMA-3697         WO          
+RTDMA-3698         WO          
+RTDMA-3699         WO          
+RTDMA-3700         WO          
+RTDMA-3701         WO          
+RTDMA-3702         WO          
+RTDMA-3703         WO          
+RTDMA-3704         WO          
+RTDMA-3705         WO          
+RTDMA-3706         WO          
+RTDMA-3707         WO          
+RTDMA-3708         WO          
+RTDMA-3709         WO          
+RTDMA-3710         WO          
+RTDMA-3711         WO          
+RTDMA-3712         WO          
+RTDMA-3713         WO          
+RTDMA-3714         WO          
+RTDMA-3715         WO          
+RTDMA-3716         WO          
+RTDMA-3717         WO          
+RTDMA-3718         WO          
+RTDMA-3719         WO          
+RTDMA-3720         WO          
+RTDMA-3721         WO          
+RTDMA-3722         WO          
+RTDMA-3723         WO          
+RTDMA-3724         WO          
+RTDMA-3725         WO          
+RTDMA-3726         WO          
+RTDMA-3727         WO          
+RTDMA-3728         WO          
+RTDMA-3729         WO          
+RTDMA-3730         WO          
+RTDMA-3731         WO          
+RTDMA-3732         WO          
+RTDMA-3733         WO          
+RTDMA-3734         WO          
+RTDMA-3735         WO          
+RTDMA-3736         WO          
+RTDMA-3737         WO          
+RTDMA-3738         WO          
+RTDMA-3739         WO          
+RTDMA-3740         WO          
+RTDMA-3741         WO          
+RTDMA-3742         WO          
+RTDMA-3743         WO          
+RTDMA-3744         WO          
+RTDMA-3745         WO          
+RTDMA-3746         WO          
+RTDMA-3747         WO          
+RTDMA-3748         WO          
+RTDMA-3749         WO          
+RTDMA-3750         WO          
+RTDMA-3751         WO          
+RTDMA-3752         WO          
+RTDMA-3753         WO          
+RTDMA-3754         WO          
+RTDMA-3755         WO          
+RTDMA-3756         WO          
+RTDMA-6048         WO          
+RTDMA-6049         WO          
+RTDMA-6050         WO          
+RTDMA-6051         WO          
+RTDMA-6052         WO          
+RTDMA-6053         WO          
+RTDMA-6054         WO          
+RTDMA-6055         WO          
+RTDMA-6056         WO          
+RTDMA-6057         WO          
+RTDMA-6058         WO          
+RTDMA-6059         WO          
+RTDMA-6060         WO          
+RTDMA-6061         WO          
+RTDMA-6062         WO          
+RTDMA-6063         WO          
+RTDMA-6064         WO          
+RTDMA-6065         WO          
+RTDMA-6066         WO          
+RTDMA-6067         WO          
+RTDMA-6068         WO          
+RTDMA-6069         WO          
+RTDMA-6070         WO          
+RTDMA-6071         WO          
+RTDMA-6072         WO          
+RTDMA-6073         WO          
+RTDMA-6074         WO          
+RTDMA-6075         WO          
+RTDMA-6076         WO          
+RTDMA-6077         WO          
+RTDMA-6078         WO          
+RTDMA-6079         WO          
+RTDMA-6080         WO          
+RTDMA-6081         WO          
+RTDMA-6082         WO          
+RTDMA-6083         WO          
+RTDMA-6084         WO          
+RTDMA-6085         WO          
+RTDMA-6086         WO          
+RTDMA-6087         WO          
+RTDMA-6088         WO          
+RTDMA-6089         WO          
+RTDMA-6090         WO          
+RTDMA-6091         WO          
+RTDMA-6092         WO          
+RTDMA-6093         WO          
+RTDMA-6094         WO          
+RTDMA-6095         WO          
+RTDMA-6096         WO          
+RTDMA-6097         WO          
+RTDMA-6098         WO          
+RTDMA-6099         WO          
+RTDMA-6100         WO          
+RTDMA-6101         WO          
+RTDMA-6102         WO          
+RTDMA-6103         WO          
+RTDMA-6104         WO          
+RTDMA-6105         WO          
+RTDMA-6106         WO          
+RTDMA-6107         WO          
+RTDMA-6108         WO          
+RTDMA-6109         WO          
+RTDMA-6110         WO          
+RTDMA-6111         WO          
+RTDMA-6112         WO          
+RTDMA-6113         WO          
+RTDMA-6114         WO          
+RTDMA-6115         WO          
+RTDMA-6116         WO          
+RTDMA-6117         WO          
+RTDMA-6118         WO          
+RTDMA-6119         WO          
+RTDMA-6120         WO          
+RTDMA-6121         WO          
+RTDMA-6122         WO          
+RTDMA-6123         WO          
+RTDMA-6124         WO          
+RTDMA-6125         WO          
+RTDMA-6126         WO          
+RTDMA-6127         WO          
+RTDMA-6128         WO          
+RTDMA-6129         WO          
+RTDMA-6130         WO          
+RTDMA-6131         WO          
+RTDMA-6132         WO          
+RTDMA-6133         WO          
+RTDMA-6134         WO          
+RTDMA-6135         WO          
+RTDMA-6136         WO          
+RTDMA-6137         WO          
+RTDMA-6138         WO          
+RTDMA-6139         WO          
+RTDMA-6140         WO          
+RTDMA-6141         WO          
+RTDMA-6142         WO          
+RTDMA-6143         WO          
+RTDMA-6144         WO          
+RTDMA-6145         WO          
+RTDMA-6146         WO          
+RTDMA-6147         WO          
+RTDMA-6148         WO          
+RTDMA-6149         WO          
+RTDMA-6150         WO          
+RTDMA-6151         WO          
+RTDMA-6152         WO          
+RTDMA-6154         WO          
+RTDMA-6155         WO          
+RTDMA-6156         WO          
+RTDMA-6157         WO          
+RTDMA-6158         WO          
+RTDMA-6159         WO          
+RTDMA-6160         WO          
+RTDMA-6161         WO          
+RTDMA-6162         WO          
+RTDMA-6163         WO          
+RTDMA-6164         WO          
+RTDMA-6165         WO          
+RTDMA-6166         WO          
+RTDMA-6167         WO          
+RTDMA-6168         WO          
+RTDMA-6169         WO          
+RTDMA-6170         WO          
+RTDMA-6171         WO          
+RTDMA-6172         WO          
+RTDMA-6173         WO          
+RTDMA-6174         WO          
+RTDMA-6175         WO          
+RTDMA-6176         WO          
+RTDMA-6177         WO          
+RTDMA-6178         WO          
+RTDMA-6179         WO          
+RTDMA-6180         WO          
+RTDMA-6181         WO          
+RTDMA-6182         WO          
+RTDMA-6183         WO          
+RTDMA-6184         WO          
+RTDMA-6185         WO          
+RTDMA-6186         WO          
+RTDMA-6187         WO          
+RTDMA-6188         WO          
+RTDMA-6189         WO          
+RTDMA-6190         WO          
+RTDMA-6191         WO          
+RTDMA-6192         WO          
+RTDMA-6193         WO          
+RTDMA-6194         WO          
+RTDMA-6195         WO          
+RTDMA-6196         WO          
+RTDMA-6197         WO          
+RTDMA-6198         WO          
+RTDMA-6199         WO          
+RTDMA-6200         WO          
+RTDMA-6201         WO          
+RTDMA-6202         WO          
+RTDMA-6203         WO          
+RTDMA-6204         WO          
+RTDMA-6205         WO          
+RTDMA-6206         WO          
+RTDMA-6207         WO          
+RTDMA-6208         WO          
+RTDMA-6209         WO          
+RTDMA-6210         WO          
+
+END
+
+<SYRIP:SURVEY;
+ORDERED
+
+<
+
+WO      MSSVA3_MI0313A_V1         AD-698  TIME 150831 1638  PAGE    1
+SOFTWARE RECOVERY SURVEY
+
+EVENT TYPE          EXPLANATION                         EVENTCNT  FRDEL
+   61 APPLERR       ERROR REPORTED BY PROCEDURE FLERROR        2 
+   60 APPLERR       ERROR REPORTED BY PROCEDURE FLERROR        2 
+   44 APPLERR       ERROR REPORTED BY PROCEDURE FLERROR        2 
+   43 APPLERR       ERROR REPORTED BY PROCEDURE FLERROR        2 
+   36 FORLOPP       POINTER TOO LARGE                                 1
+   13 APPLERR       ERROR REPORTED BY PROCEDURE FLERROR        2 
+   35 APPLERR       ERROR REPORTED BY PROCEDURE FLERROR        3 
+   32 FORLOPP       POINTER TOO LARGE                          4      1
+   12 FORLOPP       MANUALLY INITIATED FORLOPP RELEASE         6      1
+    9 APPLERR       ERROR REPORTED BY PROCEDURE FLERROR        2 
+   54 LARGE         PROGRAM HANDLING ERROR                       
+    3 LARGE         FUNCTION CHANGE WITH SIDE SWITCH             
+    2 LARGE         COMMAND ORDERED RESTART                      
+    1 SMALL         REST. OF APZ BLOCKS IN SB/SE AT FC           
+
+EVENT CODE   INF1   INF2   INF3   INF4   SIDE STATE   DATE   TIME   ACT
+   61 H'4301 H'4B0C H'09D0 H'0000 H'C1B9 A-EX NORMAL  150613 103524 NO
+   60 H'4301 H'3D0F H'02C5 H'0000 H'C1B9 A-EX NORMAL  150613 103524 NO
+   44 H'4301 H'4B0C H'09D0 H'0000 H'6413 A-EX NORMAL  150304 155046 NO
+   43 H'4301 H'3D0F H'02C5 H'0000 H'6413 A-EX NORMAL  150304 155046 NO
+   36 H'0008 H'025C H'0ED1 H'0000 H'0000 A-EX NORMAL  150113 194226 NO
+   13 H'4301 H'3D0F H'02C5 H'0000 H'B859 A-EX NORMAL  141009 104158 NO
+   35 H'4301 H'6E02 H'0585 H'0000 H'1EF5 A-EX NORMAL  140709 102929 NO
+   32 H'0008 H'025C H'5221 H'0000 H'0000 A-EX NORMAL  140703 103918 NO
+   12 H'310C H'0000 H'0144 H'0001 H'0000 A-EX NORMAL  140512 080844 NO
+    9 H'4301 H'A303 H'0187 H'0000 H'06D2 A-EX NORMAL  140502 192252 NO
+   54 H'9000 H'0000 H'0000 H'0000 H'0000 A    SINGLE  140313 235438 NO
+    3 H'900D H'0000 H'0000 H'0000 H'0000 B    SINGLE  131105 002849 NO
+    2 H'9003 H'0000 H'0000 H'0000 H'0000 B    SB-SEP  131105 000738 NO
+    1 H'900B H'0000 H'0000 H'0000 H'0000 B    SB-SEP  131105 000518 NO
+
+END
+
+
+WO      MSSVA3_MI0313A_V1         AD-698  TIME 150831 1638  PAGE    1
+<APAMP;
+AP MAINTENANCE DATA
+
+DIRECTORY ADDRESS DATA
+
+AP  NODE  LAN   IP               PORT  STATUS  CATEGORY
+1   A     1     192.168.169.1    14000 PASSIVE
+1   A     2     192.168.170.1    14000 ACTIVE
+1   B     2     192.168.170.2    14000 ACTIVE
+1   B     1     192.168.169.2    14000 PASSIVE
+
+AP MAINTENANCE TABLE
+
+AP  IO    ACTIVENODE  LOCALIP1          LOCALIP2
+1   YES   B           192.168.169.128   192.168.170.128
+
+END
+<M3RSP:DEST=ALL;
+M3UA ROUTING DATA
+
+DEST           SPID         DST    LSHM
+2-166          SSW02P1      AVA    PP
+
+               SAID             PRIO  RST              CW     CWU
+               SCTP2_STPCCS        1  EN-ACT-AVA              
+               SCTP3_STPVAL        1  EN-ACT-AVA              
+               SCTP1_STPCCS        1  EN-ACT-AVA              
+               SCTP4_STPVAL        1  EN-ACT-AVA              
+               SCTP1_STPVAL        1  EN-ACT-AVA              
+               SCTP2_STPVAL        1  EN-ACT-AVA              
+               SCTP3_STPCCS        1  EN-ACT-AVA              
+               SCTP4_STPCCS        1  EN-ACT-AVA              
+
+2-168          SSW00P1      AVA    PP
+
+               SAID             PRIO  RST              CW     CWU
+               SCTP2_STPCCS        1  EN-ACT-AVA              
+               SCTP3_STPVAL        1  EN-ACT-AVA              
+               SCTP1_STPCCS        1  EN-ACT-AVA              
+               SCTP4_STPVAL        1  EN-ACT-AVA              
+               SCTP1_STPVAL        1  EN-ACT-AVA              
+               SCTP2_STPVAL        1  EN-ACT-AVA              
+               SCTP3_STPCCS        1  EN-ACT-AVA              
+               SCTP4_STPCCS        1  EN-ACT-AVA              
+
+2-185          SSW03P1      AVA    PP
+
+               SAID             PRIO  RST              CW     CWU
+               SCTP2_STPCCS        1  EN-ACT-AVA              
+               SCTP3_STPVAL        1  EN-ACT-AVA              
+               SCTP1_STPCCS        1  EN-ACT-AVA              
+               SCTP4_STPVAL        1  EN-ACT-AVA              
+               SCTP1_STPVAL        1  EN-ACT-AVA              
+               SCTP2_STPVAL        1  EN-ACT-AVA              
+               SCTP3_STPCCS        1  EN-ACT-AVA              
+               SCTP4_STPCCS        1  EN-ACT-AVA              
+
+2-4105         STPCCS       AVA    PP
+
+               SAID             PRIO  RST              CW     CWU
+               SCTP2_STPCCS        1  EN-ACT-AVA              
+               SCTP1_STPCCS        1  EN-ACT-AVA              
+               SCTP3_STPCCS        1  EN-ACT-AVA              
+               SCTP4_STPCCS        1  EN-ACT-AVA              
+
+2-4109         STPVAL       AVA    PP
+
+               SAID             PRIO  RST              CW     CWU
+               SCTP2_STPVAL        1  EN-ACT-AVA              
+               SCTP1_STPVAL        1  EN-ACT-AVA              
+               SCTP3_STPVAL        1  EN-ACT-AVA              
+               SCTP4_STPVAL        1  EN-ACT-AVA              
+
+2-4111         MSSCC2       AVA    PP
+
+               SAID             PRIO  RST              CW     CWU
+               SCTP1_STPCCS        1  EN-ACT-AVA              
+               SCTP2_STPCCS        1  EN-ACT-AVA              
+               SCTP3_STPCCS        1  EN-ACT-AVA              
+               SCTP4_STPCCS        1  EN-ACT-AVA              
+               SCTP1_STPVAL        1  EN-ACT-AVA              
+               SCTP2_STPVAL        1  EN-ACT-AVA              
+               SCTP3_STPVAL        1  EN-ACT-AVA              
+               SCTP4_STPVAL        1  EN-ACT-AVA              
+
+2-4115         MSCVA2       AVA    PP
+
+               SAID             PRIO  RST              CW     CWU
+               SCTP2_STPCCS        1  EN-ACT-AVA              
+               SCTP3_STPVAL        1  EN-ACT-AVA              
+               SCTP1_STPCCS        1  EN-ACT-AVA              
+               SCTP4_STPVAL        1  EN-ACT-AVA              
+               SCTP1_STPVAL        1  EN-ACT-AVA              
+               SCTP2_STPVAL        1  EN-ACT-AVA              
+               SCTP3_STPCCS        1  EN-ACT-AVA              
+               SCTP4_STPCCS        1  EN-ACT-AVA              
+
+2-4125         MSCMA2       AVA    PP
+
+               SAID             PRIO  RST              CW     CWU
+               SCTP2_STPCCS        1  EN-ACT-AVA              
+               SCTP3_STPVAL        1  EN-ACT-AVA              
+               SCTP1_STPCCS        1  EN-ACT-AVA              
+               SCTP4_STPVAL        1  EN-ACT-AVA              
+               SCTP1_STPVAL        1  EN-ACT-AVA              
+               SCTP2_STPVAL        1  EN-ACT-AVA              
+               SCTP3_STPCCS        1  EN-ACT-AVA              
+               SCTP4_STPCCS        1  EN-ACT-AVA              
+
+2-4129         MSCSC3       AVA    PP
+
+               SAID             PRIO  RST              CW     CWU
+               SCTP2_STPVAL        1  EN-ACT-AVA              
+               SCTP2_STPCCS        1  EN-ACT-AVA              
+               SCTP1_STPVAL        1  EN-ACT-AVA              
+               SCTP1_STPCCS        1  EN-ACT-AVA              
+               SCTP3_STPVAL        1  EN-ACT-AVA              
+               SCTP4_STPVAL        1  EN-ACT-AVA              
+               SCTP3_STPCCS        1  EN-ACT-AVA              
+               SCTP4_STPCCS        1  EN-ACT-AVA              
+
+2-4134         MSCBT2       AVA    PP
+
+               SAID             PRIO  RST              CW     CWU
+               SCTP2_STPCCS        1  EN-ACT-AVA              
+               SCTP3_STPVAL        1  EN-ACT-AVA              
+               SCTP1_STPCCS        1  EN-ACT-AVA              
+               SCTP4_STPVAL        1  EN-ACT-AVA              
+               SCTP1_STPVAL        1  EN-ACT-AVA              
+               SCTP2_STPVAL        1  EN-ACT-AVA              
+               SCTP3_STPCCS        1  EN-ACT-AVA              
+               SCTP4_STPCCS        1  EN-ACT-AVA              
+
+2-4135         MSCSC2       AVA    PP
+
+               SAID             PRIO  RST              CW     CWU
+               SCTP2_STPCCS        1  EN-ACT-AVA              
+               SCTP3_STPVAL        1  EN-ACT-AVA              
+               SCTP1_STPCCS        1  EN-ACT-AVA              
+               SCTP4_STPVAL        1  EN-ACT-AVA              
+               SCTP1_STPVAL        1  EN-ACT-AVA              
+               SCTP2_STPVAL        1  EN-ACT-AVA              
+               SCTP3_STPCCS        1  EN-ACT-AVA              
+               SCTP4_STPCCS        1  EN-ACT-AVA              
+
+2-4139         MSSMA4       AVA    PP
+
+               SAID             PRIO  RST              CW     CWU
+               SCTP2_STPCCS        1  EN-ACT-AVA              
+               SCTP3_STPVAL        1  EN-ACT-AVA              
+               SCTP1_STPCCS        1  EN-ACT-AVA              
+               SCTP4_STPVAL        1  EN-ACT-AVA              
+               SCTP1_STPVAL        1  EN-ACT-AVA              
+               SCTP2_STPVAL        1  EN-ACT-AVA              
+               SCTP3_STPCCS        1  EN-ACT-AVA              
+               SCTP4_STPCCS        1  EN-ACT-AVA              
+
+2-4143         MSCCS7       AVA    PP
+
+               SAID             PRIO  RST              CW     CWU
+               SCTP2_STPCCS        1  EN-ACT-AVA              
+               SCTP3_STPVAL        1  EN-ACT-AVA              
+               SCTP1_STPCCS        1  EN-ACT-AVA              
+               SCTP4_STPVAL        1  EN-ACT-AVA              
+               SCTP1_STPVAL        1  EN-ACT-AVA              
+               SCTP2_STPVAL        1  EN-ACT-AVA              
+               SCTP3_STPCCS        1  EN-ACT-AVA              
+               SCTP4_STPCCS        1  EN-ACT-AVA              
+
+2-4145         MSCLC2       AVA    PP
+
+               SAID             PRIO  RST              CW     CWU
+               SCTP2_STPCCS        1  EN-ACT-AVA              
+               SCTP3_STPVAL        1  EN-ACT-AVA              
+               SCTP1_STPCCS        1  EN-ACT-AVA              
+               SCTP4_STPVAL        1  EN-ACT-AVA              
+               SCTP1_STPVAL        1  EN-ACT-AVA              
+               SCTP2_STPVAL        1  EN-ACT-AVA              
+               SCTP3_STPCCS        1  EN-ACT-AVA              
+               SCTP4_STPCCS        1  EN-ACT-AVA              
+
+2-4146         MSCMCY       AVA    PP
+
+               SAID             PRIO  RST              CW     CWU
+               SCTP2_STPCCS        1  EN-ACT-AVA              
+               SCTP3_STPVAL        1  EN-ACT-AVA              
+               SCTP1_STPCCS        1  EN-ACT-AVA              
+               SCTP4_STPVAL        1  EN-ACT-AVA              
+               SCTP1_STPVAL        1  EN-ACT-AVA              
+               SCTP2_STPVAL        1  EN-ACT-AVA              
+               SCTP3_STPCCS        1  EN-ACT-AVA              
+               SCTP4_STPCCS        1  EN-ACT-AVA              
+
+2-4147         MSCACA       AVA    PP
+
+               SAID             PRIO  RST              CW     CWU
+               SCTP2_STPCCS        1  EN-ACT-AVA              
+               SCTP3_STPVAL        1  EN-ACT-AVA              
+               SCTP1_STPCCS        1  EN-ACT-AVA              
+               SCTP4_STPVAL        1  EN-ACT-AVA              
+               SCTP1_STPVAL        1  EN-ACT-AVA              
+               SCTP2_STPVAL        1  EN-ACT-AVA              
+               SCTP3_STPCCS        1  EN-ACT-AVA              
+               SCTP4_STPCCS        1  EN-ACT-AVA              
+
+2-4152         MSSBTO       AVA    PP
+
+               SAID             PRIO  RST              CW     CWU
+               SCTP4_STPVAL        1  EN-ACT-AVA              
+               SCTP3_STPVAL        1  EN-ACT-AVA              
+               SCTP1_STPVAL        1  EN-ACT-AVA              
+               SCTP2_STPVAL        1  EN-ACT-AVA              
+               SCTP2_STPCCS        1  EN-ACT-AVA              
+               SCTP1_STPCCS        1  EN-ACT-AVA              
+               SCTP3_STPCCS        1  EN-ACT-AVA              
+               SCTP4_STPCCS        1  EN-ACT-AVA              
+
+2-4155         MSCCS5       AVA    PP
+
+               SAID             PRIO  RST              CW     CWU
+               SCTP2_STPCCS        1  EN-ACT-AVA              
+               SCTP3_STPVAL        1  EN-ACT-AVA              
+               SCTP1_STPCCS        1  EN-ACT-AVA              
+               SCTP4_STPVAL        1  EN-ACT-AVA              
+               SCTP1_STPVAL        1  EN-ACT-AVA              
+               SCTP2_STPVAL        1  EN-ACT-AVA              
+               SCTP3_STPCCS        1  EN-ACT-AVA              
+               SCTP4_STPCCS        1  EN-ACT-AVA              
+
+2-4161         MSCPT2       AVA    PP
+
+               SAID             PRIO  RST              CW     CWU
+               SCTP2_STPCCS        1  EN-ACT-AVA              
+               SCTP3_STPVAL        1  EN-ACT-AVA              
+               SCTP1_STPCCS        1  EN-ACT-AVA              
+               SCTP4_STPVAL        1  EN-ACT-AVA              
+               SCTP1_STPVAL        1  EN-ACT-AVA              
+               SCTP2_STPVAL        1  EN-ACT-AVA              
+               SCTP3_STPCCS        1  EN-ACT-AVA              
+               SCTP4_STPCCS        1  EN-ACT-AVA              
+
+2-4162         MSCMA3       AVA    PP
+
+               SAID             PRIO  RST              CW     CWU
+               SCTP2_STPCCS        1  EN-ACT-AVA              
+               SCTP3_STPVAL        1  EN-ACT-AVA              
+               SCTP1_STPCCS        1  EN-ACT-AVA              
+               SCTP4_STPVAL        1  EN-ACT-AVA              
+               SCTP1_STPVAL        1  EN-ACT-AVA              
+               SCTP2_STPVAL        1  EN-ACT-AVA              
+               SCTP3_STPCCS        1  EN-ACT-AVA              
+               SCTP4_STPCCS        1  EN-ACT-AVA              
+
+2-4164         MSCMAT       AVA    PP
+
+               SAID             PRIO  RST              CW     CWU
+               SCTP2_STPCCS        1  EN-ACT-AVA              
+               SCTP3_STPVAL        1  EN-ACT-AVA              
+               SCTP1_STPCCS        1  EN-ACT-AVA              
+               SCTP4_STPVAL        1  EN-ACT-AVA              
+               SCTP1_STPVAL        1  EN-ACT-AVA              
+               SCTP2_STPVAL        1  EN-ACT-AVA              
+               SCTP3_STPCCS        1  EN-ACT-AVA              
+               SCTP4_STPCCS        1  EN-ACT-AVA              
+
+2-4169         MSSMC3       AVA    PP
+
+               SAID             PRIO  RST              CW     CWU
+               SCTP2_STPCCS        1  EN-ACT-AVA              
+               SCTP3_STPVAL        1  EN-ACT-AVA              
+               SCTP1_STPCCS        1  EN-ACT-AVA              
+               SCTP4_STPVAL        1  EN-ACT-AVA              
+               SCTP1_STPVAL        1  EN-ACT-AVA              
+               SCTP2_STPVAL        1  EN-ACT-AVA              
+               SCTP3_STPCCS        1  EN-ACT-AVA              
+               SCTP4_STPCCS        1  EN-ACT-AVA              
+
+2-4170         GMLCCCS      AVA    PP
+
+               SAID             PRIO  RST              CW     CWU
+               SCTP3_STPVAL        1  EN-ACT-AVA              
+               SCTP3_STPCCS        1  EN-ACT-AVA              
+               SCTP4_STPVAL        1  EN-ACT-AVA              
+               SCTP4_STPCCS        1  EN-ACT-AVA              
+               SCTP1_STPCCS        1  EN-ACT-AVA              
+               SCTP2_STPCCS        1  EN-ACT-AVA              
+               SCTP1_STPVAL        1  EN-ACT-AVA              
+               SCTP2_STPVAL        1  EN-ACT-AVA              
+
+2-4179         MSSLC3       AVA    PP
+
+               SAID             PRIO  RST              CW     CWU
+               SCTP2_STPCCS        1  EN-ACT-AVA              
+               SCTP3_STPVAL        1  EN-ACT-AVA              
+               SCTP1_STPCCS        1  EN-ACT-AVA              
+               SCTP4_STPVAL        1  EN-ACT-AVA              
+               SCTP1_STPVAL        1  EN-ACT-AVA              
+               SCTP2_STPVAL        1  EN-ACT-AVA              
+               SCTP3_STPCCS        1  EN-ACT-AVA              
+               SCTP4_STPCCS        1  EN-ACT-AVA              
+
+2-4180         MSSPT3       AVA    PP
+
+               SAID             PRIO  RST              CW     CWU
+               SCTP2_STPCCS        1  EN-ACT-AVA              
+               SCTP3_STPVAL        1  EN-ACT-AVA              
+               SCTP1_STPCCS        1  EN-ACT-AVA              
+               SCTP4_STPVAL        1  EN-ACT-AVA              
+               SCTP1_STPVAL        1  EN-ACT-AVA              
+               SCTP2_STPVAL        1  EN-ACT-AVA              
+               SCTP3_STPCCS        1  EN-ACT-AVA              
+               SCTP4_STPCCS        1  EN-ACT-AVA              
+
+2-4182         MSSLCH       AVA    PP
+
+               SAID             PRIO  RST              CW     CWU
+               SCTP1_STPCCS        1  EN-ACT-AVA              
+               SCTP2_STPCCS        1  EN-ACT-AVA              
+               SCTP3_STPVAL        1  EN-ACT-AVA              
+               SCTP4_STPVAL        1  EN-ACT-AVA              
+               SCTP1_STPVAL        1  EN-ACT-AVA              
+               SCTP2_STPVAL        1  EN-ACT-AVA              
+               SCTP3_STPCCS        1  EN-ACT-AVA              
+               SCTP4_STPCCS        1  EN-ACT-AVA              
+
+2-4188         SGSNCCS      AVA    PP
+
+               SAID             PRIO  RST              CW     CWU
+               SCTP2_STPCCS        1  EN-ACT-AVA              
+               SCTP3_STPVAL        1  EN-ACT-AVA              
+               SCTP1_STPCCS        1  EN-ACT-AVA              
+               SCTP4_STPVAL        1  EN-ACT-AVA              
+               SCTP1_STPVAL        1  EN-ACT-AVA              
+               SCTP2_STPVAL        1  EN-ACT-AVA              
+               SCTP3_STPCCS        1  EN-ACT-AVA              
+               SCTP4_STPCCS        1  EN-ACT-AVA              
+
+2-4189         MSSCCS       AVA    PP
+
+               SAID             PRIO  RST              CW     CWU
+               SCTP2_STPVAL        1  EN-ACT-AVA              
+               SCTP3_STPVAL        1  EN-ACT-AVA              
+               SCTP3_STPCCS        1  EN-ACT-AVA              
+               SCTP1_STPCCS        1  EN-ACT-AVA              
+               SCTP2_STPCCS        1  EN-ACT-AVA              
+               SCTP4_STPVAL        1  EN-ACT-AVA              
+               SCTP1_STPVAL        1  EN-ACT-AVA              
+               SCTP4_STPCCS        1  EN-ACT-AVA              
+
+2-4190         MSCCC6       AVA    PP
+
+               SAID             PRIO  RST              CW     CWU
+               SCTP2_STPCCS        1  EN-ACT-AVA              
+               SCTP3_STPVAL        1  EN-ACT-AVA              
+               SCTP1_STPCCS        1  EN-ACT-AVA              
+               SCTP4_STPVAL        1  EN-ACT-AVA              
+               SCTP1_STPVAL        1  EN-ACT-AVA              
+               SCTP2_STPVAL        1  EN-ACT-AVA              
+               SCTP3_STPCCS        1  EN-ACT-AVA              
+               SCTP4_STPCCS        1  EN-ACT-AVA              
+
+2-4196         MSSMC4       AVA    PP
+
+               SAID             PRIO  RST              CW     CWU
+               SCTP2_STPCCS        1  EN-ACT-AVA              
+               SCTP3_STPVAL        1  EN-ACT-AVA              
+               SCTP1_STPCCS        1  EN-ACT-AVA              
+               SCTP4_STPVAL        1  EN-ACT-AVA              
+               SCTP1_STPVAL        1  EN-ACT-AVA              
+               SCTP2_STPVAL        1  EN-ACT-AVA              
+               SCTP3_STPCCS        1  EN-ACT-AVA              
+               SCTP4_STPCCS        1  EN-ACT-AVA              
+
+2-4198         SGSNBTO      AVA    PP
+
+               SAID             PRIO  RST              CW     CWU
+               SCTP2_STPCCS        1  EN-ACT-AVA              
+               SCTP3_STPVAL        1  EN-ACT-AVA              
+               SCTP1_STPCCS        1  EN-ACT-AVA              
+               SCTP4_STPVAL        1  EN-ACT-AVA              
+               SCTP1_STPVAL        1  EN-ACT-AVA              
+               SCTP2_STPVAL        1  EN-ACT-AVA              
+               SCTP3_STPCCS        1  EN-ACT-AVA              
+               SCTP4_STPCCS        1  EN-ACT-AVA              
+
+2-4199         MSSBT4       AVA    PP
+
+               SAID             PRIO  RST              CW     CWU
+               SCTP2_STPCCS        1  EN-ACT-AVA              
+               SCTP3_STPVAL        1  EN-ACT-AVA              
+               SCTP1_STPCCS        1  EN-ACT-AVA              
+               SCTP4_STPVAL        1  EN-ACT-AVA              
+               SCTP1_STPVAL        1  EN-ACT-AVA              
+               SCTP2_STPVAL        1  EN-ACT-AVA              
+               SCTP3_STPCCS        1  EN-ACT-AVA              
+               SCTP4_STPCCS        1  EN-ACT-AVA              
+
+2-4320         SFALDN       AVA    PP
+
+               SAID             PRIO  RST              CW     CWU
+               SCTP2_STPCCS        1  EN-ACT-AVA              
+               SCTP3_STPVAL        1  EN-ACT-AVA              
+               SCTP1_STPCCS        1  EN-ACT-AVA              
+               SCTP4_STPVAL        1  EN-ACT-AVA              
+               SCTP1_STPVAL        1  EN-ACT-AVA              
+               SCTP2_STPVAL        1  EN-ACT-AVA              
+               SCTP3_STPCCS        1  EN-ACT-AVA              
+               SCTP4_STPCCS        1  EN-ACT-AVA              
+
+2-8520         MVSMBO       AVA    PP
+
+               SAID             PRIO  RST              CW     CWU
+               SCTP4_STPVAL        1  EN-ACT-AVA              
+               SCTP2_STPCCS        1  EN-ACT-AVA              
+               SCTP1_STPCCS        1  EN-ACT-AVA              
+               SCTP3_STPVAL        1  EN-ACT-AVA              
+               SCTP1_STPVAL        1  EN-ACT-AVA              
+               SCTP2_STPVAL        1  EN-ACT-AVA              
+               SCTP3_STPCCS        1  EN-ACT-AVA              
+               SCTP4_STPCCS        1  EN-ACT-AVA              
+
+2-10547        MSCMC2       AVA    PP
+
+               SAID             PRIO  RST              CW     CWU
+               SCTP2_STPCCS        1  EN-ACT-AVA              
+               SCTP3_STPVAL        1  EN-ACT-AVA              
+               SCTP1_STPCCS        1  EN-ACT-AVA              
+               SCTP4_STPVAL        1  EN-ACT-AVA              
+               SCTP1_STPVAL        1  EN-ACT-AVA              
+               SCTP2_STPVAL        1  EN-ACT-AVA              
+               SCTP3_STPCCS        1  EN-ACT-AVA              
+               SCTP4_STPCCS        1  EN-ACT-AVA              
+
+2-10570        MVSSCR       AVA    PP
+
+               SAID             PRIO  RST              CW     CWU
+               SCTP4_STPVAL        1  EN-ACT-AVA              
+               SCTP2_STPCCS        1  EN-ACT-AVA              
+               SCTP1_STPCCS        1  EN-ACT-AVA              
+               SCTP3_STPVAL        1  EN-ACT-AVA              
+               SCTP1_STPVAL        1  EN-ACT-AVA              
+               SCTP3_STPCCS        1  EN-ACT-AVA              
+               SCTP2_STPVAL        1  EN-ACT-AVA              
+
+2-14336        MATLDN       AVA    PP
+
+               SAID             PRIO  RST              CW     CWU
+               SCTP2_STPCCS        1  EN-ACT-AVA              
+               SCTP3_STPVAL        1  EN-ACT-AVA              
+               SCTP1_STPCCS        1  EN-ACT-AVA              
+               SCTP4_STPVAL        1  EN-ACT-AVA              
+               SCTP1_STPVAL        1  EN-ACT-AVA              
+               SCTP2_STPVAL        1  EN-ACT-AVA              
+               SCTP3_STPCCS        1  EN-ACT-AVA              
+               SCTP4_STPCCS        1  EN-ACT-AVA              
+
+2-14440        PLMLDN       AVA    PP
+
+               SAID             PRIO  RST              CW     CWU
+               SCTP2_STPCCS        1  EN-ACT-AVA              
+               SCTP3_STPVAL        1  EN-ACT-AVA              
+               SCTP1_STPCCS        1  EN-ACT-AVA              
+               SCTP4_STPVAL        1  EN-ACT-AVA              
+               SCTP1_STPVAL        1  EN-ACT-AVA              
+               SCTP2_STPVAL        1  EN-ACT-AVA              
+               SCTP3_STPCCS        1  EN-ACT-AVA              
+               SCTP4_STPCCS        1  EN-ACT-AVA              
+
+3-1            MGWCCS       AVA    PP
+
+               SAID             PRIO  RST              CW     CWU
+               SCTP1_MGWCCS        1  EN-ACT-AVA              
+               SCTP2_MGWCCS        1  EN-ACT-AVA              
+               SCTP3_MGWCCS        1  EN-ACT-AVA              
+               SCTP4_MGWCCS        1  EN-ACT-AVA              
+
+3-2            MGWCC2       AVA    PP
+
+               SAID             PRIO  RST              CW     CWU
+               SCTP1_MGWCC2        1  EN-ACT-AVA              
+               SCTP2_MGWCC2        1  EN-ACT-AVA              
+               SCTP3_MGWCC2        1  EN-ACT-AVA              
+               SCTP4_MGWCC2        1  EN-ACT-AVA              
+
+3-3            MGWVAL       AVA    PP
+
+               SAID             PRIO  RST              CW     CWU
+               SCTP1_MGWVAL        1  EN-ACT-AVA              
+               SCTP3_MGWVAL        1  EN-ACT-AVA              
+               SCTP4_MGWVAL        1  EN-ACT-AVA              
+               SCTP2_MGWVAL        1  EN-ACT-AVA              
+
+3-4            MGWMCY       AVA    PP
+
+               SAID             PRIO  RST              CW     CWU
+               SCTP2_MGWMCY        1  EN-ACT-AVA              
+               SCTP4_MGWMCY        1  EN-ACT-AVA              
+               SCTP3_MGWMCY        1  EN-ACT-AVA              
+               SCTP1_MGWMCY        1  EN-ACT-AVA              
+
+3-5            MGWSFA       AVA    PP
+
+               SAID             PRIO  RST              CW     CWU
+               SCTP1_MGWSFA        1  EN-ACT-AVA              
+               SCTP2_MGWSFA        1  EN-ACT-AVA              
+               SCTP3_MGWSFA        1  EN-ACT-AVA              
+               SCTP4_MGWSFA        1  EN-ACT-AVA              
+
+3-6            MGWBTO       AVA    PP
+
+               SAID             PRIO  RST              CW     CWU
+               SCTP4_MGWBT4        1  EN-ACT-AVA              
+               SCTP2_MGWBT4        1  EN-ACT-AVA              
+               SCTP3_MGWBT4        1  EN-ACT-AVA              
+               SCTP1_MGWBT4        1  EN-ACT-AVA              
+
+3-7            MGWACA       AVA    PP
+
+               SAID             PRIO  RST              CW     CWU
+               SCTP2_MGWACA        1  EN-ACT-AVA              
+               SCTP3_MGWACA        1  EN-ACT-AVA              
+               SCTP4_MGWACA        1  EN-ACT-AVA              
+               SCTP1_MGWACA        1  EN-ACT-AVA              
+
+3-8            MGWMBO       AVA    PP
+
+               SAID             PRIO  RST              CW     CWU
+               SCTP2_MGWMBO        1  EN-ACT-AVA              
+               SCTP1_MGWMBO        1  EN-ACT-AVA              
+               SCTP3_MGWMBO        1  EN-ACT-AVA              
+               SCTP4_MGWMBO        1  EN-ACT-AVA              
+
+3-9            MGWSCR       AVA    PP
+
+               SAID             PRIO  RST              CW     CWU
+               SCTP1_MGWSCR        1  EN-ACT-AVA              
+               SCTP3_MGWSCR        1  EN-ACT-AVA              
+               SCTP4_MGWSCR        1  EN-ACT-AVA              
+               SCTP2_MGWSCR        1  EN-ACT-AVA              
+
+3-10           MGWVRA       AVA    PP
+
+               SAID             PRIO  RST              CW     CWU
+               SCTP3_MGWVRA        1  EN-ACT-AVA              
+               SCTP1_MGWVRA        1  EN-ACT-AVA              
+               SCTP2_MGWVRA        1  EN-ACT-AVA              
+               SCTP4_MGWVRA        1  EN-ACT-AVA              
+
+3-11           MGWLCH       AVA    PP
+
+               SAID             PRIO  RST              CW     CWU
+               SCTP2_MGWLCH        1  EN-ACT-AVA              
+               SCTP1_MGWLCH        1  EN-ACT-AVA              
+               SCTP3_MGWLCH        1  EN-ACT-AVA              
+               SCTP4_MGWLCH        1  EN-ACT-AVA              
+
+3-12           MGWPLM       AVA    PP
+
+               SAID             PRIO  RST              CW     CWU
+               SCTP2_MGWPLM        1  EN-ACT-AVA              
+               SCTP3_MGWPLM        1  EN-ACT-AVA              
+               SCTP4_MGWPLM        1  EN-ACT-AVA              
+               SCTP1_MGWPLM        1  EN-ACT-AVA              
+
+3-13           MGWPTO       AVA    PP
+
+               SAID             PRIO  RST              CW     CWU
+               SCTP2_MGWPTO        1  EN-ACT-AVA              
+               SCTP3_MGWPTO        1  EN-ACT-AVA              
+               SCTP1_MGWPTO        1  EN-ACT-AVA              
+               SCTP4_MGWPTO        1  EN-ACT-AVA              
+
+3-15           MGWCC3       AVA    PP
+
+               SAID             PRIO  RST              CW     CWU
+               SCTP2_MGWCC3        1  EN-ACT-AVA              
+               SCTP1_MGWCC3        1  EN-ACT-AVA              
+               SCTP3_MGWCC3        1  EN-ACT-AVA              
+               SCTP4_MGWCC3        1  EN-ACT-AVA              
+
+3-16           MGWMB2       AVA    PP
+
+               SAID             PRIO  RST              CW     CWU
+               SCTP2_MGWMB2        1  EN-ACT-AVA              
+               SCTP3_MGWMB2        1  EN-ACT-AVA              
+               SCTP1_MGWMB2        1  EN-ACT-AVA              
+               SCTP4_MGWMB2        1  EN-ACT-AVA              
+
+3-1302         BSCCC2       AVA    PP
+
+               SAID             PRIO  RST              CW     CWU
+               SCTP2_STPCCS3       1  EN-ACT-AVA              
+               SCTP3_STPVAL3       1  EN-ACT-AVA              
+               SCTP4_STPVAL3       1  EN-ACT-AVA              
+               SCTP1_STPCCS3       1  EN-ACT-AVA              
+               SCTP1_STPVAL3       1  EN-ACT-AVA              
+               SCTP2_STPVAL3       1  EN-ACT-AVA              
+               SCTP3_STPCCS3       1  EN-ACT-AVA              
+               SCTP4_STPCCS3       1  EN-ACT-AVA              
+
+3-1402         BSCVA2       AVA    PP
+
+               SAID             PRIO  RST              CW     CWU
+               SCTP3_STPVAL3       1  EN-ACT-AVA              
+               SCTP4_STPVAL3       1  EN-ACT-AVA              
+               SCTP3_STPCCS3       1  EN-ACT-AVA              
+               SCTP4_STPCCS3       1  EN-ACT-AVA              
+               SCTP1_STPCCS3       1  EN-ACT-AVA              
+               SCTP2_STPCCS3       1  EN-ACT-AVA              
+               SCTP1_STPVAL3       1  EN-ACT-AVA              
+               SCTP2_STPVAL3       1  EN-ACT-AVA              
+
+3-1404         BSCMCY       AVA    PP
+
+               SAID             PRIO  RST              CW     CWU
+               SCTP1_BSCMCY        1  EN-ACT-AVA              
+               SCTP3_BSCMCY        1  EN-ACT-AVA              
+               SCTP2_BSCMCY        1  EN-ACT-AVA              
+               SCTP4_BSCMCY        1  EN-ACT-AVA              
+
+3-1405         BSCSFA       AVA    PP
+
+               SAID             PRIO  RST              CW     CWU
+               SCTP2_BSCSFA        1  EN-ACT-AVA              
+               SCTP1_BSCSFA        1  EN-ACT-AVA              
+               SCTP3_BSCSFA        1  EN-ACT-AVA              
+               SCTP4_BSCSFA        1  EN-ACT-AVA              
+
+3-1415         BSCMC2       AVA    PP
+
+               SAID             PRIO  RST              CW     CWU
+               SCTP1_BSCMC2        1  EN-ACT-AVA              
+               SCTP2_BSCMC2        1  EN-ACT-AVA              
+               SCTP3_BSCMC2        1  EN-ACT-AVA              
+               SCTP4_BSCMC2        1  EN-ACT-AVA              
+
+3-1506         BSCBTO       AVA    PP
+
+               SAID             PRIO  RST              CW     CWU
+               SCTP2_BSCBTO        1  EN-ACT-AVA              
+               SCTP1_BSCBTO        1  EN-ACT-AVA              
+               SCTP3_BSCBTO        1  EN-ACT-AVA              
+               SCTP4_BSCBTO        1  EN-ACT-AVA              
+
+3-1516         BSCBT2       AVA    PP
+
+               SAID             PRIO  RST              CW     CWU
+               SCTP1_STPVAL3       1  EN-ACT-AVA              
+               SCTP2_STPVAL3       1  EN-ACT-AVA              
+               SCTP1_STPCCS3       1  EN-ACT-AVA              
+               SCTP2_STPCCS3       1  EN-ACT-AVA              
+               SCTP3_STPCCS3       1  EN-ACT-AVA              
+               SCTP4_STPCCS3       1  EN-ACT-AVA              
+               SCTP3_STPVAL3       1  EN-ACT-AVA              
+               SCTP4_STPVAL3       1  EN-ACT-AVA              
+
+3-1608         BSCMBO       AVA    PP
+
+               SAID             PRIO  RST              CW     CWU
+               AS_BSCMBO_4         1  EN-ACT-AVA              
+               AS_BSCMBO_3         1  EN-ACT-AVA              
+               AS_BSCMBO_2         1  EN-ACT-AVA              
+               AS_BSCMBO_1         1  EN-ACT-AVA              
+               SCTP4_STPCCS3       2  EN-ACT-UNAVA            
+               SCTP4_STPVAL3       2  EN-ACT-UNAVA            
+               SCTP3_STPCCS3       2  EN-ACT-UNAVA            
+               SCTP3_STPVAL3       2  EN-ACT-UNAVA            
+               SCTP2_STPCCS3       2  EN-ACT-UNAVA            
+               SCTP2_STPVAL3       2  EN-ACT-UNAVA            
+               SCTP1_STPCCS3       2  EN-ACT-UNAVA            
+               SCTP1_STPVAL3       2  EN-ACT-UNAVA            
+
+3-1616         BSCMB2       AVA    PP
+
+               SAID             PRIO  RST              CW     CWU
+               SCTP4_BSCMB2        1  EN-ACT-AVA              
+               SCTP3_BSCMB2        1  EN-ACT-AVA              
+               SCTP2_BSCMB2        1  EN-ACT-AVA              
+               SCTP1_BSCMB2        1  EN-ACT-AVA              
+               SCTP4_STPVAL3       2  EN-ACT-AVA              
+               SCTP3_STPVAL3       2  EN-ACT-AVA              
+               SCTP4_STPCCS3       2  EN-ACT-AVA              
+               SCTP3_STPCCS3       2  EN-ACT-AVA              
+               SCTP1_STPVAL3       2  EN-ACT-AVA              
+               SCTP2_STPVAL3       2  EN-ACT-AVA              
+               SCTP1_STPCCS3       2  EN-ACT-AVA              
+               SCTP2_STPCCS3       2  EN-ACT-AVA              
+
+3-1709         BSCSCR       AVA    PP
+
+               SAID             PRIO  RST              CW     CWU
+               SCTP2_BSCSCR        1  EN-ACT-AVA              
+               SCTP3_BSCSCR        1  EN-ACT-AVA              
+               SCTP1_BSCSCR        1  EN-ACT-AVA              
+               SCTP4_BSCSCR        1  EN-ACT-AVA              
+
+3-1710         BSCVRA       AVA    PP
+
+               SAID             PRIO  RST              CW     CWU
+               SCTP2_BSCVRA        1  EN-ACT-AVA              
+               SCTP1_BSCVRA        1  EN-ACT-AVA              
+               SCTP3_BSCVRA        1  EN-ACT-AVA              
+               SCTP4_BSCVRA        1  EN-ACT-AVA              
+
+3-1718         BSCSC2       AVA    PP
+
+               SAID             PRIO  RST              CW     CWU
+               SCTP4_BSCSC2        1  EN-ACT-AVA              
+               SCTP1_BSCSC2        1  EN-ACT-AVA              
+               SCTP3_BSCSC2        1  EN-ACT-AVA              
+               SCTP2_BSCSC2        1  EN-ACT-AVA              
+
+3-1811         BSCLCH       AVA    PP
+
+               SAID             PRIO  RST              CW     CWU
+               SCTP2_BSCLCH        1  EN-ACT-AVA              
+               SCTP1_BSCLCH        1  EN-ACT-AVA              
+               SCTP3_BSCLCH        1  EN-ACT-AVA              
+               SCTP4_BSCLCH        1  EN-ACT-AVA              
+
+3-2302         RNCCC2       AVA    PP
+
+               SAID             PRIO  RST              CW     CWU
+               SCTP2_STPCCS3       1  EN-ACT-AVA              
+               SCTP3_STPVAL3       1  EN-ACT-AVA              
+               SCTP4_STPVAL3       1  EN-ACT-AVA              
+               SCTP1_STPCCS3       1  EN-ACT-AVA              
+               SCTP1_STPVAL3       1  EN-ACT-AVA              
+               SCTP2_STPVAL3       1  EN-ACT-AVA              
+               SCTP3_STPCCS3       1  EN-ACT-AVA              
+               SCTP4_STPCCS3       1  EN-ACT-AVA              
+
+3-2303         RNCCC3       AVA    PP
+
+               SAID             PRIO  RST              CW     CWU
+               SCTP2_STPCCS3       1  EN-ACT-AVA              
+               SCTP3_STPVAL3       1  EN-ACT-AVA              
+               SCTP4_STPVAL3       1  EN-ACT-AVA              
+               SCTP1_STPCCS3       1  EN-ACT-AVA              
+               SCTP1_STPVAL3       1  EN-ACT-AVA              
+               SCTP2_STPVAL3       1  EN-ACT-AVA              
+               SCTP3_STPCCS3       1  EN-ACT-AVA              
+               SCTP4_STPCCS3       1  EN-ACT-AVA              
+
+3-2402         RNCVA2       AVA    PP
+
+               SAID             PRIO  RST              CW     CWU
+               SCTP1_STPCCS3       1  EN-ACT-AVA              
+               SCTP2_STPCCS3       1  EN-ACT-AVA              
+               SCTP3_STPCCS3       1  EN-ACT-AVA              
+               SCTP4_STPCCS3       1  EN-ACT-AVA              
+               SCTP1_STPVAL3       1  EN-ACT-AVA              
+               SCTP2_STPVAL3       1  EN-ACT-AVA              
+               SCTP3_STPVAL3       1  EN-ACT-AVA              
+               SCTP4_STPVAL3       1  EN-ACT-AVA              
+
+3-2404         MCYRNC       AVA    PP
+
+               SAID             PRIO  RST              CW     CWU
+               SCTP2_STPCCS3       1  EN-ACT-AVA              
+               SCTP3_STPVAL3       1  EN-ACT-AVA              
+               SCTP4_STPVAL3       1  EN-ACT-AVA              
+               SCTP1_STPCCS3       1  EN-ACT-AVA              
+               SCTP1_STPVAL3       1  EN-ACT-AVA              
+               SCTP2_STPVAL3       1  EN-ACT-AVA              
+               SCTP3_STPCCS3       1  EN-ACT-AVA              
+               SCTP4_STPCCS3       1  EN-ACT-AVA              
+
+3-2405         RNCSFA       AVA    PP
+
+               SAID             PRIO  RST              CW     CWU
+               SCTP2_STPCCS3       1  EN-ACT-AVA              
+               SCTP3_STPVAL3       1  EN-ACT-AVA              
+               SCTP4_STPVAL3       1  EN-ACT-AVA              
+               SCTP1_STPCCS3       1  EN-ACT-AVA              
+               SCTP1_STPVAL3       1  EN-ACT-AVA              
+               SCTP2_STPVAL3       1  EN-ACT-AVA              
+               SCTP3_STPCCS3       1  EN-ACT-AVA              
+               SCTP4_STPCCS3       1  EN-ACT-AVA              
+
+3-2506         RNCBTO       AVA    PP
+
+               SAID             PRIO  RST              CW     CWU
+               SCTP2_STPCCS3       1  EN-ACT-AVA              
+               SCTP3_STPVAL3       1  EN-ACT-AVA              
+               SCTP4_STPVAL3       1  EN-ACT-AVA              
+               SCTP1_STPCCS3       1  EN-ACT-AVA              
+               SCTP1_STPVAL3       1  EN-ACT-AVA              
+               SCTP2_STPVAL3       1  EN-ACT-AVA              
+               SCTP3_STPCCS3       1  EN-ACT-AVA              
+               SCTP4_STPCCS3       1  EN-ACT-AVA              
+
+3-2507         RNCACA       AVA    PP
+
+               SAID             PRIO  RST              CW     CWU
+               SCTP2_STPVAL3       1  EN-ACT-AVA              
+               SCTP1_STPVAL3       1  EN-ACT-AVA              
+               SCTP3_STPCCS3       1  EN-ACT-AVA              
+               SCTP4_STPCCS3       1  EN-ACT-AVA              
+               SCTP1_STPCCS3       1  EN-ACT-AVA              
+               SCTP2_STPCCS3       1  EN-ACT-AVA              
+               SCTP3_STPVAL3       1  EN-ACT-AVA              
+               SCTP4_STPVAL3       1  EN-ACT-AVA              
+
+3-2608         RNCMBO       AVA    PP
+
+               SAID             PRIO  RST              CW     CWU
+               AS_RNCMBO_2         1  EN-ACT-AVA              
+               AS_RNCMBO_3         1  EN-ACT-AVA              
+               AS_RNCMBO_4         1  EN-ACT-AVA              
+               AS_RNCMBO_1         1  EN-ACT-AVA              
+
+3-2609         RNCMB2       AVA    PP
+
+               SAID             PRIO  RST              CW     CWU
+               AS_RNCMB2_1         1  EN-ACT-AVA              
+               AS_RNCMB2_2         1  EN-ACT-AVA              
+               AS_RNCMB2_3         1  EN-ACT-AVA              
+               AS_RNCMB2_4         1  EN-ACT-AVA              
+
+3-2709         RNCSCR       AVA    PP
+
+               SAID             PRIO  RST              CW     CWU
+               SCTP2_STPCCS3       1  EN-ACT-AVA              
+               SCTP3_STPVAL3       1  EN-ACT-AVA              
+               SCTP4_STPVAL3       1  EN-ACT-AVA              
+               SCTP1_STPCCS3       1  EN-ACT-AVA              
+               SCTP1_STPVAL3       1  EN-ACT-AVA              
+               SCTP2_STPVAL3       1  EN-ACT-AVA              
+               SCTP3_STPCCS3       1  EN-ACT-AVA              
+               SCTP4_STPCCS3       1  EN-ACT-AVA              
+
+3-2710         RNCVRA       AVA    PP
+
+               SAID             PRIO  RST              CW     CWU
+               SCTP2_STPVAL3       1  EN-ACT-AVA              
+               SCTP1_STPVAL3       1  EN-ACT-AVA              
+               SCTP3_STPCCS3       1  EN-ACT-AVA              
+               SCTP4_STPCCS3       1  EN-ACT-AVA              
+               SCTP1_STPCCS3       1  EN-ACT-AVA              
+               SCTP2_STPCCS3       1  EN-ACT-AVA              
+               SCTP3_STPVAL3       1  EN-ACT-AVA              
+               SCTP4_STPVAL3       1  EN-ACT-AVA              
+
+3-2811         RNCLCH       AVA    PP
+
+               SAID             PRIO  RST              CW     CWU
+               SCTP2_STPVAL3       1  EN-ACT-AVA              
+               SCTP1_STPVAL3       1  EN-ACT-AVA              
+               SCTP3_STPCCS3       1  EN-ACT-AVA              
+               SCTP4_STPCCS3       1  EN-ACT-AVA              
+               SCTP1_STPCCS3       1  EN-ACT-AVA              
+               SCTP2_STPCCS3       1  EN-ACT-AVA              
+               SCTP3_STPVAL3       1  EN-ACT-AVA              
+               SCTP4_STPVAL3       1  EN-ACT-AVA              
+
+3-4105         STPCCS3      AVA    PP
+
+               SAID             PRIO  RST              CW     CWU
+               SCTP2_STPCCS3       1  EN-ACT-AVA              
+               SCTP1_STPCCS3       1  EN-ACT-AVA              
+               SCTP3_STPCCS3       1  EN-ACT-AVA              
+               SCTP4_STPCCS3       1  EN-ACT-AVA              
+
+3-4109         STPVAL3      AVA    PP
+
+               SAID             PRIO  RST              CW     CWU
+               SCTP2_STPVAL3       1  EN-ACT-AVA              
+               SCTP3_STPVAL3       1  EN-ACT-AVA              
+               SCTP1_STPVAL3       1  EN-ACT-AVA              
+               SCTP4_STPVAL3       1  EN-ACT-AVA              
+
+3-4169         MSSMC3       AVA    PP
+
+               SAID             PRIO  RST              CW     CWU
+               SCTP2_STPCCS3       1  EN-ACT-AVA              
+               SCTP3_STPVAL3       1  EN-ACT-AVA              
+               SCTP4_STPVAL3       1  EN-ACT-AVA              
+               SCTP1_STPCCS3       1  EN-ACT-AVA              
+               SCTP1_STPVAL3       1  EN-ACT-AVA              
+               SCTP2_STPVAL3       1  EN-ACT-AVA              
+               SCTP3_STPCCS3       1  EN-ACT-AVA              
+               SCTP4_STPCCS3       1  EN-ACT-AVA              
+
+3-4170         SMLCCCS      AVA    PP
+
+               SAID             PRIO  RST              CW     CWU
+               SCTP3_STPVAL3       1  EN-ACT-AVA              
+               SCTP4_STPVAL3       1  EN-ACT-AVA              
+               SCTP3_STPCCS3       1  EN-ACT-AVA              
+               SCTP4_STPCCS3       1  EN-ACT-AVA              
+               SCTP1_STPCCS3       1  EN-ACT-AVA              
+               SCTP2_STPCCS3       1  EN-ACT-AVA              
+               SCTP1_STPVAL3       1  EN-ACT-AVA              
+               SCTP2_STPVAL3       1  EN-ACT-AVA              
+
+3-4179         MSSLC3       AVA    PP
+
+               SAID             PRIO  RST              CW     CWU
+               SCTP2_STPCCS3       1  EN-ACT-AVA              
+               SCTP3_STPVAL3       1  EN-ACT-AVA              
+               SCTP4_STPVAL3       1  EN-ACT-AVA              
+               SCTP1_STPCCS3       1  EN-ACT-AVA              
+               SCTP1_STPVAL3       1  EN-ACT-AVA              
+               SCTP2_STPVAL3       1  EN-ACT-AVA              
+               SCTP3_STPCCS3       1  EN-ACT-AVA              
+               SCTP4_STPCCS3       1  EN-ACT-AVA              
+
+3-4180         MSSPT3       AVA    PP
+
+               SAID             PRIO  RST              CW     CWU
+               SCTP2_STPCCS3       1  EN-ACT-AVA              
+               SCTP3_STPVAL3       1  EN-ACT-AVA              
+               SCTP4_STPVAL3       1  EN-ACT-AVA              
+               SCTP1_STPCCS3       1  EN-ACT-AVA              
+               SCTP1_STPVAL3       1  EN-ACT-AVA              
+               SCTP2_STPVAL3       1  EN-ACT-AVA              
+               SCTP3_STPCCS3       1  EN-ACT-AVA              
+               SCTP4_STPCCS3       1  EN-ACT-AVA              
+
+3-4199         MSSBT4       AVA    PP
+
+               SAID             PRIO  RST              CW     CWU
+               SCTP2_STPVAL3       1  EN-ACT-AVA              
+               SCTP2_STPCCS3       1  EN-ACT-AVA              
+               SCTP1_STPVAL3       1  EN-ACT-AVA              
+               SCTP1_STPCCS3       1  EN-ACT-AVA              
+               SCTP3_STPVAL3       1  EN-ACT-AVA              
+               SCTP4_STPVAL3       1  EN-ACT-AVA              
+               SCTP3_STPCCS3       1  EN-ACT-AVA              
+               SCTP4_STPCCS3       1  EN-ACT-AVA              
+
+END
+
+<M3ASP;
+M3UA ASSOCIATION STATUS
+
+SAID             STATE  BLSTATE          AUTOBLSTATE
+SCTP8_BSCMB2     ESTB                    
+
+SCTP7_BSCMB2     ESTB                    
+
+SCTP6_BSCMB2     ESTB                    
+
+SCTP5_BSCMB2     ESTB                    
+
+AS_BSCMBO_1      ACT                     
+
+AS_BSCMBO_2      ACT                     
+
+AS_BSCMBO_3      ACT                     
+
+AS_BSCMBO_4      ACT                     
+
+AS_RNCMB2_4      ACT                     
+
+AS_RNCMB2_3      ACT                     
+
+AS_RNCMB2_2      ACT                     
+
+AS_RNCMB2_1      ACT                     
+
+AS_RNCMBO_4      ACT                     
+
+AS_RNCMBO_3      ACT                     
+
+AS_RNCMBO_2      ACT                     
+
+AS_RNCMBO_1      ACT                     
+
+SCTP4_BSCSC2     ACT                     
+
+SCTP3_BSCSC2     ACT                     
+
+SCTP2_BSCSC2     ACT                     
+
+SCTP1_BSCSC2     ACT                     
+
+SCTP4_BSCMC2     ACT                     
+
+SCTP3_BSCMC2     ACT                     
+
+SCTP2_BSCMC2     ACT                     
+
+SCTP1_BSCMC2     ACT                     
+
+SCTP4_BSCMBO     ESTB   INACTIVE-ACTIVE  
+
+SCTP3_BSCMBO     ESTB   INACTIVE-ACTIVE  
+
+SCTP2_BSCMBO     ESTB   INACTIVE-ACTIVE  
+
+SCTP1_BSCMBO     ESTB   INACTIVE-ACTIVE  
+
+SCTP4_MGWMB2     ACT                     
+
+SCTP3_MGWMB2     ACT                     
+
+SCTP2_MGWMB2     ACT                     
+
+SCTP1_MGWMB2     ACT                     
+
+SCTP4_BSCMB2     ACT                     
+
+SCTP3_BSCMB2     ACT                     
+
+SCTP2_BSCMB2     ACT                     
+
+SCTP1_BSCMB2     ACT                     
+
+SCTP4_BSCMCY     ACT                     
+
+SCTP3_BSCMCY     ACT                     
+
+SCTP2_BSCMCY     ACT                     
+
+SCTP1_BSCMCY     ACT                     
+
+SCTP4_BSCSFA     ACT                     
+
+SCTP3_BSCSFA     ACT                     
+
+SCTP2_BSCSFA     ACT                     
+
+SCTP1_BSCSFA     ACT                     
+
+SCTP4_BSCSCR     ACT                     
+
+SCTP3_BSCSCR     ACT                     
+
+SCTP2_BSCSCR     ACT                     
+
+SCTP1_BSCSCR     ACT                     
+
+SCTP4_BSCVRA     ACT                     
+
+SCTP3_BSCVRA     ACT                     
+
+SCTP2_BSCVRA     ACT                     
+
+SCTP1_BSCVRA     ACT                     
+
+SCTP4_BSCLCH     ACT                     
+
+SCTP3_BSCLCH     ACT                     
+
+SCTP2_BSCLCH     ACT                     
+
+SCTP1_BSCLCH     ACT                     
+
+SCTP4_BSCBTO     ACT                     
+
+SCTP3_BSCBTO     ACT                     
+
+SCTP2_BSCBTO     ACT                     
+
+SCTP1_BSCBTO     ACT                     
+
+SCTP4_MGWPLM     ACT                     
+
+SCTP3_MGWPLM     ACT                     
+
+SCTP2_MGWPLM     ACT                     
+
+SCTP1_MGWPLM     ACT                     
+
+SCTP4_MGWCC3     ACT                     
+
+SCTP3_MGWCC3     ACT                     
+
+SCTP2_MGWCC3     ACT                     
+
+SCTP1_MGWCC3     ACT                     
+
+SCTP4_STPVAL3    ACT    INACTIVE-ACTIVE  
+
+SCTP3_STPVAL3    ACT    INACTIVE-ACTIVE  
+
+SCTP2_STPVAL3    ACT    INACTIVE-ACTIVE  
+
+SCTP1_STPVAL3    ACT    INACTIVE-ACTIVE  
+
+SCTP4_STPCCS3    ACT    INACTIVE-ACTIVE  
+
+SCTP3_STPCCS3    ACT    INACTIVE-ACTIVE  
+
+SCTP2_STPCCS3    ACT    INACTIVE-ACTIVE  
+
+SCTP1_STPCCS3    ACT    INACTIVE-ACTIVE  
+
+SCTP4_MGWPTO     ACT                     
+
+SCTP3_MGWPTO     ACT                     
+
+SCTP2_MGWPTO     ACT                     
+
+SCTP1_MGWPTO     ACT                     
+
+SCTP4_MGWLCH     ACT                     
+
+SCTP3_MGWLCH     ACT                     
+
+SCTP2_MGWLCH     ACT                     
+
+SCTP1_MGWLCH     ACT                     
+
+SCTP4_MGWVRA     ACT                     
+
+SCTP3_MGWVRA     ACT                     
+
+SCTP2_MGWVRA     ACT                     
+
+SCTP1_MGWVRA     ACT                     
+
+SCTP4_MGWSCR     ACT                     
+
+SCTP3_MGWSCR     ACT                     
+
+SCTP2_MGWSCR     ACT                     
+
+SCTP1_MGWSCR     ACT                     
+
+SCTP4_MGWMBO     ACT                     
+
+SCTP3_MGWMBO     ACT                     
+
+SCTP2_MGWMBO     ACT                     
+
+SCTP1_MGWMBO     ACT                     
+
+SCTP4_MGWACA     ACT                     
+
+SCTP3_MGWACA     ACT                     
+
+SCTP2_MGWACA     ACT                     
+
+SCTP1_MGWACA     ACT                     
+
+SCTP4_MGWBT4     ACT                     
+
+SCTP3_MGWBT4     ACT                     
+
+SCTP2_MGWBT4     ACT                     
+
+SCTP1_MGWBT4     ACT                     
+
+SCTP4_MGWSFA     ACT                     
+
+SCTP3_MGWSFA     ACT                     
+
+SCTP2_MGWSFA     ACT                     
+
+SCTP1_MGWSFA     ACT                     
+
+SCTP4_MGWMCY     ACT                     
+
+SCTP3_MGWMCY     ACT                     
+
+SCTP2_MGWMCY     ACT                     
+
+SCTP1_MGWMCY     ACT                     
+
+SCTP4_MGWVAL     ACT                     
+
+SCTP3_MGWVAL     ACT                     
+
+SCTP2_MGWVAL     ACT                     
+
+SCTP1_MGWVAL     ACT                     
+
+SCTP4_MGWCC2     ACT                     
+
+SCTP3_MGWCC2     ACT                     
+
+SCTP2_MGWCC2     ACT                     
+
+SCTP1_MGWCC2     ACT                     
+
+SCTP4_MGWCCS     ACT                     
+
+SCTP3_MGWCCS     ACT                     
+
+SCTP2_MGWCCS     ACT                     
+
+SCTP1_MGWCCS     ACT                     
+
+SCTP4_STPVAL     ACT                     
+
+SCTP3_STPVAL     ACT                     
+
+SCTP2_STPVAL     ACT                     
+
+SCTP1_STPVAL     ACT    ACTIVE           
+
+SCTP4_STPCCS     ACT                     
+
+SCTP3_STPCCS     ACT                     
+
+SCTP2_STPCCS     ACT                     
+
+SCTP1_STPCCS     ACT                     
+
+END
+
+<IHALP:EPID=ALL;
+SCTP ASSOCIATION LIST DATA
+
+EPID    EPSTATE         LPN              USER
+EP4BSC  IN SERVICE      2910             M3UA
+
+LIP
+10.23.131.9
+10.23.131.41
+
+SAID            SASTATE            RPN   OS    MODE
+SCTP8_BSCMB2    ASSOCESTABL        2906  17    PEER
+
+RIP                                      RIPSTATE
+10.23.19.43                              ACTIVE
+10.23.19.75                              ACTIVE
+
+SAID            SASTATE            RPN   OS    MODE
+SCTP4_BSCMB2    ASSOCESTABL        2905  17    PEER
+
+RIP                                      RIPSTATE
+10.23.19.42                              ACTIVE
+10.23.19.74                              ACTIVE
+
+EPID    EPSTATE         LPN              USER
+EP3BSC  IN SERVICE      2909             M3UA
+
+LIP
+10.23.131.8
+10.23.131.40
+
+SAID            SASTATE            RPN   OS    MODE
+SCTP7_BSCMB2    ASSOCESTABL        2906  17    PEER
+
+RIP                                      RIPSTATE
+10.23.19.43                              ACTIVE
+10.23.19.75                              ACTIVE
+
+SAID            SASTATE            RPN   OS    MODE
+SCTP3_BSCMB2    ASSOCESTABL        2905  17    PEER
+
+RIP                                      RIPSTATE
+10.23.19.42                              ACTIVE
+10.23.19.74                              ACTIVE
+
+EPID    EPSTATE         LPN              USER
+EP2BSC  IN SERVICE      2908             M3UA
+
+LIP
+10.23.131.7
+10.23.131.39
+
+SAID            SASTATE            RPN   OS    MODE
+SCTP6_BSCMB2    ASSOCESTABL        2906  17    PEER
+
+RIP                                      RIPSTATE
+10.23.19.43                              ACTIVE
+10.23.19.75                              ACTIVE
+
+SAID            SASTATE            RPN   OS    MODE
+SCTP2_BSCMB2    ASSOCESTABL        2905  17    PEER
+
+RIP                                      RIPSTATE
+10.23.19.42                              ACTIVE
+10.23.19.74                              ACTIVE
+
+EPID    EPSTATE         LPN              USER
+EP1BSC  IN SERVICE      2907             M3UA
+
+LIP
+10.23.131.6
+10.23.131.38
+
+SAID            SASTATE            RPN   OS    MODE
+SCTP5_BSCMB2    ASSOCESTABL        2906  17    PEER
+
+RIP                                      RIPSTATE
+10.23.19.43                              ACTIVE
+10.23.19.75                              ACTIVE
+
+SAID            SASTATE            RPN   OS    MODE
+SCTP1_BSCMB2    ASSOCESTABL        2905  17    PEER
+
+RIP                                      RIPSTATE
+10.23.19.42                              ACTIVE
+10.23.19.74                              ACTIVE
+
+EPID    EPSTATE         LPN              USER
+EPBSC2  IN SERVICE      2905             M3UA
+
+LIP
+10.23.131.7
+10.23.131.39
+
+SAID            SASTATE            RPN   OS    MODE
+AS_BSCMBO_3     ASSOCESTABL        2905  17    PEER
+
+RIP                                      RIPSTATE
+10.23.35.10                              ACTIVE
+10.23.35.42                              ACTIVE
+
+SAID            SASTATE            RPN   OS    MODE
+AS_BSCMBO_4     ASSOCESTABL        2905  17    PEER
+
+RIP                                      RIPSTATE
+10.23.35.11                              ACTIVE
+10.23.35.43                              ACTIVE
+
+EPID    EPSTATE         LPN              USER
+EPBSC1  IN SERVICE      2905             M3UA
+
+LIP
+10.23.131.6
+10.23.131.38
+
+SAID            SASTATE            RPN   OS    MODE
+AS_BSCMBO_1     ASSOCESTABL        2905  17    PEER
+
+RIP                                      RIPSTATE
+10.23.35.10                              ACTIVE
+10.23.35.42                              ACTIVE
+
+SAID            SASTATE            RPN   OS    MODE
+AS_BSCMBO_2     ASSOCESTABL        2905  17    PEER
+
+RIP                                      RIPSTATE
+10.23.35.11                              ACTIVE
+10.23.35.43                              ACTIVE
+
+EPID    EPSTATE         LPN              USER
+EPRNC4  IN SERVICE      2906             M3UA
+
+LIP
+10.23.131.9
+10.23.131.41
+
+SAID            SASTATE            RPN   OS    MODE
+AS_RNCMB2_4     ASSOCESTABL        2905  17    SERVER
+
+RIP                                      RIPSTATE
+10.23.19.44                              ACTIVE
+10.23.19.76                              ACTIVE
+
+SAID            SASTATE            RPN   OS    MODE
+AS_RNCMBO_4     ASSOCESTABL        2905  17    SERVER
+
+RIP                                      RIPSTATE
+10.23.35.3                               ACTIVE
+10.23.35.35                              ACTIVE
+
+EPID    EPSTATE         LPN              USER
+EPRNC3  IN SERVICE      2906             M3UA
+
+LIP
+10.23.131.8
+10.23.131.40
+
+SAID            SASTATE            RPN   OS    MODE
+AS_RNCMB2_3     ASSOCESTABL        2905  17    SERVER
+
+RIP                                      RIPSTATE
+10.23.19.44                              ACTIVE
+10.23.19.76                              ACTIVE
+
+SAID            SASTATE            RPN   OS    MODE
+AS_RNCMBO_3     ASSOCESTABL        2905  17    SERVER
+
+RIP                                      RIPSTATE
+10.23.35.3                               ACTIVE
+10.23.35.35                              ACTIVE
+
+EPID    EPSTATE         LPN              USER
+EPRNC2  IN SERVICE      2906             M3UA
+
+LIP
+10.23.131.7
+10.23.131.39
+
+SAID            SASTATE            RPN   OS    MODE
+AS_RNCMB2_2     ASSOCESTABL        2905  17    SERVER
+
+RIP                                      RIPSTATE
+10.23.19.44                              ACTIVE
+10.23.19.76                              ACTIVE
+
+SAID            SASTATE            RPN   OS    MODE
+AS_RNCMBO_2     ASSOCESTABL        2905  17    SERVER
+
+RIP                                      RIPSTATE
+10.23.35.3                               ACTIVE
+10.23.35.35                              ACTIVE
+
+EPID    EPSTATE         LPN              USER
+EPRNC1  IN SERVICE      2906             M3UA
+
+LIP
+10.23.131.6
+10.23.131.38
+
+SAID            SASTATE            RPN   OS    MODE
+AS_RNCMB2_1     ASSOCESTABL        2905  17    SERVER
+
+RIP                                      RIPSTATE
+10.23.19.44                              ACTIVE
+10.23.19.76                              ACTIVE
+
+SAID            SASTATE            RPN   OS    MODE
+AS_RNCMBO_1     ASSOCESTABL        2905  17    SERVER
+
+RIP                                      RIPSTATE
+10.23.35.3                               ACTIVE
+10.23.35.35                              ACTIVE
+
+EPID    EPSTATE         LPN              USER
+SCTP4   IN SERVICE      1024             M3UA
+
+LIP
+10.23.131.9
+10.23.131.41
+
+SAID            SASTATE            RPN   OS    MODE
+SCTP4_BSCSC2    ASSOCESTABL        2908  17    PEER
+
+RIP                                      RIPSTATE
+10.23.51.241                             ACTIVE
+10.23.51.245                             ACTIVE
+
+SAID            SASTATE            RPN   OS    MODE
+SCTP4_BSCMC2    ASSOCESTABL        2916  17    PEER
+
+RIP                                      RIPSTATE
+10.23.147.241                            ACTIVE
+10.23.147.245                            ACTIVE
+
+SAID            SASTATE            RPN   OS    MODE
+SCTP4_BSCMBO    ASSOCESTABL        1024  17    PEER
+
+RIP                                      RIPSTATE
+10.23.35.11                              ACTIVE
+10.23.35.43                              ACTIVE
+
+SAID            SASTATE            RPN   OS    MODE
+SCTP4_MGWMB2    ASSOCESTABL        1024  17    PEER
+
+RIP                                      RIPSTATE
+10.23.19.33                              ACTIVE
+10.23.19.65                              ACTIVE
+
+SAID            SASTATE            RPN   OS    MODE
+SCTP4_BSCMCY    ASSOCESTABL        1035  17    PEER
+
+RIP                                      RIPSTATE
+10.23.147.93                             ACTIVE
+10.23.147.125                            ACTIVE
+
+SAID            SASTATE            RPN   OS    MODE
+SCTP4_BSCSFA    ASSOCESTABL        1035  17    PEER
+
+RIP                                      RIPSTATE
+10.23.163.97                             ACTIVE
+10.23.163.129                            ACTIVE
+
+SAID            SASTATE            RPN   OS    MODE
+SCTP4_BSCSCR    ASSOCESTABL        1035  17    PEER
+
+RIP                                      RIPSTATE
+10.23.51.93                              ACTIVE
+10.23.51.125                             ACTIVE
+
+SAID            SASTATE            RPN   OS    MODE
+SCTP4_BSCVRA    ASSOCESTABL        1035  17    PEER
+
+RIP                                      RIPSTATE
+10.23.3.93                               ACTIVE
+10.23.3.125                              ACTIVE
+
+SAID            SASTATE            RPN   OS    MODE
+SCTP4_BSCLCH    ASSOCESTABL        1035  17    PEER
+
+RIP                                      RIPSTATE
+10.22.51.93                              ACTIVE
+10.22.51.125                             ACTIVE
+
+SAID            SASTATE            RPN   OS    MODE
+SCTP4_BSCBTO    ASSOCESTABL        1035  17    PEER
+
+RIP                                      RIPSTATE
+10.22.139.93                             ACTIVE
+10.22.139.125                            ACTIVE
+
+SAID            SASTATE            RPN   OS    MODE
+SCTP4_MGWPLM    ASSOCESTABL        1024  17    PEER
+
+RIP                                      RIPSTATE
+10.22.19.1                               ACTIVE
+10.22.19.33                              ACTIVE
+
+SAID            SASTATE            RPN   OS    MODE
+SCTP4_MGWCC3    ASSOCESTABL        1024  17    PEER
+
+RIP                                      RIPSTATE
+10.24.51.1                               ACTIVE
+10.24.51.33                              ACTIVE
+
+SAID            SASTATE            RPN   OS    MODE
+SCTP4_STPVAL3   ASSOCESTABL        1025  2     PEER
+
+RIP                                      RIPSTATE
+192.168.42.220                           ACTIVE
+192.168.42.252                           ACTIVE
+
+SAID            SASTATE            RPN   OS    MODE
+SCTP4_STPCCS3   ASSOCESTABL        1025  2     PEER
+
+RIP                                      RIPSTATE
+192.168.83.220                           ACTIVE
+192.168.83.252                           ACTIVE
+
+SAID            SASTATE            RPN   OS    MODE
+SCTP4_MGWPTO    ASSOCESTABL        1024  17    PEER
+
+RIP                                      RIPSTATE
+10.22.3.1                                ACTIVE
+10.22.3.33                               ACTIVE
+
+SAID            SASTATE            RPN   OS    MODE
+SCTP4_MGWLCH    ASSOCESTABL        1024  17    PEER
+
+RIP                                      RIPSTATE
+10.22.51.1                               ACTIVE
+10.22.51.33                              ACTIVE
+
+SAID            SASTATE            RPN   OS    MODE
+SCTP4_MGWVRA    ASSOCESTABL        1024  17    PEER
+
+RIP                                      RIPSTATE
+10.23.3.1                                ACTIVE
+10.23.3.33                               ACTIVE
+
+SAID            SASTATE            RPN   OS    MODE
+SCTP4_MGWSCR    ASSOCESTABL        1024  17    PEER
+
+RIP                                      RIPSTATE
+10.23.51.1                               ACTIVE
+10.23.51.33                              ACTIVE
+
+SAID            SASTATE            RPN   OS    MODE
+SCTP4_MGWMBO    ASSOCESTABL        1024  17    PEER
+
+RIP                                      RIPSTATE
+10.23.35.2                               ACTIVE
+10.23.35.34                              ACTIVE
+
+SAID            SASTATE            RPN   OS    MODE
+SCTP4_MGWACA    ASSOCESTABL        1024  17    PEER
+
+RIP                                      RIPSTATE
+10.22.163.1                              ACTIVE
+10.22.163.33                             ACTIVE
+
+SAID            SASTATE            RPN   OS    MODE
+SCTP4_MGWBT4    ASSOCESTABL        1024  17    PEER
+
+RIP                                      RIPSTATE
+10.22.139.1                              ACTIVE
+10.22.139.33                             ACTIVE
+
+SAID            SASTATE            RPN   OS    MODE
+SCTP4_MGWSFA    ASSOCESTABL        1024  17    PEER
+
+RIP                                      RIPSTATE
+10.23.163.1                              ACTIVE
+10.23.163.33                             ACTIVE
+
+SAID            SASTATE            RPN   OS    MODE
+SCTP4_MGWMCY    ASSOCESTABL        1024  17    PEER
+
+RIP                                      RIPSTATE
+10.23.147.1                              ACTIVE
+10.23.147.33                             ACTIVE
+
+SAID            SASTATE            RPN   OS    MODE
+SCTP4_MGWVAL    ASSOCESTABL        1024  17    PEER
+
+RIP                                      RIPSTATE
+10.23.131.2                              ACTIVE
+10.23.131.34                             ACTIVE
+
+SAID            SASTATE            RPN   OS    MODE
+SCTP4_MGWCC2    ASSOCESTABL        1024  17    PEER
+
+RIP                                      RIPSTATE
+10.24.3.2                                ACTIVE
+10.24.3.34                               ACTIVE
+
+SAID            SASTATE            RPN   OS    MODE
+SCTP4_MGWCCS    ASSOCESTABL        1024  17    PEER
+
+RIP                                      RIPSTATE
+10.24.19.2                               ACTIVE
+10.24.19.34                              ACTIVE
+
+SAID            SASTATE            RPN   OS    MODE
+SCTP4_STPVAL    ASSOCESTABL        1030  2     PEER
+
+RIP                                      RIPSTATE
+192.168.42.212                           ACTIVE
+192.168.42.244                           ACTIVE
+
+SAID            SASTATE            RPN   OS    MODE
+SCTP4_STPCCS    ASSOCESTABL        1030  2     PEER
+
+RIP                                      RIPSTATE
+192.168.83.212                           ACTIVE
+192.168.83.244                           ACTIVE
+
+EPID    EPSTATE         LPN              USER
+SCTP3   IN SERVICE      1024             M3UA
+
+LIP
+10.23.131.8
+10.23.131.40
+
+SAID            SASTATE            RPN   OS    MODE
+SCTP3_BSCSC2    ASSOCESTABL        2907  17    PEER
+
+RIP                                      RIPSTATE
+10.23.51.241                             ACTIVE
+10.23.51.245                             ACTIVE
+
+SAID            SASTATE            RPN   OS    MODE
+SCTP3_BSCMC2    ASSOCESTABL        2915  17    PEER
+
+RIP                                      RIPSTATE
+10.23.147.241                            ACTIVE
+10.23.147.245                            ACTIVE
+
+SAID            SASTATE            RPN   OS    MODE
+SCTP3_BSCMBO    ASSOCESTABL        1024  17    PEER
+
+RIP                                      RIPSTATE
+10.23.35.11                              ACTIVE
+10.23.35.43                              ACTIVE
+
+SAID            SASTATE            RPN   OS    MODE
+SCTP3_MGWMB2    ASSOCESTABL        1024  17    PEER
+
+RIP                                      RIPSTATE
+10.23.19.33                              ACTIVE
+10.23.19.65                              ACTIVE
+
+SAID            SASTATE            RPN   OS    MODE
+SCTP3_BSCMCY    ASSOCESTABL        1034  17    PEER
+
+RIP                                      RIPSTATE
+10.23.147.93                             ACTIVE
+10.23.147.125                            ACTIVE
+
+SAID            SASTATE            RPN   OS    MODE
+SCTP3_BSCSFA    ASSOCESTABL        1034  17    PEER
+
+RIP                                      RIPSTATE
+10.23.163.97                             ACTIVE
+10.23.163.129                            ACTIVE
+
+SAID            SASTATE            RPN   OS    MODE
+SCTP3_BSCSCR    ASSOCESTABL        1034  17    PEER
+
+RIP                                      RIPSTATE
+10.23.51.93                              ACTIVE
+10.23.51.125                             ACTIVE
+
+SAID            SASTATE            RPN   OS    MODE
+SCTP3_BSCVRA    ASSOCESTABL        1034  17    PEER
+
+RIP                                      RIPSTATE
+10.23.3.93                               ACTIVE
+10.23.3.125                              ACTIVE
+
+SAID            SASTATE            RPN   OS    MODE
+SCTP3_BSCLCH    ASSOCESTABL        1034  17    PEER
+
+RIP                                      RIPSTATE
+10.22.51.93                              ACTIVE
+10.22.51.125                             ACTIVE
+
+SAID            SASTATE            RPN   OS    MODE
+SCTP3_BSCBTO    ASSOCESTABL        1034  17    PEER
+
+RIP                                      RIPSTATE
+10.22.139.93                             ACTIVE
+10.22.139.125                            ACTIVE
+
+SAID            SASTATE            RPN   OS    MODE
+SCTP3_MGWPLM    ASSOCESTABL        1024  17    PEER
+
+RIP                                      RIPSTATE
+10.22.19.1                               ACTIVE
+10.22.19.33                              ACTIVE
+
+SAID            SASTATE            RPN   OS    MODE
+SCTP3_MGWCC3    ASSOCESTABL        1024  17    PEER
+
+RIP                                      RIPSTATE
+10.24.51.1                               ACTIVE
+10.24.51.33                              ACTIVE
+
+SAID            SASTATE            RPN   OS    MODE
+SCTP3_STPVAL3   ASSOCESTABL        1025  2     PEER
+
+RIP                                      RIPSTATE
+192.168.42.219                           ACTIVE
+192.168.42.251                           ACTIVE
+
+SAID            SASTATE            RPN   OS    MODE
+SCTP3_STPCCS3   ASSOCESTABL        1025  2     PEER
+
+RIP                                      RIPSTATE
+192.168.83.219                           ACTIVE
+192.168.83.251                           ACTIVE
+
+SAID            SASTATE            RPN   OS    MODE
+SCTP3_MGWPTO    ASSOCESTABL        1024  17    PEER
+
+RIP                                      RIPSTATE
+10.22.3.1                                ACTIVE
+10.22.3.33                               ACTIVE
+
+SAID            SASTATE            RPN   OS    MODE
+SCTP3_MGWLCH    ASSOCESTABL        1024  17    PEER
+
+RIP                                      RIPSTATE
+10.22.51.1                               ACTIVE
+10.22.51.33                              ACTIVE
+
+SAID            SASTATE            RPN   OS    MODE
+SCTP3_MGWVRA    ASSOCESTABL        1024  17    PEER
+
+RIP                                      RIPSTATE
+10.23.3.1                                ACTIVE
+10.23.3.33                               ACTIVE
+
+SAID            SASTATE            RPN   OS    MODE
+SCTP3_MGWSCR    ASSOCESTABL        1024  17    PEER
+
+RIP                                      RIPSTATE
+10.23.51.1                               ACTIVE
+10.23.51.33                              ACTIVE
+
+SAID            SASTATE            RPN   OS    MODE
+SCTP3_MGWMBO    ASSOCESTABL        1024  17    PEER
+
+RIP                                      RIPSTATE
+10.23.35.2                               ACTIVE
+10.23.35.34                              ACTIVE
+
+SAID            SASTATE            RPN   OS    MODE
+SCTP3_MGWACA    ASSOCESTABL        1024  17    PEER
+
+RIP                                      RIPSTATE
+10.22.163.1                              ACTIVE
+10.22.163.33                             ACTIVE
+
+SAID            SASTATE            RPN   OS    MODE
+SCTP3_MGWBT4    ASSOCESTABL        1024  17    PEER
+
+RIP                                      RIPSTATE
+10.22.139.1                              ACTIVE
+10.22.139.33                             ACTIVE
+
+SAID            SASTATE            RPN   OS    MODE
+SCTP3_MGWSFA    ASSOCESTABL        1024  17    PEER
+
+RIP                                      RIPSTATE
+10.23.163.1                              ACTIVE
+10.23.163.33                             ACTIVE
+
+SAID            SASTATE            RPN   OS    MODE
+SCTP3_MGWMCY    ASSOCESTABL        1024  17    PEER
+
+RIP                                      RIPSTATE
+10.23.147.1                              ACTIVE
+10.23.147.33                             ACTIVE
+
+SAID            SASTATE            RPN   OS    MODE
+SCTP3_MGWVAL    ASSOCESTABL        1024  17    PEER
+
+RIP                                      RIPSTATE
+10.23.131.2                              ACTIVE
+10.23.131.34                             ACTIVE
+
+SAID            SASTATE            RPN   OS    MODE
+SCTP3_MGWCC2    ASSOCESTABL        1024  17    PEER
+
+RIP                                      RIPSTATE
+10.24.3.2                                ACTIVE
+10.24.3.34                               ACTIVE
+
+SAID            SASTATE            RPN   OS    MODE
+SCTP3_MGWCCS    ASSOCESTABL        1024  17    PEER
+
+RIP                                      RIPSTATE
+10.24.19.2                               ACTIVE
+10.24.19.34                              ACTIVE
+
+SAID            SASTATE            RPN   OS    MODE
+SCTP3_STPVAL    ASSOCESTABL        1030  2     PEER
+
+RIP                                      RIPSTATE
+192.168.42.211                           ACTIVE
+192.168.42.243                           ACTIVE
+
+SAID            SASTATE            RPN   OS    MODE
+SCTP3_STPCCS    ASSOCESTABL        1030  2     PEER
+
+RIP                                      RIPSTATE
+192.168.83.211                           ACTIVE
+192.168.83.243                           ACTIVE
+
+EPID    EPSTATE         LPN              USER
+SCTP2   IN SERVICE      1024             M3UA
+
+LIP
+10.23.131.7
+10.23.131.39
+
+SAID            SASTATE            RPN   OS    MODE
+SCTP2_BSCSC2    ASSOCESTABL        2906  17    PEER
+
+RIP                                      RIPSTATE
+10.23.51.241                             ACTIVE
+10.23.51.245                             ACTIVE
+
+SAID            SASTATE            RPN   OS    MODE
+SCTP2_BSCMC2    ASSOCESTABL        2914  17    PEER
+
+RIP                                      RIPSTATE
+10.23.147.241                            ACTIVE
+10.23.147.245                            ACTIVE
+
+SAID            SASTATE            RPN   OS    MODE
+SCTP2_BSCMBO    ASSOCESTABL        1024  17    PEER
+
+RIP                                      RIPSTATE
+10.23.35.10                              ACTIVE
+10.23.35.42                              ACTIVE
+
+SAID            SASTATE            RPN   OS    MODE
+SCTP2_MGWMB2    ASSOCESTABL        1024  17    PEER
+
+RIP                                      RIPSTATE
+10.23.19.33                              ACTIVE
+10.23.19.65                              ACTIVE
+
+SAID            SASTATE            RPN   OS    MODE
+SCTP2_BSCMCY    ASSOCESTABL        1033  17    PEER
+
+RIP                                      RIPSTATE
+10.23.147.93                             ACTIVE
+10.23.147.125                            ACTIVE
+
+SAID            SASTATE            RPN   OS    MODE
+SCTP2_BSCSFA    ASSOCESTABL        1033  17    PEER
+
+RIP                                      RIPSTATE
+10.23.163.97                             ACTIVE
+10.23.163.129                            ACTIVE
+
+SAID            SASTATE            RPN   OS    MODE
+SCTP2_BSCSCR    ASSOCESTABL        1033  17    PEER
+
+RIP                                      RIPSTATE
+10.23.51.93                              ACTIVE
+10.23.51.125                             ACTIVE
+
+SAID            SASTATE            RPN   OS    MODE
+SCTP2_BSCVRA    ASSOCESTABL        1033  17    PEER
+
+RIP                                      RIPSTATE
+10.23.3.93                               ACTIVE
+10.23.3.125                              ACTIVE
+
+SAID            SASTATE            RPN   OS    MODE
+SCTP2_BSCLCH    ASSOCESTABL        1033  17    PEER
+
+RIP                                      RIPSTATE
+10.22.51.93                              ACTIVE
+10.22.51.125                             ACTIVE
+
+SAID            SASTATE            RPN   OS    MODE
+SCTP2_BSCBTO    ASSOCESTABL        1033  17    PEER
+
+RIP                                      RIPSTATE
+10.22.139.93                             ACTIVE
+10.22.139.125                            ACTIVE
+
+SAID            SASTATE            RPN   OS    MODE
+SCTP2_MGWPLM    ASSOCESTABL        1024  17    PEER
+
+RIP                                      RIPSTATE
+10.22.19.1                               ACTIVE
+10.22.19.33                              ACTIVE
+
+SAID            SASTATE            RPN   OS    MODE
+SCTP2_MGWCC3    ASSOCESTABL        1024  17    PEER
+
+RIP                                      RIPSTATE
+10.24.51.1                               ACTIVE
+10.24.51.33                              ACTIVE
+
+SAID            SASTATE            RPN   OS    MODE
+SCTP2_STPVAL3   ASSOCESTABL        1024  2     PEER
+
+RIP                                      RIPSTATE
+192.168.42.220                           ACTIVE
+192.168.42.252                           ACTIVE
+
+SAID            SASTATE            RPN   OS    MODE
+SCTP2_STPCCS3   ASSOCESTABL        1024  2     PEER
+
+RIP                                      RIPSTATE
+192.168.83.220                           ACTIVE
+192.168.83.252                           ACTIVE
+
+SAID            SASTATE            RPN   OS    MODE
+SCTP2_MGWPTO    ASSOCESTABL        1024  17    PEER
+
+RIP                                      RIPSTATE
+10.22.3.1                                ACTIVE
+10.22.3.33                               ACTIVE
+
+SAID            SASTATE            RPN   OS    MODE
+SCTP2_MGWLCH    ASSOCESTABL        1024  17    PEER
+
+RIP                                      RIPSTATE
+10.22.51.1                               ACTIVE
+10.22.51.33                              ACTIVE
+
+SAID            SASTATE            RPN   OS    MODE
+SCTP2_MGWVRA    ASSOCESTABL        1024  17    PEER
+
+RIP                                      RIPSTATE
+10.23.3.1                                ACTIVE
+10.23.3.33                               ACTIVE
+
+SAID            SASTATE            RPN   OS    MODE
+SCTP2_MGWSCR    ASSOCESTABL        1024  17    PEER
+
+RIP                                      RIPSTATE
+10.23.51.1                               ACTIVE
+10.23.51.33                              ACTIVE
+
+SAID            SASTATE            RPN   OS    MODE
+SCTP2_MGWMBO    ASSOCESTABL        1024  17    PEER
+
+RIP                                      RIPSTATE
+10.23.35.1                               ACTIVE
+10.23.35.33                              ACTIVE
+
+SAID            SASTATE            RPN   OS    MODE
+SCTP2_MGWACA    ASSOCESTABL        1024  17    PEER
+
+RIP                                      RIPSTATE
+10.22.163.1                              ACTIVE
+10.22.163.33                             ACTIVE
+
+SAID            SASTATE            RPN   OS    MODE
+SCTP2_MGWBT4    ASSOCESTABL        1024  17    PEER
+
+RIP                                      RIPSTATE
+10.22.139.1                              ACTIVE
+10.22.139.33                             ACTIVE
+
+SAID            SASTATE            RPN   OS    MODE
+SCTP2_MGWSFA    ASSOCESTABL        1024  17    PEER
+
+RIP                                      RIPSTATE
+10.23.163.1                              ACTIVE
+10.23.163.33                             ACTIVE
+
+SAID            SASTATE            RPN   OS    MODE
+SCTP2_MGWMCY    ASSOCESTABL        1024  17    PEER
+
+RIP                                      RIPSTATE
+10.23.147.1                              ACTIVE
+10.23.147.33                             ACTIVE
+
+SAID            SASTATE            RPN   OS    MODE
+SCTP2_MGWVAL    ASSOCESTABL        1024  17    PEER
+
+RIP                                      RIPSTATE
+10.23.131.1                              ACTIVE
+10.23.131.33                             ACTIVE
+
+SAID            SASTATE            RPN   OS    MODE
+SCTP2_MGWCC2    ASSOCESTABL        1024  17    PEER
+
+RIP                                      RIPSTATE
+10.24.3.1                                ACTIVE
+10.24.3.33                               ACTIVE
+
+SAID            SASTATE            RPN   OS    MODE
+SCTP2_MGWCCS    ASSOCESTABL        1024  17    PEER
+
+RIP                                      RIPSTATE
+10.24.19.1                               ACTIVE
+10.24.19.33                              ACTIVE
+
+SAID            SASTATE            RPN   OS    MODE
+SCTP2_STPVAL    ASSOCESTABL        1029  2     PEER
+
+RIP                                      RIPSTATE
+192.168.42.212                           ACTIVE
+192.168.42.244                           ACTIVE
+
+SAID            SASTATE            RPN   OS    MODE
+SCTP2_STPCCS    ASSOCESTABL        1029  2     PEER
+
+RIP                                      RIPSTATE
+192.168.83.212                           ACTIVE
+192.168.83.244                           ACTIVE
+
+EPID    EPSTATE         LPN              USER
+SCTP1   IN SERVICE      1024             M3UA
+
+LIP
+10.23.131.6
+10.23.131.38
+
+SAID            SASTATE            RPN   OS    MODE
+SCTP1_BSCSC2    ASSOCESTABL        2905  17    PEER
+
+RIP                                      RIPSTATE
+10.23.51.241                             ACTIVE
+10.23.51.245                             ACTIVE
+
+SAID            SASTATE            RPN   OS    MODE
+SCTP1_BSCMC2    ASSOCESTABL        2913  17    PEER
+
+RIP                                      RIPSTATE
+10.23.147.241                            ACTIVE
+10.23.147.245                            ACTIVE
+
+SAID            SASTATE            RPN   OS    MODE
+SCTP1_BSCMBO    ASSOCESTABL        1024  17    PEER
+
+RIP                                      RIPSTATE
+10.23.35.10                              ACTIVE
+10.23.35.42                              ACTIVE
+
+SAID            SASTATE            RPN   OS    MODE
+SCTP1_MGWMB2    ASSOCESTABL        1024  17    PEER
+
+RIP                                      RIPSTATE
+10.23.19.33                              ACTIVE
+10.23.19.65                              ACTIVE
+
+SAID            SASTATE            RPN   OS    MODE
+SCTP1_BSCMCY    ASSOCESTABL        1032  17    PEER
+
+RIP                                      RIPSTATE
+10.23.147.93                             ACTIVE
+10.23.147.125                            ACTIVE
+
+SAID            SASTATE            RPN   OS    MODE
+SCTP1_BSCSFA    ASSOCESTABL        1032  17    PEER
+
+RIP                                      RIPSTATE
+10.23.163.97                             ACTIVE
+10.23.163.129                            ACTIVE
+
+SAID            SASTATE            RPN   OS    MODE
+SCTP1_BSCSCR    ASSOCESTABL        1032  17    PEER
+
+RIP                                      RIPSTATE
+10.23.51.93                              ACTIVE
+10.23.51.125                             ACTIVE
+
+SAID            SASTATE            RPN   OS    MODE
+SCTP1_BSCVRA    ASSOCESTABL        1032  17    PEER
+
+RIP                                      RIPSTATE
+10.23.3.93                               ACTIVE
+10.23.3.125                              ACTIVE
+
+SAID            SASTATE            RPN   OS    MODE
+SCTP1_BSCLCH    ASSOCESTABL        1032  17    PEER
+
+RIP                                      RIPSTATE
+10.22.51.93                              ACTIVE
+10.22.51.125                             ACTIVE
+
+SAID            SASTATE            RPN   OS    MODE
+SCTP1_BSCBTO    ASSOCESTABL        1032  17    PEER
+
+RIP                                      RIPSTATE
+10.22.139.93                             ACTIVE
+10.22.139.125                            ACTIVE
+
+SAID            SASTATE            RPN   OS    MODE
+SCTP1_MGWPLM    ASSOCESTABL        1024  17    PEER
+
+RIP                                      RIPSTATE
+10.22.19.1                               ACTIVE
+10.22.19.33                              ACTIVE
+
+SAID            SASTATE            RPN   OS    MODE
+SCTP1_MGWCC3    ASSOCESTABL        1024  17    PEER
+
+RIP                                      RIPSTATE
+10.24.51.1                               ACTIVE
+10.24.51.33                              ACTIVE
+
+SAID            SASTATE            RPN   OS    MODE
+SCTP1_STPVAL3   ASSOCESTABL        1024  2     PEER
+
+RIP                                      RIPSTATE
+192.168.42.219                           ACTIVE
+192.168.42.251                           ACTIVE
+
+SAID            SASTATE            RPN   OS    MODE
+SCTP1_STPCCS3   ASSOCESTABL        1024  2     PEER
+
+RIP                                      RIPSTATE
+192.168.83.219                           ACTIVE
+192.168.83.251                           ACTIVE
+
+SAID            SASTATE            RPN   OS    MODE
+SCTP1_MGWPTO    ASSOCESTABL        1024  17    PEER
+
+RIP                                      RIPSTATE
+10.22.3.1                                ACTIVE
+10.22.3.33                               ACTIVE
+
+SAID            SASTATE            RPN   OS    MODE
+SCTP1_MGWLCH    ASSOCESTABL        1024  17    PEER
+
+RIP                                      RIPSTATE
+10.22.51.1                               ACTIVE
+10.22.51.33                              ACTIVE
+
+SAID            SASTATE            RPN   OS    MODE
+SCTP1_MGWVRA    ASSOCESTABL        1024  17    PEER
+
+RIP                                      RIPSTATE
+10.23.3.1                                ACTIVE
+10.23.3.33                               ACTIVE
+
+SAID            SASTATE            RPN   OS    MODE
+SCTP1_MGWSCR    ASSOCESTABL        1024  17    PEER
+
+RIP                                      RIPSTATE
+10.23.51.1                               ACTIVE
+10.23.51.33                              ACTIVE
+
+SAID            SASTATE            RPN   OS    MODE
+SCTP1_MGWMBO    ASSOCESTABL        1024  17    PEER
+
+RIP                                      RIPSTATE
+10.23.35.1                               ACTIVE
+10.23.35.33                              ACTIVE
+
+SAID            SASTATE            RPN   OS    MODE
+SCTP1_MGWACA    ASSOCESTABL        1024  17    PEER
+
+RIP                                      RIPSTATE
+10.22.163.1                              ACTIVE
+10.22.163.33                             ACTIVE
+
+SAID            SASTATE            RPN   OS    MODE
+SCTP1_MGWBT4    ASSOCESTABL        1024  17    PEER
+
+RIP                                      RIPSTATE
+10.22.139.1                              ACTIVE
+10.22.139.33                             ACTIVE
+
+SAID            SASTATE            RPN   OS    MODE
+SCTP1_MGWSFA    ASSOCESTABL        1024  17    PEER
+
+RIP                                      RIPSTATE
+10.23.163.1                              ACTIVE
+10.23.163.33                             ACTIVE
+
+SAID            SASTATE            RPN   OS    MODE
+SCTP1_MGWMCY    ASSOCESTABL        1024  17    PEER
+
+RIP                                      RIPSTATE
+10.23.147.1                              ACTIVE
+10.23.147.33                             ACTIVE
+
+SAID            SASTATE            RPN   OS    MODE
+SCTP1_MGWVAL    ASSOCESTABL        1024  17    PEER
+
+RIP                                      RIPSTATE
+10.23.131.1                              ACTIVE
+10.23.131.33                             ACTIVE
+
+SAID            SASTATE            RPN   OS    MODE
+SCTP1_MGWCC2    ASSOCESTABL        1024  17    PEER
+
+RIP                                      RIPSTATE
+10.24.3.1                                ACTIVE
+10.24.3.33                               ACTIVE
+
+SAID            SASTATE            RPN   OS    MODE
+SCTP1_MGWCCS    ASSOCESTABL        1024  17    PEER
+
+RIP                                      RIPSTATE
+10.24.19.1                               ACTIVE
+10.24.19.33                              ACTIVE
+
+SAID            SASTATE            RPN   OS    MODE
+SCTP1_STPVAL    ASSOCESTABL        1029  2     PEER
+
+RIP                                      RIPSTATE
+192.168.42.211                           ACTIVE
+192.168.42.243                           ACTIVE
+
+SAID            SASTATE            RPN   OS    MODE
+SCTP1_STPCCS    ASSOCESTABL        1029  2     PEER
+
+RIP                                      RIPSTATE
+192.168.83.211                           ACTIVE
+192.168.83.243                           ACTIVE
+
+
+END
+
+<IHSTP:IPPORT=ALL;
+IP PORT STATE
+
+IPPORT         OPSTATE  BLSTATE
+IP-0-2         BUSY     
+IP-1-2         BUSY     
+IP-2-2         BUSY     
+IP-3-2         BUSY     
+IP-4-2         BUSY     
+IP-5-2         BUSY     
+IP-6-2         BUSY     
+IP-7-2         BUSY     
+
+END
+
+<STRSP:R=ALL;
+DEVICE STATE SURVEY
+R               NDV        NOCC        NIDL        NBLO  RSTAT
+CCSBICO        2336         210        2126           0  NORES
+CCSBICI        2336         210        2126           0  NORES
+BT4BICO        2336        1134        1202           0  NORES
+BT4BICI        2336        1134        1202           0  NORES
+MC3BICO        2336        1717         619           0  NORES
+MC3BICI        2336        1717         619           0  NORES
+MA4BICO        4800        2712        2088           0  NORES
+MA4BICI        4800        2712        2088           0  NORES
+LC3BICO        2335         114        2221           0  NORES
+LC3BICI        2335         114        2221           0  NORES
+PT3BICO        1376         100        1276           0  NORES
+PT3BICI        1376         100        1276           0  NORES
+MBOMSLO           0           0           0           0  NORES
+MBOMSL0           0           0           0           0  NORES
+BTOBICO        4800         333        4467           0  NORES
+BTOBICI        4800         333        4467           0  NORES
+LCHBICO        4800         287        4513           0  NORES
+LCHBICI        4800         287        4513           0  NORES
+SCRMSM1        2139        1595         544           0  NORES
+SCRMSMI        2139        1595         544           0  NORES
+VA2TMCO           0           0           0           0  NORES
+VA2TMCI           0           0           0           0  NORES
+MA2TMCO        1302         477         825           0  NORES
+MA2TMCI        1302         477         825           0  NORES
+SFATMCO           0           0           0           0  NORES
+SFATMCI           0           0           0           0  NORES
+LC2TMCO           0           0           0           0  NORES
+LC2TMCI           0           0           0           0  NORES
+ACATMCO           0           0           0           0  NORES
+ACATMCI           0           0           0           0  NORES
+VRATMCO         465         245         220           0  NORES
+VRATMCI         465         245         220           0  NORES
+SC2TMCO           0           0           0           0  NORES
+SC2TMCI           0           0           0           0  NORES
+VALCTVO        2945        1199        1746           0  NORES
+VALCTVI        2945        1199        1746           0  NORES
+VALP21O         124          15         109           0  NORES
+VALP21I         124          15         109           0  NORES
+VAL611O         186          37         149           0  NORES
+VAL611I         186          37         149           0  NORES
+VALPP5O          62           5          57           0  NORES
+VALPP5I          62           5          57           0  NORES
+TCIAL1           34          34           0           0  NORES
+TCONI          1024           0        1024           0  NORES
+TESTO             1           0           1           0  NORES
+TESTI             1           0           1           0  NORES
+MB2TMCO        1863         517        1346           0  NORES
+PP5MGWO           8           8           0           0  NORES
+MB2TMCI        1863         517        1346           0  NORES
+MA3TMCO        1395         663         732           0  NORES
+MA3TMCI        1395         663         732           0  NORES
+MC4BICO        4800         862        3938           0  NORES
+MC4BICI        4800         862        3938           0  NORES
+SC3TMCO         217         214           3           0  NORES
+SC3TMCI         217         214           3           0  NORES
+MBOMSM1        3100        2269         831           0  NORES
+MBOMSMI        3100        2269         831           0  NORES
+CC2BICO       12800         834       11966           0  NORES
+CC2BICI       12800         834       11966           0  NORES
+PROMGWO          80          80           0           0  NORES
+END
+<BLORP;
+BLOCKED ROUTES
+ROUTE    BLT
+NONE
+END
+
+<BLURP:R=ALL;
+BLOCKING SUPERVISION DATA 
+R        LVB                        ACL  NDV      ACTIVE
+VA2TMCO      142      356      713  A3         0  NO
+VA2TMCI      142      356      713  A3         0  NO
+MA2TMCO      130      325      651  A3      1302  YES
+MA2TMCI      130      325      651  A3      1302  YES
+SFATMCO       31       77      155  A3         0  YES
+SFATMCI       31       77      155  A3         0  YES
+VRATMCO      108      271      542  A3       465  YES
+VRATMCI      108      271      542  A3       465  YES
+SC2TMCO      148      372      744  A3         0  YES
+SC2TMCI      148      372      744  A3         0  YES
+VALCTVO      294      736     1472  A3      2945  YES
+VALCTVI      294      736     1472  A3      2945  YES
+VALP21O       12       31       62  A3       124  YES
+VALP21I       12       31       62  A3       124  YES
+VAL611O       18       46       93  A3       186  YES
+VAL611I       18       46       93  A3       186  YES
+VALPP5O        6       15       31  A3        62  YES
+VALPP5I        6       15       31  A3        62  YES
+MB2TMCO      186      465      931  A3      1863  YES
+MB2TMCI      186      465      931  A3      1863  YES
+MA3TMCO      139      348      697  A3      1395  YES
+MA3TMCI      139      348      697  A3      1395  YES
+SC3TMCO       21       54      108  A3       217  YES
+SC3TMCI       21       54      108  A3       217  YES
+MBOMSM1       31      782     1565  A3      3100  YES
+MBOMSMI       31      782     1565  A3      3100  YES
+END
+
+<FAIAP:R=ALL;
+SIGNALLING FAULT ALARMS FOR DEVICES
+
+ROUTE           ACL     DEVICE       FC
+
+
+MA3TMCO
+MA3TMCI         A2      UPDR-13125    248
+                        UPDR-13126    248
+                        UPDR-13135    248
+                        UPDR-13136    248
+                        UPDR-13138    248
+                        UPDR-13145    248
+                        UPDR-13146    248
+                        UPDR-22609    248
+                        UPDR-22611    248
+                        UPDR-22613    248
+                        UPDR-22623    248
+                        UPDR-22625    248
+                        UPDR-22626    248
+                        UPDR-22627    248
+                        UPDR-22628    248
+                        UPDR-22629    248
+                        UPDR-22630    248
+                        UPDR-22631    248
+                        UPDR-22632    248
+                        UPDR-22633    248
+                        UPDR-22634    248
+                        UPDR-22635    248
+                        UPDR-22636    248
+                        UPDR-22637    248
+                        UPDR-22638    248
+                        UPDR-22639    248
+                        UPDR-22640    248
+                        UPDR-22641    248
+                        UPDR-22644    248
+                        UPDR-22645    248
+                        UPDR-22646    248
+                        UPDR-22647    248
+                        UPDR-22648    248
+                        UPDR-22649    248
+                        UPDR-22650    248
+                        UPDR-22652    248
+                        UPDR-22653    248
+                        UPDR-22654    248
+                        UPDR-22655    248
+
+MB2TMCO
+MB2TMCI         A2      UPDR-20833    248
+                        UPDR-20834    248
+                        UPDR-20835    248
+                        UPDR-20865    248
+                        UPDR-20866    248
+                        UPDR-20867    248
+                        UPDR-20868    248
+                        UPDR-20869    248
+                        UPDR-20870    248
+                        UPDR-20871    248
+                        UPDR-20872    248
+                        UPDR-20874    248
+                        UPDR-20875    248
+                        UPDR-20876    248
+                        UPDR-20877    248
+                        UPDR-20878    248
+                        UPDR-20879    248
+                        UPDR-20880    248
+                        UPDR-20881    248
+                        UPDR-20882    248
+                        UPDR-20883    248
+                        UPDR-20884    248
+                        UPDR-20885    248
+                        UPDR-20886    248
+                        UPDR-20887    248
+                        UPDR-20888    248
+                        UPDR-20889    248
+                        UPDR-20890    248
+                        UPDR-20891    248
+                        UPDR-20892    248
+                        UPDR-20893    248
+                        UPDR-20894    248
+                        UPDR-20895    248
+                        UPDR-20897    248
+                        UPDR-20898    248
+                        UPDR-20899    248
+                        UPDR-20900    248
+                        UPDR-20901    248
+                        UPDR-20902    248
+                        UPDR-20904    248
+                        UPDR-20905    248
+                        UPDR-20906    248
+                        UPDR-20907    248
+                        UPDR-20908    248
+                        UPDR-20909    248
+                        UPDR-20910    248
+                        UPDR-20911    248
+                        UPDR-20912    248
+                        UPDR-20913    248
+                        UPDR-20914    248
+                        UPDR-20915    248
+                        UPDR-20916    248
+                        UPDR-20917    248
+                        UPDR-20918    248
+                        UPDR-20919    248
+                        UPDR-20920    248
+                        UPDR-20921    248
+                        UPDR-20922    248
+                        UPDR-20923    248
+                        UPDR-20924    248
+                        UPDR-20925    248
+                        UPDR-20926    248
+                        UPDR-20927    248
+                        UPDR-20836    248
+                        UPDR-20837    248
+                        UPDR-20838    248
+                        UPDR-20839    248
+                        UPDR-20840    248
+                        UPDR-20841    248
+                        UPDR-20842    248
+                        UPDR-20843    248
+                        UPDR-20844    248
+                        UPDR-20845    248
+                        UPDR-20846    248
+                        UPDR-20847    248
+                        UPDR-20848    248
+                        UPDR-20849    248
+                        UPDR-20850    248
+                        UPDR-20851    248
+                        UPDR-20852    248
+                        UPDR-20854    248
+                        UPDR-20855    248
+                        UPDR-20856    248
+                        UPDR-20857    248
+                        UPDR-20858    248
+                        UPDR-20859    248
+                        UPDR-20860    248
+                        UPDR-20861    248
+                        UPDR-20862    248
+                        UPDR-20863    248
+
+MA2TMCO
+MA2TMCI         A2      UPDR-65       248
+                        UPDR-66       248
+                        UPDR-69       248
+                        UPDR-70       248
+                        UPDR-72       248
+                        UPDR-76       248
+                        UPDR-80       248
+                        UPDR-82       248
+                        UPDR-85       248
+                        UPDR-92       248
+                        UPDR-94       248
+                        UPDR-95       248
+                        UPDR-106      248
+                        UPDR-113      248
+                        UPDR-118      248
+                        UPDR-11169    248
+                        UPDR-11170    248
+                        UPDR-11171    248
+                        UPDR-11172    248
+                        UPDR-11173    248
+                        UPDR-11174    248
+                        UPDR-11175    248
+                        UPDR-11176    248
+                        UPDR-11177    248
+                        UPDR-11178    248
+                        UPDR-11180    248
+                        UPDR-11181    248
+                        UPDR-11182    248
+                        UPDR-11183    248
+                        UPDR-11184    248
+                        UPDR-11185    248
+                        UPDR-11187    248
+                        UPDR-11188    248
+                        UPDR-11189    248
+                        UPDR-11190    248
+                        UPDR-11191    248
+                        UPDR-11192    248
+                        UPDR-11193    248
+                        UPDR-11194    248
+                        UPDR-11195    248
+                        UPDR-11196    248
+                        UPDR-11197    248
+                        UPDR-11199    248
+                        UPDR-11249    248
+                        UPDR-11250    248
+                        UPDR-11251    248
+                        UPDR-11255    248
+                        UPDR-11256    248
+END
+
+<MGSVP;
+MT MOBILE SUBSCRIBER SURVEY
+
+HLRADDR             NSUB       NSUBA
+4-584260001050       384111     353041
+4-316540791020            8          6
+4-380630010101            1          1
+4-96550099954             1          1
+4-14047259748             1          1
+4-2975989810              1          0
+4-420608005620            1          1
+4-15875800121             1          1
+4-861854324000            1          1
+4-13603399728             2          0
+4-41794992015             1          1
+4-491720097296            1          0
+4-48790993030             1          0
+4-573003690000          639        406
+4-491720097796            1          1
+4-351911390010            2          2
+4-18686880019             1          0
+4-97477920002             1          1
+4-13603399729             2          2
+4-861555414000            1          1
+4-79184790010             2          2
+4-316540942005            1          1
+4-34622993111             1          1
+4-573103150003            1          1
+4-40722000300             1          0
+
+TOTNSUB
+384784
+
+TOTNSUBA
+353472
+
+NSUBPR
+0
+
+NSUBXP
+0
+
+END
+<MGARP:NLOG=10;
+MT FAILED AUTHENTICATION LOG DETAILS
+
+IMSI          MSISDN          REJECT CGI                 ACCT DATE   TIME
+734061010057955
+                              NO     734-06-3031-1491    LUN  150831 1636
+734061042275069
+                              NO     734-06-3015-9981    LUN  150831 1623
+734061023355750
+                              NO     734-06-3024-1863    LUN  150831 1620
+734061043507412
+                              NO     734-06-3003-9851    LUN  150831 1610
+734061044761768
+              584169030057    NO     734-06-3050-6073    LUN  150831 1601
+734061042275069
+                              NO     734-06-3015-9981    LUN  150831 1553
+734061003223046
+                              NO     734-06-3018-10732   LUN  150831 1549
+734061042275069
+                              NO     734-06-3015-9981    LUN  150831 1540
+734061042275069
+                              NO     734-06-3015-9983    LUN  150831 1530
+734061005813940
+              584160756280    NO     734-06-3042-6263    MSA  150831 1526
+END
+
+<STBSP:DETY=ALL;
+DEVICE STATE DETAILS
+DEV             STATE BLS  FTYPE  ADM  ABS                        LIST
+NONE
+END
+<SYBFP:FILE;
+ORDERED
+
+<
+
+WO      MSSVA3_MI0313A_V1         AD-698  TIME 150831 1638  PAGE    1
+SYSTEM BACKUP FILES
+
+FILE                           EXCHANGE
+RELFSW0                        MSSVA3_MI0313A_V1
+
+SUBFILE          OUTPUTTIME    COMMANDLOG
+SDD              150831 0200   -
+LDD1             150831 0200   0002209
+LDD2             150830 0200   0002208
+PS               150827 0051   -
+RS               150827 0051   -
+
+
+FILE                           EXCHANGE
+RELFSW1                        MSSVA3_MI0313A_V1
+
+SUBFILE          OUTPUTTIME    COMMANDLOG
+SDD              150819 2206   -
+LDD1             150819 2206   0002203
+PS               150819 2205   -
+RS               150819 2206   -
+
+
+FILE                           EXCHANGE
+RELFSW2                        MSSVA3_MI0313A_V1
+
+SUBFILE          OUTPUTTIME    COMMANDLOG
+SDD              150805 0200   -
+LDD1             150805 0200   0002186
+LDD2             150804 0200   0002185
+PS               150721 2234   -
+RS               150721 2234   -
+
+
+FILE                           EXCHANGE
+RELFSW95                       MSSVA3_MI04132_V2
+
+SUBFILE          OUTPUTTIME    COMMANDLOG
+SDD              130205 0330   -
+LDD1             130205 0330   0001239
+PS               130205 0330   -
+RS               130205 0330   -
+
+
+FILE                           EXCHANGE
+RELFSW96                       MSSVA3_MI02141_V1
+
+SUBFILE          OUTPUTTIME    COMMANDLOG
+SDD              130606 0002   -
+LDD1             130606 0002   0001355
+PS               130606 0002   -
+RS               130606 0002   -
+
+
+FILE                           EXCHANGE
+RELFSW97                       -
+
+FAULT CODE 5
+ERROR SEIZING BACKUP FILE
+END
+
+
+WO      MSSVA3_MI0313A_V1         AD-698  TIME 150831 1638  PAGE    1

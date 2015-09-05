@@ -24,11 +24,16 @@ import os
 from itsdangerous import URLSafeTimedSerializer
 from flask.ext.mail import Mail, Message
 
+#Time Imports
+from datetime import datetime
+
 # Global Vars
 global filepath
 
 # Excel File Imports
 from openpyxl import load_workbook
+from openpyxl.styles import Font, colors
+from openpyxl.drawing import Image
 
 mail = Mail()
 application = Flask(__name__)
@@ -418,8 +423,37 @@ def reading():
 	global colGen
 	global countApzA1
 	global countLines
+	global ok_caclp
 	global ok_dpwsp
+	global ok_plldp
 	global ok_exrpp
+	global ok_exemp
+	global ok_ntstp
+	global ok_syrip
+	global ok_apamp
+	global ok_m3rsp
+	global ok_m3asp
+	global ok_ihalp
+	global ok_ihstp
+	global ok_strsp
+	global ok_blorp 
+	global ok_blurp
+	global ok_faiap
+	global ok_mgsvp
+	global ok_mgarp
+	global ok_stbsp
+	global ok_sybfp
+	
+	global ok_prcstate
+	global ok_hostname
+	global ok_alist
+	global ok_cluster_res
+	global ok_cluster_group
+	global ok_cdhls
+	global ok_cdhver
+	global ok_afpls
+	global ok_aloglist
+	
 	
 	datafile = file(filepath)
 	colGen = []
@@ -431,12 +465,27 @@ def reading():
 	allip = False
 	countApzA1 = 0
 	
-	calp = False
+	caclp = False
+	count_caclp = 0
+	mss_date = 0
+	mss_time = 0
+	day = ' '
+	month = ' '
+	year = ' '
+	hour = ' '
+	mins = ' '
+	sec = ' '
+	y = ' ' 
 	
 	dpwsp = False
+	count_dpwsp = 0
 	ok_dpwsp = False
 	
 	plldp = False
+	count_plldp = 0
+	col_plldp = []
+	col_plldp2 = []
+	ok_plldp = False
 	
 	exrpp= False
 	count_exrpp = 0
@@ -451,25 +500,122 @@ def reading():
 	ok_ntstp = False
 	
 	syrip = False
-	
+	count_syrip = 0
+	ok_syrip = False
 	
 	apamp = False
 	count_apamp = 0
 	count_pas = 0
 	count_act = 0
+	ctrl_apamp = False
+	ok_apamp = False
 	
 	m3rsp = False
+	count_m3rsp = 0
+	ok_m3rsp = False
+	
 	m3asp = False
+	count_m3asp = 0
+	ok_m3asp = False
+	
 	ihalp = False
+	ok_ihalp = False
+	count_ihalp_rip = 0
+	count_ihalp_sas = 0
+	ctr_ihalp_rip = False
+	ctr_ihalp_sas = False
+	
 	ihstp = False
+	count_ihstp = 0
+	ok_ihstp = False
+	
 	strsp = False
+	count_strsp = 0
+	col_strsp = []
+	col_strp2 = []
+	b = False
+	w = 0
+	j = 0
+	ok_strsp = False
+	
 	blorp = False
+	count_blorp = 0
+	ok_blorp = False
+	
 	blurp = False
+	count_blurp = 0
+	ok_blurp = False
+	
 	faiap = False
+	ok_faiap = False
+	count_faiap = 0
+	
 	mgsvp = False
+	count_mgsvp = 0
+	ok_mgsvp = False
+	
 	mgarp = False
+	ok_mgarp = False
+	count_mgarp = 0
+	count_mgarp_aux = 0
+	col_mgarp = []
+	
 	stbsp = False
+	count_stbsp = 0
+	ok_stbsp = False
+	
 	sybfp = False
+	count_ssd = 0
+	relfsw0_date = ' ' 
+	relfsw0_time = ' '
+	ok_sybfp = False
+	
+	
+	
+	#----------------------------
+	
+	prcstate = False
+	count_prcstate = 0
+	ok_prcstate = False
+	
+	hostname = False
+	count_hostname = 0
+	ok_hostname = False
+	
+	alist = False
+	ok_alist = False
+	count_alist = 0
+
+	cluster_res = False
+	count_cluster_res = 0
+	ok_cluster_res = False
+	
+	cluster_group = False
+	count_cluster_group = 0
+	
+	cdhls = False
+	count_cdhls = 0
+	ok_cdhls = False
+	
+	cdhver = False
+	count_cdhver = 0
+	ok_cdhver = False
+	
+	afpls = False
+	count_afpls_ctr = 0
+	count_afpls = 0
+	col_afpls = [] 
+	col_afpls2 = []
+	ok_afpls = False
+	
+		
+	aloglist = False
+	count_aloglist = 0
+	ok_aloglist = False
+	
+	#----------
+	
+	
 	
 	for line in datafile:
 		countLines += 1
@@ -480,7 +626,7 @@ def reading():
 		
 		if "END" in line:
 			allip = False
-			calp = False
+			caclp = False
 			dpwsp = False
 			plldp = False
 			exrpp = False
@@ -511,19 +657,115 @@ def reading():
 		if 'A1/APZ' in line:
 			countApzA1 += 1
 		#----------	 
+		
+	
+		# Proceso alarma Caclp
+		if caclp == True:
+			count_caclp +=1
+			if count_caclp == 5:
+				w = line.split()
+				mss_date = int(w[1])
+				mss_time = int(w[2])
+				i = datetime.now().timetuple()
+				day = str(i[2])
+				month = str(i[1])
+				#Agrega 0 a mes o día menor a 10
+				if i[2] < 10:
+					day = '0' + str(i[2])
+	
+				if i[1] <10:
+					month = '0' + str(i[1])
+				#Deja solo ultimos 2 chars al año
+				y = str(i[0])
+				year = y[2] +y[3]
+		
+				#Guarda Fecha estilo 150826
+				date = int(year + month + day)
+				t = date
+				hour = str(i[3])
+				mins = str(i[4])
+				sec = str(i[5])
+				#Agrega 0 a hora, min y seg si es menor a 10
+				if i[3] < 10:
+					hour = '0' + str(i[3])
+				if i[4] < 10:
+					mins =  '0' + str(i[4])
+				if i[5] < 10:
+					sec = '0' + str(i[5])
 			
+				#Guarda Hora estilo 150826
+				time = int(hour + mins + sec)
+					
+				if date == mss_date:
+					if time - mss_time > 5 or mss_time - time > 5:
+						ok_caclp = False
+						caclp = False
+					else:
+						ok_caclp = True
+				else:
+					ok_caclp = False
+					caclp = False
+			
+		
 		if '<CACLP;' in line:
-			calp = True
+			caclp = True
+			count_caclp +=1
+		#----------	
+			
+			
 			
 		# Proceso alarma DPWSP	
+		if dpwsp == True:
+			count_dpwsp += 1
+			if 'CPSTATE' in line and count_dpwsp == 2:
+				ok_dpwsp = True
+			else: 
+				ok_dpwsp = False
+				
+			if 'MAU  SB SBSTATE' in line and count_dpwsp == 3:
+				ok_dpwsp = True
+			else: 
+				ok_dpwsp = False
+				
+			if 'NRM  B  WO' in line and count_dpwsp == 4:
+				ok_dpwsp = True
+			else: 
+				ok_dpwsp = False
+			
 		if '<DPWSP;' in line:
 			dpwsp = True
-		if '<DPWSP;' and 'NRM  B  WO' in line:
-			ok_dpwsp = True
+			count_dpwsp += 1
 		#----------	
+		
+		# Proceso alarma PLLDP
+		if plldp == True:
+			count_plldp += 1
+			if count_plldp >= 4:
+				for i in line:
+					if i == ' ':
+						if b == True:
+							w = "".join(col_plldp2)
+							col_plldp.append(w)
+							j = 0
+							col = []
+							b = False
+							continue
+						else:
+							continue
+					col_plldp2.append(i)
+					b = True
+					j += 1
+				if col_plldp[2] <= "60":
+					ok_plldp = True
+				else:
+					ok_plldp = False
+					plldp = False
+				
 			
 		if '<PLLDP;' in line:
 			plldp = True
+			count_plldp += 1
+		#----------	
 		
 		# Proceso alarma EXRP
 		if exrpp == True:
@@ -552,7 +794,7 @@ def reading():
 					ok_exemp = False
 				
 		if '<EXEMP:rp=all,em=ALL;' in line:
-			exemp = True:
+			exemp = True
 			count_exemp += 1
 		#----------
 		
@@ -571,14 +813,24 @@ def reading():
 			ntstp = True
 			count_ntstp += 1
 		#----------
-			 
+		
+		# Proceso alarma SYRIP
+		if syrip == True:
+			count_syrip += 1
+			
+			if count_syrip >= 7:
+				ok_syrip = False
+				syrip = False
+		
 		if '<SYRIP:SURVEY;' in line:
 			syrip = True
+			count_syrip += 1
+		#----------
 		
 		# Proceso alarma APAMP
 		if apamp == True:
 			count_apamp += 1
-			if count_apamp += 3:
+			if count_apamp >= 3:
 				if 'PASSIVE' in line:
 					count_pas += 1
 				if 'ACTIVE' in line:
@@ -590,46 +842,455 @@ def reading():
 				
 		if 'DIRECTORY ADDRESS DATA' in line:
 			apamp = True
+			ctrl_apamp = True
 			count_apamp == 1
+		
+		if apamp == False and ctrl_apamp == True:
+			if count_pas == count_act:
+				ok_apamp = True
+			else:
+				 ok_apamp = False
 		#----------
 		
+		# Proceso alarma M3RSP
+		if m3rsp == True:
+			count_m3rsp += 1
+			if count_m3rsp >= 3:
+				w = line.split()
+				for i in w:
+					if i == 'RST':
+						ok_m3rsp = True
+						continue
+					if i == 'AVA':
+						continue
+					if i == 'EN-ACT-AVA':
+						continue
+					else:
+						ok_m3rsp = False
+						m3rsp = False
+					
+				
 		
 		if '<M3RSP:DEST=ALL;' in line:
 			m3rsp = True
-			
+			count_m3rsp += 1
+		#----------
+		
+		
+		# Proceso alarma M3ASP
+		if m3asp == True:
+			count_m3asp += 1
+			if count_m3asp >= 4:
+				w = line.split()
+				for i in w:
+					if i == 'ACT':
+						ok_m3asp = True
+					else:
+						ok_m3asp = False
+						m3asp = False
+					
 		if '<M3ASP;' in line:
 			m3asp = True
+			count_m3asp += 1
+		#----------
 		
-		if '<IHALP:EPID=ALL; ' in line:
+		
+		# Proceso alarma IHALP
+		if ihalp == True:
+			if ctr_ihalp_sas == True:
+				count_ihalp_sas += 1
+			
+			if 'SASTATE' in line:
+				ctr_ihalp_sas = True
+				count_ihalp_sas += 1
+			
+			if count_ihalp_sas == 2:
+				ctr_ihalp_sas = False
+				count_ihalp_sas = 0
+				if 'ASSOCESTABL' in line:
+					ok_ihalp = True
+				else:
+					ok_ihalp = False
+					ihalp = False
+			
+			if ctr_ihalp_rip == True:
+				count_ihalp_rip += 1
+			
+			if 'RIPSTATE' in line:
+				ctr_ihalp_rip = True
+				count_ihalp_rip += 1
+			
+			if count_ihalp_rip >=2 and count_ihalp_rip <=3:
+				if count_ihalp_rip ==3:
+					ctr_ihalp_rip = False
+					count_ihalp_rip = 0
+					
+				w = line.split()
+				if w[2] == 'ACTIVE':
+					ok_ihalp = True
+				else:
+					ok_ihalp = False
+					ihalp = False
+						
+					
+					
+		if '<IHALP:EPID=ALL;' in line:
 			ihalp = True
+			ok_ihalp = True
+		#----------
 		
+		
+		# Proceso alarma IHSTP
+		if ihstp == True:
+			count_ihstp += 1
+			if count_ihstp >= 4:
+				if 'BUSY' in line:
+					ok_ihstp = True
+				else:
+					ok_ihstp = False
+					ihstp = False
+					
 		if '<IHSTP:IPPORT=ALL;' in line:
 			ihstp = True
+			count_ihstp += 1
+		#----------
+		
+		
+		# Proceso alarma STRSP
+		
+		if strsp == True:
+			count_strsp += 1
+			if count_strsp >= 4:
+				w =line.split()
+				if w[5] == '0':
+					ok_strsp = True
+				else:
+					ok_strsp = False
+					strsp = False		
 		
 		if '<STRSP:R=ALL;' in line:
 			strsp = True
+			count_strsp += 1
+		#----------
 		
+		
+		
+		# Proceso alarma BLORP
+		if blorp == True:
+			count_blorp += 1
+			if count_blorp >= 4:
+				if 'NONE' in line:
+					ok_blorp = True
+					blorp = False
+				else:
+					ok_blorp = False 
+					blorp = False
+			
 		if '<BLORP;' in line:
 			blorp = True
+			count_blorp += 1
+		#----------
+		
+		# Proceso alarma BLURP
+		if blurp == True:
+			count_blurp += 1
+			if count_blurp >= 4:
+				w =line.split()
+				if w[7] == 'YES':
+					ok_blrup = True
+				else:
+					ok_blrup = False
+					blurp = False
 		
 		if '<BLURP:R=ALL;' in line:
 			blurp = True
+			count_blurp += 1
+		#----------
+		
+		
+		# Proceso alarma faiap
+		if faiap == True:
+			count_faiap += 1
+			if count_faiap  > 10:
+				ok_faiap = False
+				faiap = False
+			else:
+				ok_faiap = True
 		
 		if '<FAIAP:R=ALL;' in line:
 			faiap = True
-			
+			count_faiap += 1
+		#----------
+		
+		
+		
+		# Proceso alarma mgsvp
+		if mgsvp == True:
+			count_mgsvp += 1
+			if count_mgsvp > 10:
+				ok_mgsvp = True
+				mgsvp = False
+			else:
+				ok_mgsvp = False
+		
 		if '<MGSVP;' in line:
-			mgsvp = True	 
+			mgsvp = True
+			count_mgsvp += 1	 
+		#----------
+		
+		
+		
+		# Proceso alarma mgarp
+		if mgarp == True:
+			count_mgarp += 1
+			if count_mgarp%2 == 0 and count_mgarp > 2:
+				w = line.split()
+				col_mgarp.append(w[1])
+			if count_mgarp == 10:
+				for i in col_mgarp:
+					for j in col_mgarp:
+						if i == j:
+							count_mgarp_aux += 1
+					if count_mgarp_aux >= 2:
+						ok_mgarp = False
+						mgarp = False
+						break
+					else:
+						ok_mgarp = True
+					count_mgarp_aux = 0
+					
+				
 		
 		if '<MGARP:NLOG=10;' in line:
 			mgarp = True
+			count_mgarp += 1
+		#----------
 		
+		
+		# Proceso alarma stbsp
+		if stbsp == True:
+			count_stbsp += 1
+			if count_stbsp == 4:
+				if 'NONE' in line:
+					ok_stbsp = True
+				else :
+					ok_stbsp = False
+					stbsp = False
+			
 		if '<STBSP:DETY=ALL;' in line:
 			stbsp = True
+			count_stbsp += 1
+		#----------
 		
-		if '<SYBFP:FILE; ' in line:
+		
+		# Proceso alarma sybfp
+		if sybfp == True:
+			if 'SDD' in line:
+				count_ssd += 1
+				w = line.split()
+				i = w[2]
+				j = w[3]
+				if count_ssd == 1:
+					relfsw0_date = int(i)
+					relfsw0_time = int(j)
+					
+				if count_ssd >= 2:
+					if int(i) < relfsw0_date:
+						ok_sybfp = True
+					else: 
+						ok_sybfp = False
+					if int(i) == relfsw0_date and int(j) < relfsw0_time:
+						ok_sybfp = True
+					else: 
+						ok_sybfp = False
+						
+						
+		if '<SYBFP:FILE;' in line:
 			sybfp = True
+		#---------------------------------------------------------------
+		
+		if '>mml'  in line:
+			aloglist = False
+		
+		
+		# Proceso alarma aloglist
+		if aloglist == True:
+			if count_aloglist == 3:
+				w = line.split()
+				if w[1] == 'ACTIVE':
+					ok_aloglist = True
+				else:
+					ok_aloglist = False
+					aloglist = False
+					 
+		if '>aloglist' in line:
+			afpls = False
+			aloglist = True
+		#----------
+		
+		
+		# Proceso alarma afpls
+		if afpls == True and count_afpls_ctr == 1:
+			count_afpls += 1
+			if count_afpls >= 4:
+				w = line.split()
+				col_afpls.append(w[1])
+			if count_afpls == 15:
+				afpls = False
+				count_afpls = 0
+		
+		if afpls == True and count_afpls_ctr == 2:
+			count_afpls += 1
+			if count_afpls >= 4:
+				w = line.split()
+				col_afpls2.append(w[1])
+			if count_afpls == 15:
+				afpls = False
+				count_afpls = 0
+						
+		if '>afpls' in line:
+			count_afpls_ctr += 1
+			cdhver = False
+			afpls = True
+			count_afpls += 1
+		
+		#----------
+		
+		
+		
+		
+		# Proceso alarma cdhver
+		if cdhver == True:
+			count_cdhver += 1
+			if count_cdhver == 2:
+				if 'DESTINATION' and 'STATUS' in line:
+					ok_cdhver = True
+				else:
+					ok_cdhver = False
+			if count_cdhver == 3:
+				if 'RTRDEST' and 'OK' in line:
+					ok_cdhver = True
+				else:
+					ok_cdhver = False
 			
+		if '>cdhver' in line:
+			cdhls = False
+			cdhver = True
+			count_cdhver += 1
+		#----------
+		
+		
+		
+		# Proceso alarma cdhls
+		if cdhls == True:
+			count_cdhls += 1
+			if count_cdhls == 5:
+				if 'RTRDEST' and 'FTPV2' in line:
+					ok_cdhls = True
+				else:
+					ok_cdhls = False
+					cdhls = False
+					continue
+					
+			if count_cdhls == 6:
+				if 'STSDEST1' and 'FTPV2' in line:
+					ok_cdhls = True
+					cdhls = False
+					continue
+					
+				
+		if '>cdhls' in line:
+			cluster_group = False
+			cdhls = True
+			count_cdhls += 1
+		#----------
+			
+		
+		# Proceso alarma cluster group
+		if cluster_group == True:
+			count_cluster_group += 1
+		
+			if count_cluster_group >= 5:
+				if 'Online' in line:
+					ok_cluster_group = True
+				else:
+					ok_cluster_group = True
+					cluster_group = False
+		
+		
+		if '>cluster group' in line:
+			cluster_res = False
+			cluster_group = True
+			count_cluster_group += 1
+		#----------	
+		
+		# Proceso alarma cluster res
+		if cluster_res == True:
+			count_cluster_res += 1
+		
+			if count_cluster_res >= 5:
+				if 'Online' in line:
+					ok_cluster_res = True
+				else:
+					ok_cluster_res = False
+					cluster_res = False
+		
+		if '>cluster res' in line:
+			alist = False
+			cluster_res = True
+			count_cluster_res += 1
+		#----------	
+		
+		
+		# Proceso alarma alist
+		if alist == True:
+			count_alist += 1
+			if count_alist == 2:
+				if 'Alarm' in line:
+					ok_alist = False
+				else:
+					ok_alist = True
+					
+		if '>alist' in line:
+			hostname = False
+			alist = True
+			count_alist += 1
+		#----------	
+		
+		# Proceso alarma hostname
+		if hostname == True:
+			count_hostname += 1
+			if count_hostname == 2:
+				if 'MSSVA3APG40B' or 'MSSVA3APG40A' in line:
+					ok_hostname = True
+				else:
+					hostname = False
+					ok_hostname = False
+				
+		if '>hostname' in line:
+			prcstate = False
+			hostname = True
+			count_hostname += 1
+		#----------	
+		
+		# Proceso alarma pcrstate
+		if prcstate == True:
+			count_prcstate += 1
+			if count_prcstate == 2:
+				if 'active' in line:
+					ok_prcstate = True
+				else:
+					prcstate = False
+					ok_prcstate = False
+				
+		if '>prcstate' in line:
+			prcstate = True
+			count_prcstate += 1
+		#----------	
+		
+		
+		
+		
 	os.remove(filepath)	
 	
 	return render_template('reading-results.html', countLines=countLines,
@@ -644,49 +1305,279 @@ def processing():
 	global countApzA1
 	global heirFilePath
 	global countLines
+	global ok_caclp
 	global ok_dpwsp
+	global ok_plldp
 	global ok_exrpp
-	patternFilePath = os.path.join(application.config['UPLOAD_FOLDER'], "ModeloB.xlsx")
-	heirFilePath = os.path.join(application.config['UPLOAD_FOLDER'], "reporta/reporte.xlsx")
+	global ok_exemp
+	global ok_ntstp
+	global ok_syrip
+	global ok_apamp
+	global ok_m3rsp
+	global ok_m3asp
+	global ok_ihalp
+	global ok_ihstp
+	global ok_strsp
+	global ok_blorp 
+	global ok_blurp
+	global ok_faiap
+	global ok_mgsvp
+	global ok_mgarp
+	global ok_stbsp
+	global ok_sybfp
+	
+	global ok_prcstate
+	global ok_hostname
+	global ok_alist
+	global ok_cluster_res
+	global ok_cluster_group
+	global ok_cdhls
+	global ok_cdhver
+	global ok_afpls
+	global ok_aloglist
+	patternFilePath = os.path.join(application.config['UPLOAD_FOLDER'], "ModeloD.xlsx")
+	heirFilePath = os.path.join(application.config['UPLOAD_FOLDER'], "reporta/reporta.xlsx")
 	i = 0
 	j = 0
 	wb = load_workbook(patternFilePath)
 	ws = wb.get_sheet_by_name("logo")
 	ws2 = wb.get_sheet_by_name("MSS")
 	rows = countLines
-	x = "reporte.xlsx#logo!A1"
+	x = "reporta.xlsx#logo!A1"
 	
+	ok = Font(name='Arial', size= 8,color=colors.BLACK, bold=True)
+	not_ok = Font(name='Arial', size= 8,color=colors.RED, bold=True)	
 	for i in range(rows):
 		ws.cell(row=i+1, column=1).value = colGen[i]
-	
+	j=5
 	i = 0
-	rows = 56
+	rows = 57
 	for i in range(rows):
-		if i  == 16:
-			ws2.cell(row=i+1, column=5).hyperlink = (x)
+		if i  == 17:
+			ws2.cell(row=i+1, column=j+1).hyperlink = (x)
+			ws2.cell(row=i+1, column=j+1).value = '+Inf'
 			if countApzA1 >= 1:
-				ws2.cell(row=i+1, column=4).value = "NOT OK"
+				ws2.cell(row=i+1, column=j).value = "NOT OK"
+				ws2.cell(row=i+1, column=j).font = not_ok	
 			else:
-				ws2.cell(row=i+1, column=4).value = "OK"
+				ws2.cell(row=i+1, column=j).value = "OK"
+				ws2.cell(row=i+1, column=j).font = ok	
 			
-		if i >= 22 and i <= 41:
-			ws2.cell(row=i+1, column=5).hyperlink = (x)
+		if i >= 23 and i <= 42:
+			ws2.cell(row=i+1, column=j+1).hyperlink = (x)
+			ws2.cell(row=i+1, column=j+1).value = '+Inf'
 			if i == 23:
+				if ok_caclp == True:
+					ws2.cell(row=i+1, column=j).value = "OK"
+					ws2.cell(row=i+1, column=j).font = ok
+				else:
+					ws2.cell(row=i+1, column=j).value = "NOT OK"
+					ws2.cell(row=i+1, column=j).font = not_ok
+			if i == 24:
 				if ok_dpwsp == True:
-					ws2.cell(row=i+1, column=4).value = "OK"
+					ws2.cell(row=i+1, column=j).value = "OK"
+					ws2.cell(row=i+1, column=j).font = ok
 				else:
-					ws2.cell(row=i+1, column=4).value = "NOT OK"
+					ws2.cell(row=i+1, column=j).value = "NOT OK"
+					ws2.cell(row=i+1, column=j).font = not_ok
 			if i == 25:
-				if ok_exrpp == True:
-					ws2.cell(row=i+1, column=4).value = "OK"
+				if ok_plldp == True:
+					ws2.cell(row=i+1, column=j).value = "OK"
+					ws2.cell(row=i+1, column=j).font = ok
 				else:
-					ws2.cell(row=i+1, column=4).value = "NOT OK"
+					ws2.cell(row=i+1, column=j).value = "NOT OK"
+					ws2.cell(row=i+1, column=j).font = not_ok
+			if i == 26:
+				if ok_exrpp == True:
+					ws2.cell(row=i+1, column=j).value = "OK"
+					ws2.cell(row=i+1, column=j).font = ok
+				else:
+					ws2.cell(row=i+1, column=j).value = "NOT OK"
+					ws2.cell(row=i+1, column=j).font = not_ok
+			if i == 27:
+				if ok_exemp == True:
+					ws2.cell(row=i+1, column=j).value = "OK"
+					ws2.cell(row=i+1, column=j).font = ok
+				else:
+					ws2.cell(row=i+1, column=j).value = "NOT OK"
+					ws2.cell(row=i+1, column=j).font = not_ok
+			if i == 28:
+				if ok_ntstp == True:
+					ws2.cell(row=i+1, column=j).value = "OK"
+					ws2.cell(row=i+1, column=j).font = ok
+				else:
+					ws2.cell(row=i+1, column=j).value = "NOT OK"
+					ws2.cell(row=i+1, column=j).font = not_ok
+			if i == 29:
+				if ok_syrip == True:
+					ws2.cell(row=i+1, column=j).value = "OK"
+					ws2.cell(row=i+1, column=j).font = ok
+				else:
+					ws2.cell(row=i+1, column=j).value = "NOT OK"
+					ws2.cell(row=i+1, column=j).font = not_ok	
+			if i == 30:
+				if ok_apamp == True:
+					ws2.cell(row=i+1, column=j).value = "OK"
+					ws2.cell(row=i+1, column=j).font = ok
+				else:
+					ws2.cell(row=i+1, column=j).value = "NOT OK"
+					ws2.cell(row=i+1, column=j).font = not_ok
+			if i == 31:
+				if ok_m3rsp == True:
+					ws2.cell(row=i+1, column=j).value = "OK"
+					ws2.cell(row=i+1, column=j).font = ok
+				else:
+					ws2.cell(row=i+1, column=j).value = "NOT OK"
+					ws2.cell(row=i+1, column=j).font = not_ok
+			if i == 32:
+				if ok_m3asp == True:
+					ws2.cell(row=i+1, column=j).value = "OK"
+					ws2.cell(row=i+1, column=j).font = ok
+				else:
+					ws2.cell(row=i+1, column=j).value = "NOT OK"
+					ws2.cell(row=i+1, column=j).font = not_ok
+			if i == 33:
+				if ok_ihalp == True:
+					ws2.cell(row=i+1, column=j).value = "OK"
+					ws2.cell(row=i+1, column=j).font = ok
+				else:
+					ws2.cell(row=i+1, column=j).value = "NOT OK"
+					ws2.cell(row=i+1, column=j).font = not_ok
+			if i == 34:
+				if ok_ihstp == True:
+					ws2.cell(row=i+1, column=j).value = "OK"
+					ws2.cell(row=i+1, column=j).font = ok
+				else:
+					ws2.cell(row=i+1, column=j).value = "NOT OK"
+					ws2.cell(row=i+1, column=j).font = not_ok
+			if i == 35:
+				if ok_strsp == True:
+					ws2.cell(row=i+1, column=j).value = "OK"
+					ws2.cell(row=i+1, column=j).font = ok
+				else:
+					ws2.cell(row=i+1, column=j).value = "NOT OK"
+					ws2.cell(row=i+1, column=j).font = not_ok
+			if i == 36:
+				if ok_blorp == True:
+					ws2.cell(row=i+1, column=j).value = "OK"
+					ws2.cell(row=i+1, column=j).font = ok
+				else:
+					ws2.cell(row=i+1, column=j).value = "NOT OK"
+					ws2.cell(row=i+1, column=j).font = not_ok
+			if i == 37:
+				if ok_blurp == True:
+					ws2.cell(row=i+1, column=j).value = "OK"
+					ws2.cell(row=i+1, column=j).font = ok
+				else:
+					ws2.cell(row=i+1, column=j).value = "NOT OK"
+					ws2.cell(row=i+1, column=j).font = not_ok
+			if i == 38:
+				if ok_faiap == True:
+					ws2.cell(row=i+1, column=j).value = "OK"
+					ws2.cell(row=i+1, column=j).font = ok
+				else:
+					ws2.cell(row=i+1, column=j).value = "NOT OK"
+					ws2.cell(row=i+1, column=j).font = not_ok	
+			if i == 39:
+				if ok_mgsvp == True:
+					ws2.cell(row=i+1, column=j).value = "OK"
+					ws2.cell(row=i+1, column=j).font = ok
+				else:
+					ws2.cell(row=i+1, column=j).value = "NOT OK"
+					ws2.cell(row=i+1, column=j).font = not_ok	
+			if i == 40:
+				if ok_mgarp == True:
+					ws2.cell(row=i+1, column=j).value = "OK"
+					ws2.cell(row=i+1, column=j).font = ok
+				else:
+					ws2.cell(row=i+1, column=j).value = "NOT OK"
+					ws2.cell(row=i+1, column=j).font = not_ok
+			if i == 41:
+				if ok_stbsp == True:
+					ws2.cell(row=i+1, column=j).value = "OK"
+					ws2.cell(row=i+1, column=j).font = ok
+				else:
+					ws2.cell(row=i+1, column=j).value = "NOT OK"
+					ws2.cell(row=i+1, column=j).font = not_ok
+			if i == 42:
+				if ok_sybfp == True:
+					ws2.cell(row=i+1, column=j).value = "OK"
+					ws2.cell(row=i+1, column=j).font = ok
+				else:
+					ws2.cell(row=i+1, column=j).value = "NOT OK"
+					ws2.cell(row=i+1, column=j).font = not_ok
 					
-		if i == 56:
+					
+		if i == 57:
 			break
-		if i >= 47:
-			ws2.cell(row=i+1, column=5).hyperlink = (x)
-		
+		if i >= 48:
+			ws2.cell(row=i+1, column=j+1).hyperlink = (x)
+			ws2.cell(row=i+1, column=j+1).value = '+Inf'
+			if i == 48:
+				if ok_prcstate == True:
+					ws2.cell(row=i+1, column=j).value = "OK"
+					ws2.cell(row=i+1, column=j).font = ok
+				else:
+					ws2.cell(row=i+1, column=j).value = "NOT OK"
+					ws2.cell(row=i+1, column=j).font = not_ok	
+			if i == 49:
+				if ok_hostname == True:
+					ws2.cell(row=i+1, column=j).value = "OK"
+					ws2.cell(row=i+1, column=j).font = ok
+				else:
+					ws2.cell(row=i+1, column=j).value = "NOT OK"
+					ws2.cell(row=i+1, column=j).font = not_ok	
+			if i == 50:
+				if ok_alist == True:
+					ws2.cell(row=i+1, column=j).value = "OK"
+					ws2.cell(row=i+1, column=j).font = ok
+				else:
+					ws2.cell(row=i+1, column=j).value = "NOT OK"
+					ws2.cell(row=i+1, column=j).font = not_ok
+			if i == 51:
+				if ok_cluster_res == True:
+					ws2.cell(row=i+1, column=j).value = "OK"
+					ws2.cell(row=i+1, column=j).font = ok
+				else:
+					ws2.cell(row=i+1, column=j).value = "NOT OK"
+					ws2.cell(row=i+1, column=j).font = not_ok
+			if i == 52:
+				if ok_cluster_group == True:
+					ws2.cell(row=i+1, column=j).value = "OK"
+					ws2.cell(row=i+1, column=j).font = ok
+				else:
+					ws2.cell(row=i+1, column=j).value = "NOT OK"
+					ws2.cell(row=i+1, column=j).font = not_ok
+			if i == 53:
+				if ok_cdhls == True:
+					ws2.cell(row=i+1, column=j).value = "OK"
+					ws2.cell(row=i+1, column=j).font = ok
+				else:
+					ws2.cell(row=i+1, column=j).value = "NOT OK"
+					ws2.cell(row=i+1, column=j).font = not_ok	
+			if i == 54:
+				if ok_cdhver == True:
+					ws2.cell(row=i+1, column=j).value = "OK"
+					ws2.cell(row=i+1, column=j).font = ok
+				else:
+					ws2.cell(row=i+1, column=j).value = "NOT OK"
+					ws2.cell(row=i+1, column=j).font = not_ok
+			if i == 55:
+				if ok_afpls == True:
+					ws2.cell(row=i+1, column=j).value = "OK"
+					ws2.cell(row=i+1, column=j).font = ok
+				else:
+					ws2.cell(row=i+1, column=j).value = "NOT OK"
+					ws2.cell(row=i+1, column=j).font = not_ok
+			if i == 56:
+				if ok_aloglist == True:
+					ws2.cell(row=i+1, column=j).value = "OK"
+					ws2.cell(row=i+1, column=j).font = ok
+				else:
+					ws2.cell(row=i+1, column=j).value = "NOT OK"
+					ws2.cell(row=i+1, column=j).font = not_ok
+				
+			
 	
 	wb.save(heirFilePath)
 	
@@ -701,9 +1592,9 @@ def sending():
 	if os.environ.get('OPENSHIFT_DATA_DIR'):
 		path_mail_file = heirFilePath
 	else:
-		path_mail_file = "static/patterns/reporta/reporte.xlsx"
+		path_mail_file = "static/patterns/reporta/reporta.xlsx"
 	type_mail_file = "excel/xlsx"
-	name_file = "reporte.xlsx"
+	name_file = "reporta.xlsx"
 	html = render_template('report.html')
 	subject = "Has recibido un Reporte!"
 	send_email_file(current_user.email, subject, html, path_mail_file, name_file, type_mail_file)
